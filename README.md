@@ -18,9 +18,9 @@ Investigating the six most important factors that led to the spread of COVID-19 
 By creating a machine-learning model to predict the spread of respitory viral infection like COVID-19, we can develop a pandemic playbook to help policymakers and business leaders prepare for a future pandemic/epidemic and respond appropriately.  
 
 ### Data Source
-[John Hopkins Coronavirus Data](https://coronavirus.jhu.edu/data/new-cases-50-states)
-
+https://www.census.gov/data/developers/data-sets.html
 ### Questions to Investigate
 
 1. What is the population per state at the begining and end of the pandemic
 2. How has race played a role in the spread of the COVID-19 pandemic?
+3. 
