@@ -31,5 +31,6 @@ By creating a machine-learning model to predict the spread of respiratory viral 
 4. Did having medical insurance play a role in the cure and deaths?
 5. What were the top 5 MSAs (Metropolitan Statistical Areas) impacted by Covid-19? (Def: MSA is a geographical region with a relatively high population density at its core and close economic ties throughout the area.)
 6. What were the top 20 uSAs (Micropolitan Statistical Areas) impacted by Covid-19?
-7. During periods of Covid-19 case spikes, were there geographical or state areas that trended with these spikes? 
+7. During periods of Covid-19 case spikes, were there geographical or state areas that trended with these spikes?
+8. Did political affiliation of areas have an influence on the number of Covid cases prior to vaccine distribution?
  
