@@ -16,7 +16,7 @@ Investigating the six most important factors that led to the spread of COVID-19 
 
 ### Reason for Selecting Topic
 
-By creating a machine-learning model to predict the spread of respitory viral infection like COVID-19, we can develop a pandemic playbook to help policymakers and business leaders prepare for a future pandemic/epidemic and respond appropriately.  
+By creating a machine-learning model to predict the spread of respiratory viral infection like COVID-19, we can develop a pandemic playbook to help policy makers and business leaders prepare for a future pandemic/epidemic and respond appropriately.  
 
 ### Data Source
 [John Hopkins Coronavirus Data](https://coronavirus.jhu.edu/data/new-cases-50-states)
@@ -29,4 +29,6 @@ By creating a machine-learning model to predict the spread of respitory viral in
 2. How has race played a role in the spread of the COVID-19 pandemic?
 3. Could the level of poverty and inequality affect the spread of COVID-19? 
 4. Did having medical insurance play a role in the cure and deaths?
-5. What were the top 5 MSAs (Metropolitan Statistical Areas) impacted by Covid-19? (Def: MSA is a geographical region with a relatively high population density at its core and close economic ties throughout the area.) 
+5. What were the top 5 MSAs (Metropolitan Statistical Areas) impacted by Covid-19? (Def: MSA is a geographical region with a relatively high population density at its core and close economic ties throughout the area.)
+6. What were the top 20 uSAs (Micropolitan Statistical Areas) impacted by Covid-19?
+ 
