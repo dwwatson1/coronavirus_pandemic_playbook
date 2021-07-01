@@ -28,3 +28,4 @@ By creating a machine-learning model to predict the spread of respitory viral in
 1. What is the population per state at the begining and end of the pandemic
 2. How has race played a role in the spread of the COVID-19 pandemic?
 3. Could the level of poverty and inequality affect the spread of COVID-19? 
+4. Did having medical insurance play a role in the cure and deaths
