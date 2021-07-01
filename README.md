@@ -43,4 +43,11 @@ We have identified a linear regression model as the best model in order to compl
 
 yi=β0+β1xi,1+β2xi,2+…+βkxi,k+ϵi.
 
+From an early perspectivce we have identified:
+yi = dependent variable—the number of COVID-19 cases
+xi1 = explanatory variable-the number of men and women
+xi2 = religion
+xi3 = race
+xi4 = political party affiliation
+xi5 = income level
 
