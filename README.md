@@ -21,4 +21,4 @@ By creating a machine-learning model to predict the spread of respitory viral in
 
 ### Questions to Investigate
 
-
+1. What is the population per state at the begining and end of the pandemic
