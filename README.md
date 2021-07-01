@@ -25,7 +25,8 @@ By creating a machine-learning model to predict the spread of respitory viral in
 
 ### Questions to Investigate
 
-1. What is the population per state at the begining and end of the pandemic
+1. What is the population per state at the beginning and end of the pandemic?
 2. How has race played a role in the spread of the COVID-19 pandemic?
 3. Could the level of poverty and inequality affect the spread of COVID-19? 
-4. Did having medical insurance play a role in the cure and deaths
+4. Did having medical insurance play a role in the cure and deaths?
+5. What were the top 5 MSAs (Metropolitan Statistical Areas) impacted by Covid-19? (Def: MSA is a geographical region with a relatively high population density at its core and close economic ties throughout the area.) 
