@@ -37,6 +37,9 @@ By creating a machine-learning model to predict the spread of respiratory viral 
 6. What were the top 20 uSAs (Micropolitan Statistical Areas) impacted by Covid-19?
 7. During periods of Covid-19 case spikes, were there geographical or state areas that trended with these spikes?
 8. Did political affiliation of areas have an influence on the number of Covid cases prior to vaccine distribution?
+9. Did gender play a role in the spread of COVID-19?
+10. Did weight play a role in the spread of COVID-19?
+11. Did religion play a role in the spread of COVID-19?
  
 ## Machine Learning
 We have identified a linear regression model as the best model in order to complete our project. The inputs for the model will be covid cases by state, gender, age, weight, race, political party, religious affiliation, income level, and population density. We will run the model with the hopes of identifying the largest factors that played a role in the spread of covid-19. We will be considering the R squared value when running our model in order to consider if the model is well fitted. 
