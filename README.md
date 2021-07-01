@@ -39,4 +39,8 @@ By creating a machine-learning model to predict the spread of respiratory viral 
 8. Did political affiliation of areas have an influence on the number of Covid cases prior to vaccine distribution?
  
 ## Machine Learning
-We have identified a linear regression model as the best model in order to complete our project. The inputs for the model will be covid cases by state, gender, age, weight, race, political party, religious affiliation, income level, and population density. We will run the model with the hopes of identifying the largest factors that played a role in the spread of covid-19. We will be considering the R squared value when running our model in order to consider if the model is well fitted. 
+We have identified a linear regression model as the best model in order to complete our project. The inputs for the model will be covid cases by state, gender, age, weight, race, political party, religious affiliation, income level, and population density. We will run the model with the hopes of identifying the largest factors that played a role in the spread of covid-19. We will be considering the R squared value when running our model in order to consider if the model is well fitted. The sample equation that we are using to build the model is below:
+
+yi=β0+β1xi,1+β2xi,2+…+βkxi,k+ϵi.
+
+
