@@ -23,6 +23,8 @@ By creating a machine-learning model to predict the spread of respiratory viral 
 
 [U.S. Census Data](https://www.census.gov/data/developers/data-sets.html)
 
+[Additional data source that we are considering](https://docs.google.com/document/d/10i01u6oQAUVCbk5VTL6G0rIsTF9JlO1I90XTCDXWTCA/edit)
+
 ## Questions to Investigate During Project
 
 1. What is the population per state at the beginning and end of the pandemic?
