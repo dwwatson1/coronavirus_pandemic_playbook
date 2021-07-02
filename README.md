@@ -14,9 +14,15 @@ Investigating the six most important factors that led to the spread of COVID-19 
 * Income Level
 * Population Density
 
-### Reason for Selecting Topic
+### Audience
 
-By creating a machine-learning model to predict the spread of respiratory viral infection like COVID-19, we can develop a pandemic playbook to help policy makers and business leaders prepare for a future pandemic/epidemic and respond appropriately.  
+The National Governors Association has tasked our group, the **COVID-19 Rapid Response Group: Preparing for the Next Pandemic** will be presenting our pandemic playbook to at a COVID-19 response conference with the National Governors Association and to the United States Conference of Mayors. The two nonpartisan organizations comprised of governors from the U.S.'s 55 states and territories and mayors of U.S. cities with population of 30,000 or more. Typically these groups meet separately to share strategies across their jurisdictions, however, this conference is a rare opportunity for all executives to gather and learn how to better respond to the next pandemic and minimize the spread, deaths, and economic impact. 
+
+### Why Should We Care?
+
+As a capitalist society, some economic measures of success for the U.S. are jobs created and GDP growth. The COVID-19 brought the [deepest recession since the end of WWII](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) as the global economy shrunk by 3.5% and [114 million](https://www.weforum.org/agenda/2021/02/covid-employment-global-job-loss/) people lost their jobs in 2020. The impact of this shock is likely to be felt for years to come.
+
+[The Brookings Institute](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) identified **state capacity** as one of three pre-existing conditions that amplified the impact of the shock. The COVID-19 crisis posed a critical challenge for policymakers as they needed to quickly reach workers and households during the abrupt economic crisis. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors and mayors have the opportunity to learn where our countries weak points are that led to these incredible economic losses and mitigate them in a future pandemic. 
 
 ## Data Sources for Project
 [John Hopkins Coronavirus Data](https://coronavirus.jhu.edu/data/new-cases-50-states)
