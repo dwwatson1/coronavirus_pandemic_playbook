@@ -39,16 +39,23 @@ By creating a machine-learning model to predict the spread of respiratory viral 
 8. Did political affiliation of areas have an influence on the number of Covid cases prior to vaccine distribution?
  
 ## Machine Learning
-We have identified a linear regression model as the best model in order to complete our project. The inputs for the model will be covid cases by state, gender, age, weight, race, political party, religious affiliation, income level, and population density. We will run the model with the hopes of identifying the largest factors that played a role in the spread of covid-19. We will be considering the R squared value when running our model in order to consider if the model is well fitted. The sample equation that we are using to build the model is below:
+We have identified a multiple linear regression model as the best model in order to complete our project. The inputs for the model will be covid cases by state, gender, age, weight, race, political party, religious affiliation, income level, and population density. We are using a multiple linear regression model because we have multiple explanatory variables (the independent variables which are the earlier identified factors) and we want to know how strong the relationship is between these independent variables with our dependent variable, which is covid cases. We are using a linear model as opposed to a logisitical model because our dependent variable is continuous. We will run the model with the hopes of identifying the largest factors that played a role in the spread of covid-19. We will be considering the R squared value and the standardized coefficient when running our model in order to consider if the model is well fitted and compare the factors to see which play a larger role. The sample equation that we are using to build the model is below:
 
 yi=β0+β1xi,1+β2xi,2+…+βkxi,k+ϵi.
 
 From an early perspectivce we have identified:
+
 yi = dependent variable—the number of COVID-19 cases
+
 xi1 = explanatory variable-the number of men and women
+
 xi2 = religion
+
 xi3 = race
+
 xi4 = political party affiliation
+
 xi5 = income level
+
 xi6 = health care professionals/dcotrs registered by state
 
