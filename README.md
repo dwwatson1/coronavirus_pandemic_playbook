@@ -63,5 +63,5 @@ xi4 = political party affiliation
 
 xi5 = income level
 
-xi6 = health care professionals/dcotrs registered by state
+xi6 = health care professionals/doctors registered by state
 
