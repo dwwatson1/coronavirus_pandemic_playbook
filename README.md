@@ -24,7 +24,7 @@ As a capitalist society, some economic measures of success for the U.S. are jobs
 
 [The Brookings Institute](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) identified **state capacity** as one of three pre-existing conditions that amplified the impact of the shock. The COVID-19 crisis posed a critical challenge for policymakers as they needed to quickly reach workers and households during the abrupt economic crisis. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors and mayors have the opportunity to learn where our countries weak points are that led to these incredible economic losses and mitigate them in a future pandemic. 
 
-## Data Sources for Project
+### Data Sources for Project
 [John Hopkins Coronavirus Data](https://coronavirus.jhu.edu/data/new-cases-50-states)
 
 [U.S. Census Data](https://www.census.gov/data/developers/data-sets.html)
@@ -33,7 +33,7 @@ As a capitalist society, some economic measures of success for the U.S. are jobs
 
 [Another possible data APIs](https://blogs.mulesoft.com/dev-guides/track-covid-19/)
 
-## Questions to Investigate During Project
+### Questions to Investigate During Project
 
 1. What is the population per state at the beginning and end of the pandemic?
 2. How has race played a role in the spread of the COVID-19 pandemic?
@@ -44,7 +44,7 @@ As a capitalist society, some economic measures of success for the U.S. are jobs
 7. During periods of Covid-19 case spikes, were there geographical or state areas that trended with these spikes?
 8. Did political affiliation of areas have an influence on the number of Covid cases prior to vaccine distribution?
  
-## Machine Learning
+### Machine Learning
 We have identified a multiple linear regression model as the best model in order to complete our project. The inputs for the model will be covid cases by state, gender, age, weight, race, political party, religious affiliation, income level, and population density. We are using a multiple linear regression model because we have multiple explanatory variables (the independent variables which are the earlier identified factors) and we want to know how strong the relationship is between these independent variables with our dependent variable, which is covid cases. We are using a linear model as opposed to a logisitical model because our dependent variable is continuous. We will run the model with the hopes of identifying the largest factors that played a role in the spread of covid-19. We will be considering the R squared value and the standardized coefficient when running our model in order to consider if the model is well fitted and compare the factors to see which play a larger role. The sample equation that we are using to build the model is below:
 
 yi=β0+β1xi,1+β2xi,2+…+βkxi,k+ϵi.
@@ -65,3 +65,25 @@ xi5 = income level
 
 xi6 = health care professionals/dcotrs registered by state
 
+### Communication Protocol 
+
+We are utilizing the available and most suitable resources as our communication tools. Zoom and Slack. We are aiming to meet twice a week in addition to meeting and discussing over the regular virtual class hours. 
+We have created a group and direct messages for group members in Slack, and we may use this channel for any cases of emergency. 
+
+### Technologies Used
+
+#### Database storage
+
+We will use SQL database tool to extract, organize and retrieve our data.
+
+#### Data Cleaning and Analysis
+
+Pandas will be used to clean and transform the data and perform an exploratory analysis. 
+
+#### Dashboard
+
+We will create an HTML/CSS portfolio to showcase our project and Bootstrap components to polish and customize the portfolio. We will also use JavaScript functions to display dynamic and interactive dashboard. 
+
+#### Machine Learning 
+
+We will use Scikit-learn machine learning library for Python to reshape, stratify, split, test, train …. our data. 
