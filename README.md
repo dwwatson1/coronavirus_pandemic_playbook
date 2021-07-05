@@ -57,7 +57,7 @@ We have identified a multiple linear regression model as the best model in order
 
 yi=β0+β1xi,1+β2xi,2+…+βkxi,k+ϵi.
 
-From an early perspectivce we have identified:
+From an early perspective we have identified:
 
 yi = dependent variable—the number of COVID-19 cases
 
@@ -72,4 +72,42 @@ xi4 = political party affiliation
 xi5 = income level
 
 xi6 = health care professionals/doctors registered by state
+
+## Database Schema
+
+SQL Database Schema
+States
+-
+State_Init VARCHAR PK
+Pop_Density INTEGER
+Income INTEGER
+Race VARCHAR
+Zipcode VARCHAR
+
+Covid_Cases
+-
+Case_Totals INTEGER PK
+State_Init VARCHAR FK >- States.State_Init
+Death_Totals INTEGER 
+Hospital_Utilz INTEGER
+
+
+Demographics
+-
+Case_Totals INTEGER PK
+State_Init VARCHAR FK >- States.State_Init
+Age INTEGER
+Politics VARCHAR 
+Religion VARCHAR
+Gender VARCHAR
+
+
+Identity
+-
+Race VARCHAR PK
+State_Init VARCHAR FK >- States.State_Init
+Case_Totals INTEGER FK >- Covid_Cases.Case_Totals
+Death_Totals INTEGER FK >- Covid_Cases.Case_Totals
+Income INTEGER
+Health_Issues VARCHAR 
 
