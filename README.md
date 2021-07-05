@@ -73,10 +73,9 @@ xi5 = income level
 
 xi6 = health care professionals/doctors registered by state
 
-## Database Schema
+## SQL Database Schema
 
-### SQL Database Schema
-States
+### States
 -
 State_Init VARCHAR PK
 Pop_Density INTEGER
@@ -84,15 +83,14 @@ Income INTEGER
 Race VARCHAR
 Zipcode VARCHAR
 
-Covid_Cases
+### Covid_Cases
 -
 Case_Totals INTEGER PK
 State_Init VARCHAR FK >- States.State_Init
 Death_Totals INTEGER 
 Hospital_Utilz INTEGER
 
-
-Demographics
+### Demographics
 -
 Case_Totals INTEGER PK
 State_Init VARCHAR FK >- States.State_Init
@@ -101,8 +99,7 @@ Politics VARCHAR
 Religion VARCHAR
 Gender VARCHAR
 
-
-Identity
+### Identity
 -
 Race VARCHAR PK
 State_Init VARCHAR FK >- States.State_Init
