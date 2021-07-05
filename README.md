@@ -26,12 +26,20 @@ As a capitalist society, some economic measures of success for the U.S. are jobs
 
 ## Data Sources for Project
 [John Hopkins Coronavirus Data](https://coronavirus.jhu.edu/data/new-cases-50-states)
+ - [US Dept of Health Data Sources by State] (https://github.com/CSSEGISandData/COVID-19)
+ - [US State Level Policy Tracker] (https://github.com/govex/COVID-19/tree/govex_data/data_tables/policy_data/table_data/Current)
 
 [U.S. Census Data](https://www.census.gov/data/developers/data-sets.html)
 
 [Additional data source that we are considering](https://docs.google.com/document/d/10i01u6oQAUVCbk5VTL6G0rIsTF9JlO1I90XTCDXWTCA/edit)
 
 [Another possible data APIs](https://blogs.mulesoft.com/dev-guides/track-covid-19/)
+
+[APM Research Lab: The Color of Coronavirus cvs files] (https://www.apmresearchlab.org/covid/deaths-by-race)
+
+
+
+[COVID-19 original and derived datasets (JHU, NY Times, ECDC)] (https://github.com/cipriancraciun/covid19-datasets)
 
 ## Questions to Investigate During Project
 
