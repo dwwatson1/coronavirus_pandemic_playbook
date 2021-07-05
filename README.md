@@ -77,7 +77,6 @@ We have created a group and direct messages for group members in Slack, and we m
 We will use SQL database tool to extract, organize and retrieve our data.
 
 #### Data Cleaning and Analysis
-
 Pandas will be used to clean and transform the data and perform an exploratory analysis. 
 
 #### Dashboard
