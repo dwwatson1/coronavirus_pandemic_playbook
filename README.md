@@ -75,7 +75,7 @@ xi6 = health care professionals/doctors registered by state
 
 ## Database Schema
 
-SQL Database Schema
+### SQL Database Schema
 States
 -
 State_Init VARCHAR PK
