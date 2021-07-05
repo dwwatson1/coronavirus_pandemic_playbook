@@ -76,7 +76,6 @@ xi6 = health care professionals/doctors registered by state
 ## SQL Database Schema
 
 ### States
--
 State_Init VARCHAR PK
 Pop_Density INTEGER
 Income INTEGER
@@ -84,14 +83,12 @@ Race VARCHAR
 Zipcode VARCHAR
 
 ### Covid_Cases
--
 Case_Totals INTEGER PK
 State_Init VARCHAR FK >- States.State_Init
 Death_Totals INTEGER 
 Hospital_Utilz INTEGER
 
 ### Demographics
--
 Case_Totals INTEGER PK
 State_Init VARCHAR FK >- States.State_Init
 Age INTEGER
@@ -100,7 +97,6 @@ Religion VARCHAR
 Gender VARCHAR
 
 ### Identity
--
 Race VARCHAR PK
 State_Init VARCHAR FK >- States.State_Init
 Case_Totals INTEGER FK >- Covid_Cases.Case_Totals
