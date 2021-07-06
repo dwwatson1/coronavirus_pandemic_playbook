@@ -26,6 +26,8 @@ As a capitalist society, some economic measures of success for the U.S. are jobs
 
 ### Data Sources for Project
 [John Hopkins Coronavirus Data](https://coronavirus.jhu.edu/data/new-cases-50-states)
+ - [US Dept of Health Data Sources by State] (https://github.com/CSSEGISandData/COVID-19)
+ - [US State Level Policy Tracker] (https://github.com/govex/COVID-19/tree/govex_data/data_tables/policy_data/table_data/Current)
 
 [U.S. Census Data](https://www.census.gov/data/developers/data-sets.html)
 
@@ -35,9 +37,11 @@ As a capitalist society, some economic measures of success for the U.S. are jobs
 
 [A database that we can consider] (https://covidtracking.com/data/download)
 
+[APM Research Lab: The Color of Coronavirus cvs files] (https://www.apmresearchlab.org/covid/deaths-by-race)
+
+[COVID-19 original and derived datasets (JHU, NY Times, ECDC)] (https://github.com/cipriancraciun/covid19-datasets)
 
 ### Questions to Investigate During Project
-
 1. What is the population per state at the beginning and end of the pandemic?
 2. How has race played a role in the spread of the COVID-19 pandemic?
 3. Could the level of poverty and inequality affect the spread of COVID-19? If so what is the impact?
@@ -52,7 +56,7 @@ We have identified a multiple linear regression model as the best model in order
 
 yi=β0+β1xi,1+β2xi,2+…+βkxi,k+ϵi.
 
-From an early perspectivce we have identified:
+From an early perspective we have identified:
 
 yi = dependent variable—the number of COVID-19 cases
 
@@ -68,6 +72,38 @@ xi5 = income level
 
 xi6 = health care professionals/doctors registered by state
 
+## SQL Database Schema
+
+### States
+State_Init VARCHAR PK
+Pop_Density INTEGER
+Income INTEGER
+Race VARCHAR
+Zipcode VARCHAR
+
+### Covid_Cases
+Case_Totals INTEGER PK
+State_Init VARCHAR FK >- States.State_Init
+Death_Totals INTEGER 
+Hospital_Utilz INTEGER
+
+### Demographics
+Case_Totals INTEGER PK
+State_Init VARCHAR FK >- States.State_Init
+Age INTEGER
+Politics VARCHAR 
+Religion VARCHAR
+Gender VARCHAR
+
+### Identity
+Race VARCHAR PK
+State_Init VARCHAR FK >- States.State_Init
+Case_Totals INTEGER FK >- Covid_Cases.Case_Totals
+Death_Totals INTEGER FK >- Covid_Cases.Case_Totals
+Income INTEGER
+Health_Issues VARCHAR 
+
+=======
 ### Communication Protocol 
 
 We are utilizing the available and most suitable resources as our communication tools. Zoom and Slack. We are aiming to meet twice a week in addition to meeting and discussing over the regular virtual class hours. 
