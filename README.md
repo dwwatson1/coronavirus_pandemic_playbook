@@ -33,6 +33,9 @@ As a capitalist society, some economic measures of success for the U.S. are jobs
 
 [Another possible data APIs](https://blogs.mulesoft.com/dev-guides/track-covid-19/)
 
+(https://covidtracking.com/data/download)
+
+
 ### Questions to Investigate During Project
 
 1. What is the population per state at the beginning and end of the pandemic?
