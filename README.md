@@ -75,10 +75,15 @@ xi6 = health care professionals/doctors registered by state
 ## SQL Database Schema
 
 ### States
+
 State_Init VARCHAR PK
+
 Pop_Density INTEGER
+
 Income INTEGER
+
 Race VARCHAR
+
 Zipcode VARCHAR
 
 ### Covid_Cases
