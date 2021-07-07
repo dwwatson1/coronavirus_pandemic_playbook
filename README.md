@@ -41,6 +41,8 @@ As a capitalist society, some economic measures of success for the U.S. are jobs
 
 [COVID-19 original and derived datasets (JHU, NY Times, ECDC)] (https://github.com/cipriancraciun/covid19-datasets)
 
+[Case Surveillance Public Use Data with Geography] (https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data-with-Ge/n8mc-b4w4/data)
+
 ### Questions to Investigate During Project
 1. What is the population per state at the beginning and end of the pandemic?
 2. How has race played a role in the spread of the COVID-19 pandemic?
