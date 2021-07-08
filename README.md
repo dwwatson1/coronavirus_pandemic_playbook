@@ -87,12 +87,14 @@ Race VARCHAR
 Zipcode VARCHAR
 
 ### Covid_Cases
+
 Case_Totals INTEGER PK
 State_Init VARCHAR FK >- States.State_Init
 Death_Totals INTEGER 
 Hospital_Utilz INTEGER
 
 ### Demographics
+
 Case_Totals INTEGER PK
 State_Init VARCHAR FK >- States.State_Init
 Age INTEGER
@@ -101,6 +103,7 @@ Religion VARCHAR
 Gender VARCHAR
 
 ### Identity
+
 Race VARCHAR PK
 State_Init VARCHAR FK >- States.State_Init
 Case_Totals INTEGER FK >- Covid_Cases.Case_Totals
@@ -108,13 +111,13 @@ Death_Totals INTEGER FK >- Covid_Cases.Case_Totals
 Income INTEGER
 Health_Issues VARCHAR 
 
-=======
-### Communication Protocol 
+## Communication Protocol 
 
 We are utilizing the available and most suitable resources as our communication tools. Zoom and Slack. We are aiming to meet twice a week in addition to meeting and discussing over the regular virtual class hours. 
+
 We have created a group and direct messages for group members in Slack, and we may use this channel for any cases of emergency. 
 
-### Technologies Used
+## Technologies Used
 
 #### Database storage
 
