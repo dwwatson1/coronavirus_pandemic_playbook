@@ -26,7 +26,7 @@ As a capitalist society, some economic measures of success for the U.S. are jobs
 
 ## Communication Protocol 
 
-(Group meeting agendas)[https://drive.google.com/drive/folders/1sMOLvKQO-S99917fQL9axuocZujgKNZQ?usp=sharing]
+[Group meeting agendas](https://drive.google.com/drive/folders/1sMOLvKQO-S99917fQL9axuocZujgKNZQ?usp=sharing)
 
 We are utilizing the available and most suitable resources as our communication tools. Zoom and Slack. We are aiming to meet twice a week in addition to meeting and discussing over the regular virtual class hours. 
 
