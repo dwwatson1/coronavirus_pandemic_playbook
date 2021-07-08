@@ -24,6 +24,14 @@ As a capitalist society, some economic measures of success for the U.S. are jobs
 
 [The Brookings Institute](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) identified **state capacity** as one of three pre-existing conditions that amplified the impact of the shock. The COVID-19 crisis posed a critical challenge for policymakers as they needed to quickly reach workers and households during the abrupt economic crisis. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors and mayors have the opportunity to learn where our countries weak points are that led to these incredible economic losses and mitigate them in a future pandemic. 
 
+## Communication Protocol 
+
+(Group meeting agendas)[https://drive.google.com/drive/folders/1sMOLvKQO-S99917fQL9axuocZujgKNZQ?usp=sharing]
+
+We are utilizing the available and most suitable resources as our communication tools. Zoom and Slack. We are aiming to meet twice a week in addition to meeting and discussing over the regular virtual class hours. 
+
+We have created a group and direct messages for group members in Slack, and we may use this channel for any cases of emergency. 
+
 ### Data Sources for Project
 [John Hopkins Coronavirus Data](https://coronavirus.jhu.edu/data/new-cases-50-states)
  - [US Dept of Health Data Sources by State] (https://github.com/CSSEGISandData/COVID-19)
@@ -110,12 +118,6 @@ Case_Totals INTEGER FK >- Covid_Cases.Case_Totals
 Death_Totals INTEGER FK >- Covid_Cases.Case_Totals
 Income INTEGER
 Health_Issues VARCHAR 
-
-## Communication Protocol 
-
-We are utilizing the available and most suitable resources as our communication tools. Zoom and Slack. We are aiming to meet twice a week in addition to meeting and discussing over the regular virtual class hours. 
-
-We have created a group and direct messages for group members in Slack, and we may use this channel for any cases of emergency. 
 
 ## Technologies Used
 
