@@ -35,8 +35,8 @@ We have created a group and direct messages for group members in Slack, and we m
 
 ### Data Sources for Project
 [John Hopkins Coronavirus Data](https://coronavirus.jhu.edu/data/new-cases-50-states)
- - [US Dept of Health Data Sources by State] (https://github.com/CSSEGISandData/COVID-19)
- - [US State Level Policy Tracker] (https://github.com/govex/COVID-19/tree/govex_data/data_tables/policy_data/table_data/Current)
+[US Dept of Health Data Sources by State](https://github.com/CSSEGISandData/COVID-19)
+[US State Level Policy Tracker](https://github.com/govex/COVID-19/tree/govex_data/data_tables/policy_data/table_data/Current)
 
 [U.S. Census Data](https://www.census.gov/data/developers/data-sets.html)
 
@@ -44,11 +44,11 @@ We have created a group and direct messages for group members in Slack, and we m
 
 [Another possible data APIs](https://blogs.mulesoft.com/dev-guides/track-covid-19/)
 
-[A database that we can consider] (https://covidtracking.com/data/download)
+[A database that we can consider](https://covidtracking.com/data/download)
 
-[APM Research Lab: The Color of Coronavirus cvs files] (https://www.apmresearchlab.org/covid/deaths-by-race)
+[APM Research Lab: The Color of Coronavirus cvs files](https://www.apmresearchlab.org/covid/deaths-by-race)
 
-[COVID-19 original and derived datasets (JHU, NY Times, ECDC)] (https://github.com/cipriancraciun/covid19-datasets)
+[COVID-19 original and derived datasets (JHU, NY Times, ECDC)](https://github.com/cipriancraciun/covid19-datasets)
 
 ### Questions to Investigate During Project
 1. What is the population per state at the beginning and end of the pandemic?
