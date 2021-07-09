@@ -13,6 +13,7 @@ Investigating the six most important factors that led to the spread of COVID-19 
 * Religious Affiliation
 * Income Level
 * Population Density
+* Number of Commercial Airports
 
 ### Audience
 
