@@ -20,5 +20,61 @@ from sklearn.metrics import confusion_matrix, accuracy_score, classification_rep
 After loading in the data, we process the data by defining the features or independent variables, and the target variables or dependent variables.
 
 ```
-X = 
+file_path = ("maryland_data.csv")
+covid_df = pd.read_csv(file_path)
 
+X = pd.get_dummies(covid_df, columns=["age", "gender", "race", "hospitalization", "ICU", "underlying conditions"]
+X = X.drop(columns="covid cases", axis=1)
+
+y = covid_df["covid cases"]
+```
+
+We then split the data into training and testing sets and scale the data. We set random_state to a number in the testing phase so that we can consistently see the same results when the test model is run (this could possibly be removed for the final model).
+
+```
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1)
+
+scaler = StandardScaler()
+
+X_scaler = scaler.fit(X_train)
+
+X_train_scaled = X_scaler.transform(X_train)
+X_test_scaled = X_scaler.transform(X_test)
+```
+
+We initialize the random forest classifier and fit the model. We set n_estimators to 128 because best practice is to use between 64 and 128 forests. Generally, the higher the number, the stronger and more stable the predictions are. Given that this is a test model, it is reasonable to assume the model might be able to handle 128 forests.
+
+```
+rf_model = RandomForestClassifier(n_estimators=128, random_state=1) 
+
+rf_model = rf_model.fit(X_train_scaled, y_train)
+```
+
+We make predictions and then evaluate how well the model classified the data.
+
+```
+predictions = rf_model.predict(X_test_scaled)
+
+cm = confusion_matrix(y_test, predictions)
+
+cm_df = pd.DataFrame(
+    cm, index=["Actual 0", "Actual 1"], columns=["Predicted 0", "Predicted 1"])
+cm_df
+
+acc_score = accuracy_score(y_test, predictions)
+
+print("Confusion Matrix")
+display(cm_df)
+print(f"Accuracy Score : {acc_score}")
+print("Classification Report")
+print(classification_report(y_test, predictions))
+```
+
+We finally rank the importance of the features and see which have the most impact on the output.
+
+```
+importances = rf_model.feature_importances_
+importances
+
+sorted(zip(rf_model.feature_importances_, X.columns), reverse=True)
+```
