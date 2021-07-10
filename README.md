@@ -1,24 +1,7 @@
 # Coronavirus Pandemic Playbook
 
-## Project Topic and Description
+## Machine Learning
 
-### Topic
+The preliminary data used is a subset of our main data table wtih data from the state of Maryland. We chose one state to work with for the preliminary data as it is significantly smaller, which will help the model run faster for the testing phase. With the model working with the Maryland data, we can reasonably assume that the model should work with the whole dataset. For the preliminary data, we used features from age, gender, and race, hospitalization, ICU, and underlying conditions. This was most efficient for the preliminary model because these features were already included in the main dataset. 
 
-Investigating the six most important factors that led to the spread of COVID-19 cases in states across the United States.
-* Gender
-* Age
-* Race
-* Political Party
-* Religious Affiliation
-* Income Level
-* Population Density
-
-### Reason for Selecting Topic
-
-By creating a machine-learning model to predict the spread of respitory viral infection like COVID-19, we can develop a pandemic playbook to help policymakers and business leaders prepare for a future pandemic/epidemic and respond appropriately.  
-
-### Data Source
-
-### Questions to Investigate
-
-1. What is the population per state at the begining and end of the pandemic
+The model we chose to use is a supervised random forest model. We chose supervised machine learning because we have labeled data (our features in tabular form) and outputs (whether someone has COVID or not). The input data, or our features, has a paired outcome which is plugged in to train the model to predict outcomes. Supervised machine learning models have target variables, or variables about which we want to gain a deeper understanding, which in our case is whether or not a person has COVID. We chose a random forest algorithm because they are robust against overfitting, can handle a lot of input variables of which we will have many, can run efficiently on large datasets (the original dataset before transformation had 27 million rows), and most importantly random forest models can be used to efficiently rank the importance of input variables.
