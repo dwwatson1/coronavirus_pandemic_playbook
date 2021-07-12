@@ -60,7 +60,7 @@ We have created a group and direct messages for group members in Slack, and we m
 7. During periods of Covid-19 case spikes, were there geographical or state areas that trended with these spikes?
 8. Did political affiliation of areas have an influence on the number of Covid cases prior to vaccine distribution?
  
-### Machine Learning
+## Machine Learning
 
 ### Preliminary Data Spitting / Testing Sets
 We used Maryland COVID-19 data as our preliminary data, which is a subset of our main data table. We chose one state to work with first as the size of the data is significantly smaller. This helped the model run faster for the testing phase. As the model worked with the Maryland data, we are assuming that the model will work for the whole dataset. For the preliminary data, we used features from age, gender, and race, hospitalization, ICU, and underlying conditions. This was most efficient for the preliminary model because these features were already included in the main dataset. 
