@@ -1,0 +1,613 @@
+code,state,conditiongroup,total_deaths
+Montana,MT,Malignant neoplasms,206
+Indiana,IN,Alzheimer disease,1426
+Georgia,GA,Renal failure,3589
+South Carolina,SC,Vascular and unspecified dementia,1564
+New York,NY,Obesity,1061
+Pennsylvania,PA,"Intentional and unintentional injury, poisoning, and other adverse events",1385
+New Jersey,NJ,Respiratory diseases,58865
+Virginia,VA,Respiratory diseases,19412
+South Dakota,SD,Malignant neoplasms,287
+Virginia,VA,All other conditions and causes (residual),8156
+Alabama,AL,Malignant neoplasms,808
+Iowa,IA,Alzheimer disease,797
+Massachusetts,MA,"Intentional and unintentional injury, poisoning, and other adverse events",575
+Texas,TX,Circulatory diseases,73670
+Vermont,VT,Sepsis,0
+Michigan,MI,Vascular and unspecified dementia,2893
+Connecticut,CT,Respiratory diseases,15301
+District of Columbia,DC,COVID-19,2953
+Wisconsin,WI,"Intentional and unintentional injury, poisoning, and other adverse events",522
+South Carolina,SC,Circulatory diseases,12533
+Florida,FL,Alzheimer disease,1782
+Maine,ME,Malignant neoplasms,68
+Nevada,NV,Obesity,468
+Arkansas,AR,Vascular and unspecified dementia,1168
+Alabama,AL,COVID-19,21866
+South Dakota,SD,Alzheimer disease,365
+Hawaii,HI,Vascular and unspecified dementia,62
+Nevada,NV,"Intentional and unintentional injury, poisoning, and other adverse events",197
+Rhode Island,RI,Circulatory diseases,3751
+South Carolina,SC,COVID-19,18498
+Kentucky,KY,Diabetes,2916
+Mississippi,MS,Vascular and unspecified dementia,1048
+Tennessee,TN,Respiratory diseases,29843
+New Hampshire,NH,Sepsis,146
+Arizona,AZ,All other conditions and causes (residual),11820
+Kansas,KS,Malignant neoplasms,491
+Indiana,IN,Malignant neoplasms,1429
+Washington,WA,COVID-19,11312
+Texas,TX,Obesity,6768
+Alaska,AK,All other conditions and causes (residual),322
+Virginia,VA,"Intentional and unintentional injury, poisoning, and other adverse events",356
+Rhode Island,RI,COVID-19,5394
+Wisconsin,WI,Diabetes,3522
+Georgia,GA,Malignant neoplasms,1285
+Louisiana,LA,Malignant neoplasms,788
+Utah,UT,"Intentional and unintentional injury, poisoning, and other adverse events",170
+New Jersey,NJ,Obesity,1185
+North Dakota,ND,Alzheimer disease,311
+Georgia,GA,Obesity,1338
+Mississippi,MS,Respiratory diseases,20075
+Nebraska,NE,Obesity,232
+Texas,TX,Diabetes,22270
+Pennsylvania,PA,Obesity,1686
+Idaho,ID,Diabetes,647
+South Carolina,SC,Renal failure,3112
+Nevada,NV,Renal failure,1028
+North Carolina,NC,COVID-19,27362
+New Mexico,NM,COVID-19,8372
+Georgia,GA,Alzheimer disease,1166
+Illinois,IL,Vascular and unspecified dementia,4425
+Georgia,GA,Vascular and unspecified dementia,2410
+Michigan,MI,Renal failure,3537
+New Mexico,NM,Respiratory diseases,8221
+Utah,UT,Circulatory diseases,3033
+Washington,WA,Respiratory diseases,14815
+Connecticut,CT,Vascular and unspecified dementia,2465
+Nevada,NV,Circulatory diseases,7655
+Tennessee,TN,Sepsis,2877
+Maine,ME,Circulatory diseases,862
+Alabama,AL,Vascular and unspecified dementia,1360
+District of Columbia,DC,Vascular and unspecified dementia,272
+Delaware,DE,Circulatory diseases,2210
+Arkansas,AR,Obesity,308
+Colorado,CO,Respiratory diseases,17078
+Kansas,KS,"Intentional and unintentional injury, poisoning, and other adverse events",165
+Utah,UT,COVID-19,5049
+Delaware,DE,Obesity,166
+Arkansas,AR,"Intentional and unintentional injury, poisoning, and other adverse events",172
+Virginia,VA,Sepsis,1910
+Arkansas,AR,Circulatory diseases,7793
+Hawaii,HI,Alzheimer disease,0
+North Dakota,ND,Malignant neoplasms,195
+Illinois,IL,Respiratory diseases,42651
+South Carolina,SC,Respiratory diseases,22520
+South Dakota,SD,Diabetes,842
+Hawaii,HI,Diabetes,170
+Hawaii,HI,"Intentional and unintentional injury, poisoning, and other adverse events",16
+Iowa,IA,Diabetes,1885
+New Hampshire,NH,Alzheimer disease,107
+Virginia,VA,COVID-19,22340
+Florida,FL,Diabetes,14000
+Kentucky,KY,Circulatory diseases,11103
+Kentucky,KY,Obesity,390
+Arizona,AZ,COVID-19,32060
+New Mexico,NM,Alzheimer disease,233
+Missouri,MO,Diabetes,2228
+Hawaii,HI,Respiratory diseases,1037
+Missouri,MO,All other conditions and causes (residual),8479
+Ohio,OH,Circulatory diseases,27240
+Rhode Island,RI,All other conditions and causes (residual),2207
+Idaho,ID,Circulatory diseases,2939
+Montana,MT,Respiratory diseases,3985
+Connecticut,CT,Alzheimer disease,470
+Florida,FL,Obesity,3980
+Colorado,CO,Obesity,761
+California,CA,All other conditions and causes (residual),43892
+New Hampshire,NH,Respiratory diseases,2173
+Georgia,GA,COVID-19,35918
+South Carolina,SC,"Intentional and unintentional injury, poisoning, and other adverse events",450
+Nevada,NV,Alzheimer disease,140
+New Hampshire,NH,Obesity,44
+District of Columbia,DC,Malignant neoplasms,290
+Iowa,IA,Respiratory diseases,11465
+Texas,TX,"Intentional and unintentional injury, poisoning, and other adverse events",2162
+New Jersey,NJ,COVID-19,49249
+Tennessee,TN,All other conditions and causes (residual),11100
+District of Columbia,DC,Obesity,278
+Kentucky,KY,Renal failure,2017
+Ohio,OH,Sepsis,3736
+Nebraska,NE,Alzheimer disease,305
+Ohio,OH,"Intentional and unintentional injury, poisoning, and other adverse events",742
+Tennessee,TN,Malignant neoplasms,1241
+South Dakota,SD,All other conditions and causes (residual),2271
+Kansas,KS,Renal failure,947
+Washington,WA,Renal failure,1247
+Kentucky,KY,All other conditions and causes (residual),8204
+Maryland,MD,Renal failure,3067
+North Dakota,ND,"Intentional and unintentional injury, poisoning, and other adverse events",66
+South Dakota,SD,Vascular and unspecified dementia,453
+Massachusetts,MA,Alzheimer disease,797
+Texas,TX,Sepsis,14502
+Vermont,VT,All other conditions and causes (residual),282
+Iowa,IA,Obesity,482
+Illinois,IL,Diabetes,11248
+Missouri,MO,Vascular and unspecified dementia,1942
+Missouri,MO,COVID-19,22538
+Utah,UT,Vascular and unspecified dementia,454
+Tennessee,TN,"Intentional and unintentional injury, poisoning, and other adverse events",580
+Illinois,IL,"Intentional and unintentional injury, poisoning, and other adverse events",711
+Mississippi,MS,"Intentional and unintentional injury, poisoning, and other adverse events",244
+Nebraska,NE,Diabetes,992
+West Virginia,WV,COVID-19,5833
+New Hampshire,NH,Malignant neoplasms,98
+Mississippi,MS,COVID-19,15336
+Vermont,VT,Obesity,20
+Florida,FL,Circulatory diseases,57442
+Massachusetts,MA,Diabetes,2339
+Oregon,OR,Renal failure,539
+California,CA,Vascular and unspecified dementia,7930
+Delaware,DE,Respiratory diseases,2984
+Virginia,VA,Alzheimer disease,619
+Oklahoma,OK,Obesity,1365
+Delaware,DE,Renal failure,383
+Oklahoma,OK,Renal failure,1773
+Kentucky,KY,Alzheimer disease,579
+South Dakota,SD,Respiratory diseases,4436
+New Mexico,NM,Sepsis,606
+Washington,WA,Malignant neoplasms,640
+Texas,TX,All other conditions and causes (residual),46054
+Mississippi,MS,Alzheimer disease,534
+Montana,MT,Vascular and unspecified dementia,403
+Wyoming,WY,Diabetes,198
+Kansas,KS,Circulatory diseases,5830
+Oregon,OR,Malignant neoplasms,317
+Delaware,DE,COVID-19,3432
+Ohio,OH,Vascular and unspecified dementia,5153
+Idaho,ID,Vascular and unspecified dementia,442
+California,CA,Respiratory diseases,166480
+North Dakota,ND,Respiratory diseases,3860
+Utah,UT,Sepsis,552
+New Mexico,NM,All other conditions and causes (residual),2716
+Arizona,AZ,Vascular and unspecified dementia,1796
+Colorado,CO,COVID-19,14042
+Texas,TX,Malignant neoplasms,4384
+Louisiana,LA,Diabetes,3067
+Vermont,VT,Diabetes,84
+Arkansas,AR,Renal failure,1098
+Delaware,DE,Malignant neoplasms,196
+Connecticut,CT,Renal failure,1235
+Connecticut,CT,All other conditions and causes (residual),5777
+Alaska,AK,"Intentional and unintentional injury, poisoning, and other adverse events",0
+Nebraska,NE,Vascular and unspecified dementia,781
+South Carolina,SC,All other conditions and causes (residual),9858
+Oregon,OR,COVID-19,5438
+Arizona,AZ,Sepsis,2004
+Wisconsin,WI,All other conditions and causes (residual),8220
+Vermont,VT,Renal failure,20
+District of Columbia,DC,Renal failure,181
+Nevada,NV,Malignant neoplasms,365
+West Virginia,WV,Diabetes,720
+Delaware,DE,Sepsis,299
+California,CA,Diabetes,29310
+Oregon,OR,Respiratory diseases,4818
+Oklahoma,OK,Respiratory diseases,15144
+Texas,TX,Respiratory diseases,124644
+Iowa,IA,COVID-19,12288
+Connecticut,CT,Circulatory diseases,9841
+North Carolina,NC,Respiratory diseases,29170
+Delaware,DE,"Intentional and unintentional injury, poisoning, and other adverse events",83
+District of Columbia,DC,Alzheimer disease,31
+New Hampshire,NH,COVID-19,2720
+Vermont,VT,Malignant neoplasms,16
+Iowa,IA,Malignant neoplasms,689
+Arizona,AZ,Diabetes,4819
+Kansas,KS,Vascular and unspecified dementia,1282
+Wisconsin,WI,Renal failure,1542
+New Jersey,NJ,All other conditions and causes (residual),18955
+New Hampshire,NH,Circulatory diseases,1502
+Arkansas,AR,Diabetes,1647
+Texas,TX,Renal failure,16110
+Alabama,AL,Sepsis,2555
+Indiana,IN,COVID-19,27279
+Montana,MT,Renal failure,280
+Maryland,MD,All other conditions and causes (residual),9598
+Texas,TX,COVID-19,111266
+Maine,ME,Obesity,17
+Oklahoma,OK,Alzheimer disease,861
+West Virginia,WV,Renal failure,672
+Colorado,CO,"Intentional and unintentional injury, poisoning, and other adverse events",543
+Wyoming,WY,Alzheimer disease,60
+Oregon,OR,Diabetes,954
+North Dakota,ND,All other conditions and causes (residual),1601
+Vermont,VT,Alzheimer disease,38
+Kansas,KS,Alzheimer disease,340
+Wyoming,WY,COVID-19,1316
+Nebraska,NE,Respiratory diseases,6506
+Arizona,AZ,Obesity,1658
+Oklahoma,OK,Diabetes,4437
+Maryland,MD,Alzheimer disease,464
+Hawaii,HI,Sepsis,94
+Kentucky,KY,Sepsis,2474
+New Hampshire,NH,Diabetes,295
+Maryland,MD,COVID-19,20806
+West Virginia,WV,Malignant neoplasms,271
+Massachusetts,MA,Sepsis,2220
+Minnesota,MN,Circulatory diseases,13936
+Rhode Island,RI,"Intentional and unintentional injury, poisoning, and other adverse events",169
+Alabama,AL,Respiratory diseases,21095
+New Mexico,NM,Obesity,541
+Georgia,GA,Diabetes,4297
+Missouri,MO,Sepsis,1927
+North Dakota,ND,Obesity,116
+Pennsylvania,PA,Renal failure,5236
+Michigan,MI,Sepsis,3680
+New Jersey,NJ,Alzheimer disease,1016
+Wyoming,WY,Vascular and unspecified dementia,185
+Michigan,MI,"Intentional and unintentional injury, poisoning, and other adverse events",489
+Idaho,ID,Malignant neoplasms,279
+Massachusetts,MA,Vascular and unspecified dementia,4713
+Kansas,KS,Sepsis,780
+Iowa,IA,Circulatory diseases,8163
+Arizona,AZ,Alzheimer disease,918
+Washington,WA,All other conditions and causes (residual),6224
+Montana,MT,Circulatory diseases,2447
+Kentucky,KY,"Intentional and unintentional injury, poisoning, and other adverse events",450
+Delaware,DE,All other conditions and causes (residual),1544
+Washington,WA,Vascular and unspecified dementia,1254
+Michigan,MI,Respiratory diseases,37488
+Louisiana,LA,Alzheimer disease,569
+Indiana,IN,Sepsis,2534
+Alaska,AK,Vascular and unspecified dementia,39
+Tennessee,TN,Circulatory diseases,16310
+Minnesota,MN,Malignant neoplasms,1254
+Alabama,AL,All other conditions and causes (residual),7384
+New York,NY,Renal failure,3955
+Florida,FL,Renal failure,5336
+Oklahoma,OK,Vascular and unspecified dementia,1896
+Oklahoma,OK,COVID-19,17240
+Indiana,IN,Vascular and unspecified dementia,3844
+Kentucky,KY,COVID-19,15239
+Maryland,MD,Circulatory diseases,16668
+West Virginia,WV,Alzheimer disease,208
+Minnesota,MN,Obesity,694
+Tennessee,TN,Renal failure,2607
+Louisiana,LA,"Intentional and unintentional injury, poisoning, and other adverse events",215
+Nebraska,NE,Malignant neoplasms,389
+Missouri,MO,Respiratory diseases,22091
+North Carolina,NC,Malignant neoplasms,1162
+Minnesota,MN,Sepsis,974
+Oregon,OR,Alzheimer disease,436
+South Dakota,SD,"Intentional and unintentional injury, poisoning, and other adverse events",83
+Virginia,VA,Circulatory diseases,10937
+Alaska,AK,Obesity,19
+Maine,ME,Vascular and unspecified dementia,429
+Alabama,AL,Circulatory diseases,12604
+Georgia,GA,Circulatory diseases,21050
+Alabama,AL,Alzheimer disease,576
+South Carolina,SC,Malignant neoplasms,768
+Indiana,IN,Circulatory diseases,19400
+New Jersey,NJ,Malignant neoplasms,2329
+Ohio,OH,Alzheimer disease,2075
+South Carolina,SC,Sepsis,2525
+Colorado,CO,Malignant neoplasms,873
+Vermont,VT,"Intentional and unintentional injury, poisoning, and other adverse events",0
+New York,NY,COVID-19,50802
+Hawaii,HI,COVID-19,982
+Georgia,GA,All other conditions and causes (residual),14154
+North Carolina,NC,Circulatory diseases,15331
+Wyoming,WY,All other conditions and causes (residual),741
+Mississippi,MS,All other conditions and causes (residual),5799
+New York,NY,Circulatory diseases,35535
+Pennsylvania,PA,Vascular and unspecified dementia,7363
+Mississippi,MS,Malignant neoplasms,973
+Idaho,ID,Sepsis,297
+West Virginia,WV,All other conditions and causes (residual),2286
+Rhode Island,RI,Respiratory diseases,5279
+Minnesota,MN,Vascular and unspecified dementia,3329
+Alaska,AK,Respiratory diseases,697
+North Carolina,NC,Vascular and unspecified dementia,3221
+Kentucky,KY,Malignant neoplasms,995
+Utah,UT,All other conditions and causes (residual),2335
+Wyoming,WY,Obesity,45
+Alabama,AL,"Intentional and unintentional injury, poisoning, and other adverse events",279
+Florida,FL,COVID-19,70462
+Virginia,VA,Malignant neoplasms,956
+Maine,ME,Renal failure,135
+South Dakota,SD,Renal failure,479
+Tennessee,TN,COVID-19,26614
+Tennessee,TN,Vascular and unspecified dementia,2239
+Alaska,AK,Renal failure,31
+Rhode Island,RI,Malignant neoplasms,362
+New Mexico,NM,Circulatory diseases,4315
+Colorado,CO,Diabetes,2242
+Connecticut,CT,COVID-19,16608
+Arkansas,AR,All other conditions and causes (residual),4198
+Michigan,MI,Circulatory diseases,20350
+New Jersey,NJ,Circulatory diseases,34075
+Minnesota,MN,Alzheimer disease,1434
+South Carolina,SC,Obesity,567
+New Jersey,NJ,Renal failure,5071
+Washington,WA,Diabetes,1968
+Massachusetts,MA,Respiratory diseases,27038
+Connecticut,CT,"Intentional and unintentional injury, poisoning, and other adverse events",319
+Mississippi,MS,Sepsis,1458
+Pennsylvania,PA,Circulatory diseases,36635
+Rhode Island,RI,Obesity,108
+North Dakota,ND,Sepsis,271
+Ohio,OH,Malignant neoplasms,2287
+Oregon,OR,Vascular and unspecified dementia,966
+Illinois,IL,Alzheimer disease,1330
+Pennsylvania,PA,Malignant neoplasms,3026
+Massachusetts,MA,Malignant neoplasms,1342
+New Jersey,NJ,Vascular and unspecified dementia,3811
+Ohio,OH,COVID-19,45968
+Indiana,IN,Renal failure,3320
+Kansas,KS,All other conditions and causes (residual),4129
+Pennsylvania,PA,Respiratory diseases,58478
+Colorado,CO,Renal failure,1538
+Massachusetts,MA,Obesity,436
+Louisiana,LA,Circulatory diseases,12663
+Florida,FL,Sepsis,6146
+Maryland,MD,Obesity,1010
+Arkansas,AR,Alzheimer disease,589
+Arizona,AZ,Malignant neoplasms,1172
+North Carolina,NC,"Intentional and unintentional injury, poisoning, and other adverse events",569
+Virginia,VA,Renal failure,2330
+Utah,UT,Renal failure,593
+West Virginia,WV,Circulatory diseases,3337
+Utah,UT,Malignant neoplasms,273
+Virginia,VA,Obesity,420
+Alabama,AL,Renal failure,2303
+Indiana,IN,Diabetes,4168
+Wyoming,WY,Renal failure,54
+Kansas,KS,Respiratory diseases,10866
+Ohio,OH,All other conditions and causes (residual),18892
+New York,NY,All other conditions and causes (residual),17836
+Colorado,CO,Circulatory diseases,10146
+Pennsylvania,PA,Sepsis,4546
+Idaho,ID,Obesity,209
+Nevada,NV,COVID-19,11628
+Nevada,NV,Sepsis,1614
+Connecticut,CT,Diabetes,1708
+Minnesota,MN,All other conditions and causes (residual),8557
+New Mexico,NM,Vascular and unspecified dementia,573
+Michigan,MI,Alzheimer disease,1197
+Ohio,OH,Obesity,966
+New Mexico,NM,Malignant neoplasms,274
+New York,NY,Malignant neoplasms,2484
+Alaska,AK,Diabetes,45
+Maryland,MD,Sepsis,2132
+Minnesota,MN,Respiratory diseases,14506
+Ohio,OH,Respiratory diseases,48074
+Michigan,MI,Malignant neoplasms,1844
+Colorado,CO,Sepsis,1209
+North Dakota,ND,Vascular and unspecified dementia,287
+Wisconsin,WI,Respiratory diseases,12760
+Maine,ME,Alzheimer disease,100
+New Hampshire,NH,All other conditions and causes (residual),1081
+California,CA,COVID-19,130445
+Rhode Island,RI,Renal failure,571
+California,CA,"Intentional and unintentional injury, poisoning, and other adverse events",2839
+Missouri,MO,Circulatory diseases,11275
+Texas,TX,Vascular and unspecified dementia,7106
+South Dakota,SD,Sepsis,291
+New Hampshire,NH,"Intentional and unintentional injury, poisoning, and other adverse events",42
+Connecticut,CT,Sepsis,1323
+North Carolina,NC,Obesity,882
+New Jersey,NJ,"Intentional and unintentional injury, poisoning, and other adverse events",819
+Massachusetts,MA,Renal failure,2788
+Minnesota,MN,"Intentional and unintentional injury, poisoning, and other adverse events",597
+Maryland,MD,Diabetes,3996
+Alaska,AK,COVID-19,686
+District of Columbia,DC,Diabetes,1271
+Indiana,IN,Respiratory diseases,31019
+New York,NY,Vascular and unspecified dementia,5641
+Tennessee,TN,Obesity,958
+Illinois,IL,Sepsis,2437
+Oklahoma,OK,"Intentional and unintentional injury, poisoning, and other adverse events",488
+Nebraska,NE,All other conditions and causes (residual),2962
+Vermont,VT,Circulatory diseases,377
+Kansas,KS,Obesity,347
+Montana,MT,COVID-19,3316
+Wyoming,WY,Malignant neoplasms,56
+Idaho,ID,COVID-19,4345
+Maine,ME,Diabetes,160
+Washington,WA,Sepsis,1216
+Oregon,OR,"Intentional and unintentional injury, poisoning, and other adverse events",140
+District of Columbia,DC,All other conditions and causes (residual),829
+Alaska,AK,Alzheimer disease,10
+Missouri,MO,Renal failure,2449
+New Mexico,NM,Renal failure,691
+North Carolina,NC,Alzheimer disease,1014
+Rhode Island,RI,Alzheimer disease,288
+North Dakota,ND,Circulatory diseases,2127
+Georgia,GA,Sepsis,5066
+Montana,MT,"Intentional and unintentional injury, poisoning, and other adverse events",71
+Missouri,MO,Alzheimer disease,1068
+Georgia,GA,"Intentional and unintentional injury, poisoning, and other adverse events",516
+Louisiana,LA,Respiratory diseases,23738
+Maryland,MD,Respiratory diseases,18041
+Montana,MT,Sepsis,216
+Missouri,MO,Malignant neoplasms,997
+Louisiana,LA,Sepsis,1728
+West Virginia,WV,Respiratory diseases,6231
+Missouri,MO,"Intentional and unintentional injury, poisoning, and other adverse events",322
+Idaho,ID,Renal failure,382
+Iowa,IA,Vascular and unspecified dementia,1679
+New Mexico,NM,Diabetes,1499
+West Virginia,WV,"Intentional and unintentional injury, poisoning, and other adverse events",88
+Nevada,NV,All other conditions and causes (residual),5070
+Idaho,ID,Respiratory diseases,5028
+Texas,TX,Alzheimer disease,3543
+New Jersey,NJ,Diabetes,5299
+California,CA,Circulatory diseases,111029
+Oklahoma,OK,Sepsis,2008
+Pennsylvania,PA,All other conditions and causes (residual),22932
+Wisconsin,WI,Circulatory diseases,15691
+Indiana,IN,Obesity,857
+Wyoming,WY,"Intentional and unintentional injury, poisoning, and other adverse events",74
+Wyoming,WY,Respiratory diseases,1286
+Wisconsin,WI,Alzheimer disease,1054
+Arizona,AZ,Respiratory diseases,42368
+Maryland,MD,Vascular and unspecified dementia,3381
+Washington,WA,Circulatory diseases,8260
+Colorado,CO,Alzheimer disease,929
+New York,NY,Respiratory diseases,52956
+North Carolina,NC,Renal failure,3363
+Oklahoma,OK,Circulatory diseases,15655
+California,CA,Alzheimer disease,5557
+New York,NY,Diabetes,4962
+West Virginia,WV,Vascular and unspecified dementia,499
+Colorado,CO,All other conditions and causes (residual),7404
+Arkansas,AR,Respiratory diseases,14028
+North Carolina,NC,Sepsis,2494
+California,CA,Malignant neoplasms,5366
+North Dakota,ND,Renal failure,454
+Michigan,MI,All other conditions and causes (residual),13292
+California,CA,Renal failure,16526
+Mississippi,MS,Diabetes,2863
+Arizona,AZ,Renal failure,2792
+Michigan,MI,Diabetes,4161
+Illinois,IL,COVID-19,44944
+Louisiana,LA,All other conditions and causes (residual),6212
+Kansas,KS,COVID-19,10032
+New York,NY,Sepsis,3571
+Maine,ME,All other conditions and causes (residual),619
+Virginia,VA,Diabetes,2382
+Indiana,IN,"Intentional and unintentional injury, poisoning, and other adverse events",711
+Oklahoma,OK,Malignant neoplasms,1037
+Nebraska,NE,Renal failure,595
+Georgia,GA,Respiratory diseases,42538
+Missouri,MO,Obesity,540
+Pennsylvania,PA,COVID-19,56926
+Wisconsin,WI,Sepsis,750
+Florida,FL,Respiratory diseases,79497
+Iowa,IA,Renal failure,1083
+Illinois,IL,Renal failure,2350
+Vermont,VT,COVID-19,471
+Wyoming,WY,Circulatory diseases,979
+South Dakota,SD,COVID-19,4164
+Kentucky,KY,Vascular and unspecified dementia,2180
+District of Columbia,DC,Circulatory diseases,2791
+New Jersey,NJ,Sepsis,5429
+Connecticut,CT,Malignant neoplasms,827
+Arkansas,AR,Sepsis,994
+Mississippi,MS,Renal failure,1567
+New Mexico,NM,"Intentional and unintentional injury, poisoning, and other adverse events",166
+Wyoming,WY,Sepsis,45
+Utah,UT,Respiratory diseases,5875
+Utah,UT,Obesity,405
+Pennsylvania,PA,Diabetes,6732
+Minnesota,MN,Renal failure,1520
+Illinois,IL,Obesity,2624
+Kansas,KS,Diabetes,1215
+District of Columbia,DC,"Intentional and unintentional injury, poisoning, and other adverse events",54
+Nebraska,NE,Circulatory diseases,4576
+Iowa,IA,All other conditions and causes (residual),5423
+Oregon,OR,Obesity,283
+Montana,MT,Diabetes,642
+New York,NY,"Intentional and unintentional injury, poisoning, and other adverse events",817
+Tennessee,TN,Alzheimer disease,858
+South Dakota,SD,Circulatory diseases,3338
+Florida,FL,"Intentional and unintentional injury, poisoning, and other adverse events",1666
+Oregon,OR,All other conditions and causes (residual),2702
+Iowa,IA,"Intentional and unintentional injury, poisoning, and other adverse events",253
+Wisconsin,WI,COVID-19,16642
+Washington,WA,Alzheimer disease,884
+Idaho,ID,"Intentional and unintentional injury, poisoning, and other adverse events",101
+Hawaii,HI,Circulatory diseases,454
+Massachusetts,MA,All other conditions and causes (residual),10902
+Oklahoma,OK,All other conditions and causes (residual),7630
+Alaska,AK,Circulatory diseases,277
+Montana,MT,Obesity,174
+Hawaii,HI,Obesity,23
+Mississippi,MS,Obesity,587
+Wisconsin,WI,Vascular and unspecified dementia,2521
+New Hampshire,NH,Vascular and unspecified dementia,567
+Wisconsin,WI,Malignant neoplasms,1292
+North Carolina,NC,All other conditions and causes (residual),11222
+Arizona,AZ,"Intentional and unintentional injury, poisoning, and other adverse events",687
+New Hampshire,NH,Renal failure,229
+Delaware,DE,Alzheimer disease,247
+District of Columbia,DC,Sepsis,20
+Washington,WA,"Intentional and unintentional injury, poisoning, and other adverse events",400
+Delaware,DE,Vascular and unspecified dementia,619
+Louisiana,LA,Obesity,755
+Nevada,NV,Diabetes,1584
+Ohio,OH,Renal failure,3701
+South Carolina,SC,Diabetes,2437
+Kentucky,KY,Respiratory diseases,18025
+Rhode Island,RI,Diabetes,603
+South Dakota,SD,Obesity,158
+Arkansas,AR,Malignant neoplasms,495
+Virginia,VA,Vascular and unspecified dementia,2486
+Oregon,OR,Circulatory diseases,4025
+Maine,ME,COVID-19,1971
+Alabama,AL,Obesity,518
+North Carolina,NC,Diabetes,3264
+Maryland,MD,Malignant neoplasms,1301
+Nebraska,NE,Sepsis,457
+Hawaii,HI,Renal failure,129
+Nevada,NV,Vascular and unspecified dementia,433
+Illinois,IL,Malignant neoplasms,2426
+New York,NY,Alzheimer disease,1118
+Indiana,IN,All other conditions and causes (residual),13643
+Rhode Island,RI,Vascular and unspecified dementia,872
+Louisiana,LA,Vascular and unspecified dementia,1082
+North Dakota,ND,Diabetes,396
+Florida,FL,All other conditions and causes (residual),25692
+Massachusetts,MA,COVID-19,27242
+Alaska,AK,Malignant neoplasms,47
+Oregon,OR,Sepsis,320
+Hawaii,HI,Malignant neoplasms,37
+Pennsylvania,PA,Alzheimer disease,2111
+Maine,ME,Sepsis,16
+Florida,FL,Malignant neoplasms,3753
+Louisiana,LA,Renal failure,1366
+Montana,MT,Alzheimer disease,125
+California,CA,Sepsis,18380
+Ohio,OH,Diabetes,5289
+North Dakota,ND,COVID-19,3484
+Mississippi,MS,Circulatory diseases,13033
+Illinois,IL,All other conditions and causes (residual),14124
+Tennessee,TN,Diabetes,3558
+Hawaii,HI,All other conditions and causes (residual),364
+Maryland,MD,"Intentional and unintentional injury, poisoning, and other adverse events",512
+Rhode Island,RI,Sepsis,294
+Washington,WA,Obesity,625
+West Virginia,WV,Sepsis,581
+Utah,UT,Alzheimer disease,255
+South Carolina,SC,Alzheimer disease,526
+Alabama,AL,Diabetes,2308
+Vermont,VT,Vascular and unspecified dementia,98
+Montana,MT,All other conditions and causes (residual),1777
+Connecticut,CT,Obesity,402
+Minnesota,MN,Diabetes,3017
+Michigan,MI,COVID-19,36978
+California,CA,Obesity,6622
+Illinois,IL,Circulatory diseases,37573
+Alaska,AK,Sepsis,18
+Idaho,ID,All other conditions and causes (residual),2202
+Idaho,ID,Alzheimer disease,243
+Minnesota,MN,COVID-19,15470
+Nevada,NV,Respiratory diseases,18457
+Arizona,AZ,Circulatory diseases,18522
+West Virginia,WV,Obesity,143
+Wisconsin,WI,Obesity,1347
+Michigan,MI,Obesity,1282
+Maine,ME,"Intentional and unintentional injury, poisoning, and other adverse events",12
+Nebraska,NE,COVID-19,5861
+Delaware,DE,Diabetes,456
+Nebraska,NE,"Intentional and unintentional injury, poisoning, and other adverse events",150
+Arkansas,AR,COVID-19,12203
+Colorado,CO,Vascular and unspecified dementia,2314
+District of Columbia,DC,Respiratory diseases,4746
+Utah,UT,Diabetes,784
+Iowa,IA,Sepsis,700
+Massachusetts,MA,Circulatory diseases,14980
+Maine,ME,Respiratory diseases,1039
+Louisiana,LA,COVID-19,19398
+Vermont,VT,Respiratory diseases,355
+Florida,FL,Vascular and unspecified dementia,8105
