@@ -87,3 +87,9 @@ We will create an HTML/CSS portfolio to showcase our project and Bootstrap compo
 #### Machine Learning 
 
 We will use Scikit-learn machine learning library for Python to reshape, stratify, split, test, train …. our data. 
+
+
+#### Preliminary sample dashbaord
+
+[Link to Tableau public dashboard](https://public.tableau.com/app/profile/yodit.teamir/viz/MarylandCoviddemo/DemoStory)
+
