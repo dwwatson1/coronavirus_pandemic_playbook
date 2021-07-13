@@ -82,7 +82,7 @@ Pandas will be used to clean and transform the data and perform an exploratory a
 
 #### Dashboard
 
-We will create an HTML/CSS portfolio to showcase our project and Bootstrap components to polish and customize the portfolio. We will also use JavaScript functions to display dynamic and interactive dashboard. 
+We will create a tableau visualization to display dynamic and interactive dashboard. 
 
 #### Machine Learning 
 
