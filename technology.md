@@ -218,6 +218,73 @@ Deaths            3426
 # Step 9
 df_Covid_Contributing_Deaths.to_csv("COVID_Conditions_Contributing_Deaths.csv")
 
+
+# Extract from file 4
+# Step 1
+df_app = pd.read_csv("cdc_database_cleaned.csv")
+df_app.head()
+
+# Determine the number of unique values in each column
+# Step 2
+df_app.nunique()
+Unnamed: 0                  141944
+case_month                      10
+res_state                       41
+state_fips_code                 30
+res_county                     393
+county_fips_code               497
+age_group                        4
+sex                              3
+race                             6
+ethnicity                        2
+exposure_yn                      1
+current_status                   2
+symptom_status                   3
+hosp_yn                          2
+icu_yn                           2
+death_yn                         2
+underlying_conditions_yn         2
+
+# Step 3
+df_app.shape
+(141944, 17)
+
+# Step 4
+new_cdc_database_df=df_app.drop(columns=["state_fips_code","res_county","county_fips_code"], axis=1)
+
+# Step 5
+new_cdc_database_df.isnull().sum()
+
+# Determine the number of unique values in each column
+# Step 6
+new_cdc_database_df.nunique()
+
+# Step 7
+df_COVID_cdc_db=new_cdc_database_df.rename(columns={'Data As Of': 'AsOfDate','Start Date':'StartDate','End Date':'EndDate', 'Group': 'Grouping','Age Group': 'AgeGroup','Condition Group':'ConditionGroup','COVID-19 Deaths' : 'Deaths'}, inplace=False)
+df_COVID_cdc_db.head
+[141944 rows x 14 columns]>
+
+# Step 8
+df_COVID_cdc_db.nunique()
+case_month                      10
+res_state                       41
+age_group                        4
+sex                              3
+race                             6
+ethnicity                        2
+exposure_yn                      1
+current_status                   2
+symptom_status                   3
+hosp_yn                          2
+icu_yn                           2
+death_yn                         2
+underlying_conditions_yn         2
+
+# Save and export your results to an csv file - Conditions_Contributing_to_COVID-19_Deaths__by_State_and_Age
+# File 4
+# Step 9
+df_COVID_cdc_db.to_csv("COVID_CDC_DATA.csv")
+
 -----------
 
 
@@ -343,16 +410,25 @@ INNER JOIN US_STATES
 ON COVIDDEATHSBYSTATE.STATE=US_STATES.CODE
 GROUP BY COVIDDEATHSBYSTATE.STATE, US_STATES.STATE
 
+--------------------------
+cdc_database_cleaned.csv
 
+case_month                      10
+res_state                       41
+age_group                        4
+sex                              3
+race                             6
+ethnicity                        2
+exposure_yn                      1
+current_status                   2
+symptom_status                   3
+hosp_yn                          2
+icu_yn                           2
+death_yn                         2
+underlying_conditions_yn         2
+
+COVID_CDC_DATA
 --------------------
-
-## Database Storage
-Mongo is the database we intend to use, and we will integrate Flask to display the data.
-We will use SQL database tool to extract, organize and retrieve our data.
-
-## Machine Learning
-SciKitLearn is the ML library we'll be using to create a classifier. Our training and testing setup is ___. Extra ML verbiage here.
-We will use Scikit-learn machine learning library for Python to reshape, stratify, split, test, train …. our data.
 
 ## Dashboard
 TABLEAU
