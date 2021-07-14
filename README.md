@@ -35,7 +35,7 @@ We have created a group and direct messages for group members in Slack, and we m
 
 ### Data Sources for Project
 **Main Data Source**
--[Case Surveillance Public Use Data with Geography](https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data-with-Ge/n8mc-b4w4/data)
+* [Case Surveillance Public Use Data with Geography](https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data-with-Ge/n8mc-b4w4/data)
 
 **Other Data Sources**
 -[John Hopkins Coronavirus Data](https://coronavirus.jhu.edu/data/new-cases-50-states)
