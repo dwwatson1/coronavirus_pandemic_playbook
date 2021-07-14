@@ -25,6 +25,13 @@ As a capitalist society, some economic measures of success for the U.S. are jobs
 
 [The Brookings Institute](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) identified **state capacity** as one of three pre-existing conditions that amplified the impact of the shock. The COVID-19 crisis posed a critical challenge for policymakers as they needed to quickly reach workers and households during the abrupt economic crisis. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors and mayors have the opportunity to learn where our countries weak points are that led to these incredible economic losses and mitigate them in a future pandemic. 
 
+## Technologies Used
+
+* **Database storage**
+** We will use SQL database tool to extract, organize and retrieve our data.
+* **Data Cleaning and Analysis**
+** Pandas will be used to clean and transform the data and perform an exploratory analysis. 
+
 ## Communication Protocol 
 
 [Group meeting agendas](https://drive.google.com/drive/folders/1sMOLvKQO-S99917fQL9axuocZujgKNZQ?usp=sharing)
@@ -61,9 +68,60 @@ We used these other data sources to find columns that matched our schema.
 6. What were the top 20 uSAs (Micropolitan Statistical Areas) impacted by Covid-19?
 7. During periods of Covid-19 case spikes, were there geographical or state areas that trended with these spikes?
 8. Did political affiliation of areas have an influence on the number of Covid cases prior to vaccine distribution?
+
+## Database
+
+### SQL Database Schema
+
+#### States
+
+State_Init VARCHAR PK
+
+Pop_Density INTEGER
+
+Income INTEGER
+
+Race VARCHAR
+
+Zipcode VARCHAR
+
+#### Covid_Cases
+
+Case_Totals INTEGER PK
+State_Init VARCHAR FK >- States.State_Init
+Death_Totals INTEGER 
+Hospital_Utilz INTEGER
+
+#### Demographics
+
+Case_Totals INTEGER PK
+State_Init VARCHAR FK >- States.State_Init
+Age INTEGER
+Politics VARCHAR 
+Religion VARCHAR
+Gender VARCHAR
+
+#### Identity
+
+Race VARCHAR PK
+State_Init VARCHAR FK >- States.State_Init
+Case_Totals INTEGER FK >- Covid_Cases.Case_Totals
+Death_Totals INTEGER FK >- Covid_Cases.Case_Totals
+Income INTEGER
+Health_Issues VARCHAR 
  
-## Extract, Transform, and Load the Data
+### Method
+
+#### Extract, Transform, and Load the Data
+
 Our main data table has "Missing", "Unknown", and "NA" values. Because these values are similar, we replaced these values to be all NA. In order for our machine learning model to process the data, we replaced all the NA values with 0. By replacing the NA's with 0, we will see that there are fewer values in certain columns that do not add up to the total number of COVID cases. For example, since there were some missing values for whether the COVID case person was either Male or Female, the total Male/Female columns will not add up to the total cases. To account for this, we will use the SMOTE oversampling technique.
+
+#### Data Dictionary
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
 ## Machine Learning
 
@@ -149,54 +207,6 @@ importances
 
 sorted(zip(rf_model.feature_importances_, X.columns), reverse=True)
 ```
-
-## SQL Database Schema
-
-### States
-
-State_Init VARCHAR PK
-
-Pop_Density INTEGER
-
-Income INTEGER
-
-Race VARCHAR
-
-Zipcode VARCHAR
-
-### Covid_Cases
-
-Case_Totals INTEGER PK
-State_Init VARCHAR FK >- States.State_Init
-Death_Totals INTEGER 
-Hospital_Utilz INTEGER
-
-### Demographics
-
-Case_Totals INTEGER PK
-State_Init VARCHAR FK >- States.State_Init
-Age INTEGER
-Politics VARCHAR 
-Religion VARCHAR
-Gender VARCHAR
-
-### Identity
-
-Race VARCHAR PK
-State_Init VARCHAR FK >- States.State_Init
-Case_Totals INTEGER FK >- Covid_Cases.Case_Totals
-Death_Totals INTEGER FK >- Covid_Cases.Case_Totals
-Income INTEGER
-Health_Issues VARCHAR 
-
-## Technologies Used
-
-#### Database storage
-
-We will use SQL database tool to extract, organize and retrieve our data.
-
-#### Data Cleaning and Analysis
-Pandas will be used to clean and transform the data and perform an exploratory analysis. 
 
 #### Dashboard
 
