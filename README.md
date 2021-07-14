@@ -78,7 +78,7 @@ xi6 = health care professionals/doctors registered by state
 
 ### DATA DICTIONARY
 
-![image](https://user-images.githubusercontent.com/79073778/125697815-635bad71-8f33-4de6-8bf0-65b1a1673d74.png)
+![image](https://user-images.githubusercontent.com/79073778/125698844-72de6a00-2bfc-472b-8c61-9f2fe2a1c625.png)
 
 ### SQL Database Schema
 
