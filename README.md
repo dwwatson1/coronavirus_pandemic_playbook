@@ -74,7 +74,13 @@ xi5 = income level
 
 xi6 = health care professionals/doctors registered by state
 
-## SQL Database Schema
+## DATABASE
+
+### DATA DICTIONARY
+
+![image](https://user-images.githubusercontent.com/79073778/125697815-635bad71-8f33-4de6-8bf0-65b1a1673d74.png)
+
+### SQL Database Schema
 
 ### States
 State_Init VARCHAR PK
