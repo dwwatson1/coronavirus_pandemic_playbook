@@ -1,0 +1,84 @@
+1.	To create the MD data and replicate for all data
+
+
+2.	Create the maryland_data.csv in PGAdmin
+CREATE TABLE MARYLAND_DATA(
+ID_MD                           INTEGER,
+case_month                      TEXT,
+res_state                       TEXT,
+state_fips_code                 TEXT,
+res_county                      TEXT,
+county_fips_code                TEXT,
+age_group                       TEXT,
+sex                             TEXT,
+race                            TEXT,
+ethnicity                       TEXT, 
+exposure_yn                     TEXT,
+current_status                  TEXT,
+symptom_status                  TEXT,   
+hosp_yn                         TEXT,
+icu_yn                          TEXT,
+death_yn                        TEXT,
+underlying_conditions_yn        TEXT
+	);
+
+3.	Read the query to summarize counts
+
+
+SELECT DISTINCT RES_STATE,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE AGE_GROUP LIKE '0 - 17 years') age_group_0_17,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE AGE_GROUP LIKE '18 to 49 years') age_group_18_49,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE AGE_GROUP LIKE '50 to 64 years') age_group_50_64,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE AGE_GROUP LIKE '65+ years') age_group_65PLUS,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE AGE_GROUP 
+ NOT IN ('0 - 17 years', '18 to 49 years', '50 to 64 years', '65+ years')) age_group_MISSING,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE SEX LIKE 'Female') sex_FEMALE,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE SEX LIKE 'Male') sex_MALE,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE SEX NOT IN ('Male', 'Female')) SEX_MISSING,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE race LIKE 'White') race_WHITE, 
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE race LIKE 'Black') race_BLACK, 
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE race LIKE 'Asian') race_ASIAN, 
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE race LIKE 'Multiple/Other') race_MULTIPLE_OTHER, 
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE race LIKE 'American Indian/Alaska Native') race_AM_INDIAN_ALASKA_NATIVE, 
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE race 
+ NOT IN ('White', 'Black', 'Asian', 'Multiple/Other','American Indian/Alaska Native')) race_MISSING
+FROM MARYLAND_DATA ORDER BY 2,1	
+
+
+
+4.	Create a new table project4_covid_dataa
+CREATE TABLE COVID_CDC_PROJECT4_DATA
+( RES_STATE TEXT, age_group_0_17 INTEGER, age_group_18_49  INTEGER, age_group_50_64  INTEGER, age_group_65PLUS INTEGER, age_group_MISSING INTEGER, sex_FEMALE INTEGER, sex_MALE INTEGER,
+ SEX_MISSING INTEGER, race_WHITE INTEGER, race_BLACK INTEGER, race_ASIAN INTEGER, race_MULTIPLE_OTHER INTEGER, race_AM_INDIAN_ALASKA_NATIVE INTEGER,  race_MISSING INTEGER)
+
+
+
+5.      Insert the summary data	
+
+INSERT INTO COVID_CDC_PROJECT4_DATA
+( SELECT DISTINCT RES_STATE,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE AGE_GROUP LIKE '0 - 17 years') age_group_0_17,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE AGE_GROUP LIKE '18 to 49 years') age_group_18_49,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE AGE_GROUP LIKE '50 to 64 years') age_group_50_64,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE AGE_GROUP LIKE '65+ years') age_group_65PLUS,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE AGE_GROUP 
+ NOT IN ('0 - 17 years', '18 to 49 years', '50 to 64 years', '65+ years')) age_group_MISSING,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE SEX LIKE 'Female') sex_FEMALE,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE SEX LIKE 'Male') sex_MALE,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE SEX NOT IN ('Male', 'Female')) SEX_MISSING,
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE race LIKE 'White') race_WHITE, 
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE race LIKE 'Black') race_BLACK, 
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE race LIKE 'Asian') race_ASIAN, 
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE race LIKE 'Multiple/Other') race_MULTIPLE_OTHER, 
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE race LIKE 'American Indian/Alaska Native') race_AM_INDIAN_ALASKA_NATIVE, 
+(SELECT COUNT(ID_MD) FROM MARYLAND_DATA WHERE race 
+ NOT IN ('White', 'Black', 'Asian', 'Multiple/Other','American Indian/Alaska Native')) race_MISSING
+FROM MARYLAND_DATA ORDER BY 2,1	)
+
+
+
+6.	Export the data as csv
+
+
+
+end
