@@ -42,6 +42,7 @@ We have created a group and direct messages for group members in Slack, and we m
 * [US State Level Policy Tracker](https://github.com/govex/COVID-19/tree/govex_data/data_tables/policy_data/table_data/Current)
  
 **Other Data Sources Used**
+
 We used these other data sources to find columns that matched our schema.
 * [John Hopkins Coronavirus Data](https://coronavirus.jhu.edu/data/new-cases-50-states)
 * [US Dept of Health Data Sources by State](https://github.com/CSSEGISandData/COVID-19)
