@@ -118,10 +118,24 @@ Our main data table has "Missing", "Unknown", and "NA" values. Because these val
 
 #### Data Dictionary
 
-| First Header  | Second Header |
+| Column Term  | Defintion |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| case_mont  | Content Cell  |
+| res_state  | Content Cell  |
+| state_fips  | Content Cell  |
+| res_county  | Content Cell  |
+| county_fips_code  | Content Cell  |
+| age_group  | Content Cell  |
+| sex  | Content Cell  |
+| race  | Content Cell  |
+| ethnicity  | Content Cell  |
+| exposure_yn  | Content Cell  |
+| current_status  | Content Cell  |
+| symptom_status  | Content Cell  |
+| hosp_yn  | Content Cell  |
+| icu_yn  | Content Cell  |
+| death_yn  | Content Cell  |
+| underlying_conditions_yn  | Content Cell  |
 
 ## Machine Learning
 
