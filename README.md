@@ -62,6 +62,9 @@ We used these other data sources to find columns that matched our schema.
 7. During periods of Covid-19 case spikes, were there geographical or state areas that trended with these spikes?
 8. Did political affiliation of areas have an influence on the number of Covid cases prior to vaccine distribution?
  
+## Extract, Transform, and Load the Data
+Our main data table has "Missing", "Unknown", and "NA" values. Because these values are similar, we replaced these values to be all NA. In order for our machine learning model to process the data, we replaced all the NA values with 0. By replacing the NA's with 0, we will see that there are fewer values in certain columns that do not add up to the total number of COVID cases. For example, since there were some missing values for whether the COVID case person was either Male or Female, the total Male/Female columns will not add up to the total cases. To account for this, we will use the SMOTE oversampling technique.
+
 ## Machine Learning
 
 ### Preliminary Data Spitting / Testing Sets
