@@ -91,5 +91,5 @@ We will use Scikit-learn machine learning library for Python to reshape, stratif
 
 #### Preliminary sample dashbaord
 
-[Link to Tableau public dashboard](https://public.tableau.com/app/profile/yodit.teamir/viz/MarylandCoviddemo/DemoStory)
+[Link to dashboard](https://public.tableau.com/app/profile/yodit.teamir/viz/MarylandCoviddemo/DEMO-MarylandCovidcasesdashboard)
 
