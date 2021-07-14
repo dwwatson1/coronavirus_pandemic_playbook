@@ -69,7 +69,9 @@ We used these other data sources to find columns that matched our schema.
 7. During periods of Covid-19 case spikes, were there geographical or state areas that trended with these spikes?
 8. Did political affiliation of areas have an influence on the number of Covid cases prior to vaccine distribution?
 
-## Database
+## DATABASE
+
+### Data Dictionary
 
 ### SQL Database Schema
 
@@ -118,24 +120,10 @@ Our main data table has "Missing", "Unknown", and "NA" values. Because these val
 
 #### Data Dictionary
 
-| Column Term  | Defintion |
+| First Header  | Second Header |
 | ------------- | ------------- |
-| case_mont  | Content Cell  |
-| res_state  | Content Cell  |
-| state_fips  | Content Cell  |
-| res_county  | Content Cell  |
-| county_fips_code  | Content Cell  |
-| age_group  | Content Cell  |
-| sex  | Content Cell  |
-| race  | Content Cell  |
-| ethnicity  | Content Cell  |
-| exposure_yn  | Content Cell  |
-| current_status  | Content Cell  |
-| symptom_status  | Content Cell  |
-| hosp_yn  | Content Cell  |
-| icu_yn  | Content Cell  |
-| death_yn  | Content Cell  |
-| underlying_conditions_yn  | Content Cell  |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
 ## Machine Learning
 
