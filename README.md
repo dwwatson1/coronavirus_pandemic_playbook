@@ -73,6 +73,8 @@ We used these other data sources to find columns that matched our schema.
 
 ### Data Dictionary
 
+![image](https://user-images.githubusercontent.com/79073778/125699214-0a67f9a7-cd0d-4933-b7a7-8c7f62741baf.png)
+
 ### SQL Database Schema
 
 #### States
