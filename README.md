@@ -89,13 +89,34 @@ We used these other data sources to find columns that matched our schema.
 1. What is the population per state at the beginning and end of the pandemic?
 2. How has race played a role in the spread of the COVID-19 pandemic?
 3. Could the level of poverty and inequality affect the spread of COVID-19? If so what is the impact?
-4. Did having medical insurance play a role in the cure and deaths?
-5. What were the top 5 MSAs (Metropolitan Statistical Areas) impacted by Covid-19? (Def: MSA is a geographical region with a relatively high population density at its core and close economic ties throughout the area.)
-6. What were the top 20 uSAs (Micropolitan Statistical Areas) impacted by Covid-19?
-7. During periods of Covid-19 case spikes, were there geographical or state areas that trended with these spikes?
-8. Did political affiliation of areas have an influence on the number of Covid cases prior to vaccine distribution?
+4. What influence did State Covid Mandate policies have on testing, hospital utilization, ICU admittance, and death outcome.?
+5. What were the top 5 US States & territories impacted by Covid-19? 
+6. During periods of Covid-19 case spikes, were there geographical or state areas that trended with these spikes?
+7. Did religious affiliation have an influence on the number of Covid cases prior to vaccine distribution?
 
 ## Database
+
+### Sources of Data
+
+Our primary dataset for this project consist of over 27 million rows of unique patient Covid-19 data and was sourced from the Center for Disease Control and Prevention (CDC) Case Surveillance Public Use Data.  It consists of 19 columns of patient specific attributes that will be reduced to 16 columns. Two other tables have been identified, and include data based on Religion by State and State Covid-19 Policy Mandates by state. These tables will be joined to the reconstructed primary database which will be indexed by the 50 US states and its territories. As we refine our Questions to Investigate, we may see fit to remove more columns due to numerous missing values. 
+
+Applying the SQL code on the primary dataset, the reconstructed dataframe will be grouped by state and the data values will become the columns with the patients become the measure to be counted.  In brief, the current primary dataset will be grouped with columns expanded.
+
+Maryland State sub dataset:
+![image](https://user-images.githubusercontent.com/79073778/125868128-740d4848-1f0b-4f32-9f35-b0e6a3a60846.png)
+
+Testing our data strategy, a subset of the primary dataset has been created for one state. That one state (MD) data subset consist of 225,815 rows to which the SQL code has been applied as a preparation step for reconstructing the entire database.  The following is sample work:
+
+![image](https://user-images.githubusercontent.com/79073778/125867840-4ed53e91-338b-47ea-b311-6a82f029610e.png)
+
+![image](https://user-images.githubusercontent.com/79073778/125867942-26a4b027-bd93-44dd-bf8a-e0e9ee6965f7.png)
+
+![image](https://user-images.githubusercontent.com/79073778/125868019-79dd73d9-244c-4d03-8502-58649666cf8f.png)
+
+![image](https://user-images.githubusercontent.com/79073778/125867494-eae850e9-66a7-46db-b40b-efb4f1b54959.png)
+
+![image](https://user-images.githubusercontent.com/79073778/125867771-34edf60e-f0b9-444c-8d6e-f6afde805352.png)
+
 
 ### Data Dictionary
 
@@ -217,4 +238,4 @@ sorted(zip(rf_model.feature_importances_, X.columns), reverse=True)
 
 We will create an HTML/CSS portfolio to showcase our project and Bootstrap components to polish and customize the portfolio. We will also use JavaScript functions to display dynamic and interactive dashboard. 
 
-### [Tableau Dashboard Demo](https://public.tableau.com/views/MarylandCoviddemo/DEMO-MarylandCovidcasesdashboard?:language=en-US&:display_count=n&:origin=viz_share_link)
+### [Tableau Dashboard Demo](https://public.tableau.com/app/profile/yodit.teamir/viz/MarylandCoviddemo/DemoStory)
