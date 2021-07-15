@@ -9,11 +9,10 @@ Investigating the six most important factors that led to the spread of COVID-19 
 * Age
 * Weight
 * Race
-* Political Party
+* State Mandates / COVID-19 rules
 * Religious Affiliation
 * Income Level
 * Population Density
-* Number of Commercial Airports
 
 ### Audience
 
@@ -28,9 +27,9 @@ As a capitalist society, some economic measures of success for the U.S. are jobs
 ## Technologies Used
 
 * **Database storage**
-** We will use SQL database tool to extract, organize and retrieve our data.
+ * We will use SQL database tool to extract, organize and retrieve our data.
 * **Data Cleaning and Analysis**
-** Pandas will be used to clean and transform the data and perform an exploratory analysis. 
+ * Pandas will be used to clean and transform the data and perform an exploratory analysis. 
 
 ## Communication Protocol 
 
