@@ -16,7 +16,7 @@ The term 'pandemic playbook' circulated in the news during the beginning of the 
 
 ### Audience
 
-AsThe National Governors Association has tasked our group, the **COVID-19 Rapid Response Group: Preparing for the Next Pandemic** to present our pandemic playbook at the next National Governors Association annual conference. This conference is a rare opportunity for all state executives to gather and learn how to better respond to the next pandemic and minimize the spread, deaths, and economic impact. 
+The National Governors Association tasked our group, the **COVID-19 Rapid Response Group: Preparing for the Next Pandemic** to present our pandemic playbook at the next National Governors Association annual conference. This conference is a rare opportunity for all state executives to gather and learn how to better respond to the next pandemic and minimize the spread, deaths, and economic impact. 
 
 ### Why Should Our Audience Care?
 
@@ -47,8 +47,8 @@ Looking at the above factors hasn't been attempted. There is evidence that if st
 
 ## Communication Protocol 
 
-[Project Checklist](https://docs.google.com/spreadsheets/d/1G9lvPyMrlkjnYT-qGigKpNdVk72A9Zu0Je7hyy8Q6ug/edit?usp=sharing)
-[Group meeting agendas](https://drive.google.com/drive/folders/1sMOLvKQO-S99917fQL9axuocZujgKNZQ?usp=sharing)
+* [Project Checklist](https://docs.google.com/spreadsheets/d/1G9lvPyMrlkjnYT-qGigKpNdVk72A9Zu0Je7hyy8Q6ug/edit?usp=sharing)
+* [Group meeting agendas](https://drive.google.com/drive/folders/1sMOLvKQO-S99917fQL9axuocZujgKNZQ?usp=sharing)* 
 
 We are meeting twice a week outside of class on Zoom and consistently communicating over Slack. David has established best pratices in GitHub, so we don't overwrite each other's work.
 
