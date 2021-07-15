@@ -25,12 +25,16 @@ As a capitalist society, some economic measures of success for the U.S. are jobs
 [The Brookings Institute](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) identified **state capacity** as one of three pre-existing conditions that amplified the impact of the shock. The COVID-19 crisis posed a critical challenge for policymakers as they needed to quickly reach workers and households during the abrupt economic crisis. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors and mayors have the opportunity to learn where our countries weak points are that led to these incredible economic losses and mitigate them in a future pandemic. 
 
 ## Technologies Used
-              * Nested bullet
-              * Sub-nested bullet etc
-* **Database storage**
-    * We will use SQL database tool to extract, organize and retrieve our data.
+
+* **Database Storage**
+    * pgAdmin - PostgreSQL
+    * AWS RDS
 * **Data Cleaning and Analysis**
-    * Pandas will be used to clean and transform the data and perform an exploratory analysis. 
+    * Juypter Notebook - Pandas
+* **Machine Learning Model**
+    * Google Collab Notebook
+* **Presentation of Findings**
+    * Tableau Public
 
 ## Communication Protocol 
 
