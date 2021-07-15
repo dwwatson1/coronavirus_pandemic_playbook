@@ -1,10 +1,10 @@
 # Coronavirus Pandemic Playbook
 
-## Project Topic and Description
+## Topic
 
-### Topic
+The term 'pandemic playbook' circulated in the news during the beginning of the coronavirus pandemic. President Obama's team had outlined how to respond to infectious diseases and biological incidents so future administrations would be prepared to respond to the next pandemic or biological threat. While the federal government prepared guidelines, state governments were woefully unprepared for a pandemic. The National Governors Association, a nonpartisan organizations comprised of governors from the 55 states and territories in the U.S., tasked with creating a playbook for state governments and have asked us to provide a comprehensive review of factors that led to the spread of COVID-19 cases in states across the United States. We will be presenting our at the next National Governors Association annual conference in late 2021.
 
-Investigating the six most important factors that led to the spread of COVID-19 cases in states across the United States.
+### Factors 
 * Gender
 * Age
 * Weight
@@ -14,15 +14,41 @@ Investigating the six most important factors that led to the spread of COVID-19 
 * Income Level
 * Population Density
 
-### Audience
+### Review Audience
 
-The National Governors Association has tasked our group, the **COVID-19 Rapid Response Group: Preparing for the Next Pandemic** will be presenting our pandemic playbook to at a COVID-19 response conference with the National Governors Association and to the United States Conference of Mayors. The two nonpartisan organizations comprised of governors from the U.S.'s 55 states and territories and mayors of U.S. cities with population of 30,000 or more. Typically these groups meet separately to share strategies across their jurisdictions, however, this conference is a rare opportunity for all executives to gather and learn how to better respond to the next pandemic and minimize the spread, deaths, and economic impact. 
+The National Governors Association has tasked our group, the **COVID-19 Rapid Response Group: Preparing for the Next Pandemic** to present our pandemic playbook at the next National Governors Association annual conference. This conference is a rare opportunity for all state executives to gather and learn how to better respond to the next pandemic and minimize the spread, deaths, and economic impact. 
 
-### Why Should We Care?
+### Why Should Our Audience Care?
 
-As a capitalist society, some economic measures of success for the U.S. are jobs created and GDP growth. The COVID-19 brought the [deepest recession since the end of WWII](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) as the global economy shrunk by 3.5% and [114 million](https://www.weforum.org/agenda/2021/02/covid-employment-global-job-loss/) people lost their jobs in 2020. The impact of this shock is likely to be felt for years to come.
+The COVID-19 brought the [deepest recession since the end of WWII](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) as the global economy shrunk by 3.5% and [114 million](https://www.weforum.org/agenda/2021/02/covid-employment-global-job-loss/) people lost their jobs in 2020. The impact of this shock is likely to be felt for years to come.
 
-[The Brookings Institute](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) identified **state capacity** as one of three pre-existing conditions that amplified the impact of the shock. The COVID-19 crisis posed a critical challenge for policymakers as they needed to quickly reach workers and households during the abrupt economic crisis. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors and mayors have the opportunity to learn where our countries weak points are that led to these incredible economic losses and mitigate them in a future pandemic. 
+States governments were tested and pushed to their limit. [The Brookings Institute](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) identified **state capacity** as one of three pre-existing conditions that amplified the impact of the shock. The COVID-19 crisis posed a critical challenge for policymakers as they needed to quickly reach workers and households during the abrupt economic crisis. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors and mayors have the opportunity to learn where our countries weak points are that led to these incredible economic losses and mitigate them in a future pandemic. 
+
+### Roles
+
+* **Project Manager**
+    * David
+* **Database Storage**
+    * Dinah
+    * Kimi
+    * Michael
+* **Data Cleaning and Analysis**
+    * Dinah
+    * Kimi
+    * Michael
+* **Machine Learning Model**
+    * Michael
+* **Presentation of Findings**
+    * Yodit (Tableau)
+    * Jack (Tableau
+    * David (approver) & Team (GitHub)
+
+## Communication Protocol 
+
+[Project Checklist](https://docs.google.com/spreadsheets/d/1G9lvPyMrlkjnYT-qGigKpNdVk72A9Zu0Je7hyy8Q6ug/edit?usp=sharing)
+[Group meeting agendas](https://drive.google.com/drive/folders/1sMOLvKQO-S99917fQL9axuocZujgKNZQ?usp=sharing)
+
+We are meeting twice a week outside of class on Zoom and consistently communicating over Slack. David has established best pratices in GitHub, so we don't overwrite each other's work.
 
 ## Technologies Used
 
@@ -35,16 +61,10 @@ As a capitalist society, some economic measures of success for the U.S. are jobs
     * Google Collab Notebook
 * **Presentation of Findings**
     * Tableau Public
-
-## Communication Protocol 
-
-[Group meeting agendas](https://drive.google.com/drive/folders/1sMOLvKQO-S99917fQL9axuocZujgKNZQ?usp=sharing)
-
-We are utilizing the available and most suitable resources as our communication tools. Zoom and Slack. We are aiming to meet twice a week in addition to meeting and discussing over the regular virtual class hours. 
-
-We have created a group and direct messages for group members in Slack, and we may use this channel for any cases of emergency. 
+    * GitHub
 
 ### Data Sources for Project
+
 **Main Data Source**
 * [Case Surveillance Public Use Data with Geography](https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data-with-Ge/n8mc-b4w4/data)
 * [U.S. Census Data](https://www.census.gov/data/developers/data-sets.html)
@@ -73,28 +93,38 @@ We used these other data sources to find columns that matched our schema.
 7. During periods of Covid-19 case spikes, were there geographical or state areas that trended with these spikes?
 8. Did political affiliation of areas have an influence on the number of Covid cases prior to vaccine distribution?
 
-## DATABASE
+## Database
 
 ### Data Dictionary
 
-![image](https://user-images.githubusercontent.com/79073778/125847094-14e67f22-4479-4192-9f8b-ba684083d1a8.png)
+| Column Name  | Description | Type | 
+| ------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------- |
+| case_month  | The earlier of month the Clinical Date (date related to the illness or specimen collection) or the Date Received by CDC  | DATE  |
+| res_state | State of residence  | TEXT  |
+| state_fips_code  | Numeric two-digit code to identify states  | TEXT  |
+| res_county  | County of residence  | TEXT  |
+| county_fips_code  | Numeric five-digit codes to identify counties  | TEXT  |
+| age_group  | 0 - 17 years; 18 - 49 years; 50 - 64 years; 65 + years; Unknown; Missing; NA, if value suppressed for privacy protection | TEXT  |
+| sex  | Female; Male; Other; Unknown; Missing; NA, if value suppressed for privacy protection  | TEXT  |
+| race  | American Indian/Alaska Native; Asian; Black; Multiple/Other; Native Hawaiian/Other Pacific Islander; White; Unknown; Missing; NA, if value suppressed for privacy)  | TEXT  |
+| ethnicity  | Hispanic; Non-Hispanic; Unknown; Missing; NA, if value suppressed for privacy protection | TEXT  |
+| exposure_yn  | In the 14 days prior to illness onset, did the patient have any of the following known exposures: domestic travel, international travel, cruise ship or vessel travel as a passenger or crew member, workplace, airport/airplane, adult congregate living facility, etc  | BOOLEAN  |
+| current_status  | What is the current status of this person?  | BOOLEAN  |
+| symptom_status  | What is the symptom status of this person?  | BOOLEAN  |
+| hosp_yn  | Was the patient hospitalized?  | BOOLEAN  |
+| icu_yn  | Was the patient admitted to an intensive care unit (ICU)?  | BOOLEAN  |
+| death_yn  | Did the patient die as a result of this illness?  | BOOLEAN  |
+| underlying_conditions_YN  | Did the patient have one or more of the underlying medical conditions and risk behaviors  | BOOLEAN  |
 
 ### SQL Database ERD Schema
 
+![COVID_Pandemic_ERD](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Images/COVID_Pandemic_ERD.png)
 
- 
 ### Method
 
 #### Extract, Transform, and Load the Data
 
 Our main data table has "Missing", "Unknown", and "NA" values. Because these values are similar, we replaced these values to be all NA. In order for our machine learning model to process the data, we replaced all the NA values with 0. By replacing the NA's with 0, we will see that there are fewer values in certain columns that do not add up to the total number of COVID cases. For example, since there were some missing values for whether the COVID case person was either Male or Female, the total Male/Female columns will not add up to the total cases. To account for this, we will use the SMOTE oversampling technique.
-
-#### Data Dictionary
-
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
 
 ## Machine Learning
 
