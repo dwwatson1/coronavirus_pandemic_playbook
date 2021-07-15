@@ -73,46 +73,11 @@ We used these other data sources to find columns that matched our schema.
 
 ### Data Dictionary
 
-![image](https://user-images.githubusercontent.com/79073778/125699214-0a67f9a7-cd0d-4933-b7a7-8c7f62741baf.png)
+![image](https://user-images.githubusercontent.com/79073778/125847094-14e67f22-4479-4192-9f8b-ba684083d1a8.png)
 
-### SQL Database Schema
+### SQL Database ERD Schema
 
-#### States
 
-State_Init VARCHAR PK
-
-Pop_Density INTEGER
-
-Income INTEGER
-
-Race VARCHAR
-
-Zipcode VARCHAR
-
-#### Covid_Cases
-
-Case_Totals INTEGER PK
-State_Init VARCHAR FK >- States.State_Init
-Death_Totals INTEGER 
-Hospital_Utilz INTEGER
-
-#### Demographics
-
-Case_Totals INTEGER PK
-State_Init VARCHAR FK >- States.State_Init
-Age INTEGER
-Politics VARCHAR 
-Religion VARCHAR
-Gender VARCHAR
-
-#### Identity
-
-Race VARCHAR PK
-State_Init VARCHAR FK >- States.State_Init
-Case_Totals INTEGER FK >- Covid_Cases.Case_Totals
-Death_Totals INTEGER FK >- Covid_Cases.Case_Totals
-Income INTEGER
-Health_Issues VARCHAR 
  
 ### Method
 
