@@ -14,15 +14,17 @@ The term 'pandemic playbook' circulated in the news during the beginning of the 
 * Income Level
 * Population Density
 
-### Review Audience
+### Audience
 
-The National Governors Association has tasked our group, the **COVID-19 Rapid Response Group: Preparing for the Next Pandemic** to present our pandemic playbook at the next National Governors Association annual conference. This conference is a rare opportunity for all state executives to gather and learn how to better respond to the next pandemic and minimize the spread, deaths, and economic impact. 
+AsThe National Governors Association has tasked our group, the **COVID-19 Rapid Response Group: Preparing for the Next Pandemic** to present our pandemic playbook at the next National Governors Association annual conference. This conference is a rare opportunity for all state executives to gather and learn how to better respond to the next pandemic and minimize the spread, deaths, and economic impact. 
 
 ### Why Should Our Audience Care?
 
 The COVID-19 brought the [deepest recession since the end of WWII](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) as the global economy shrunk by 3.5% and [114 million](https://www.weforum.org/agenda/2021/02/covid-employment-global-job-loss/) people lost their jobs in 2020. The impact of this shock is likely to be felt for years to come.
 
-States governments were tested and pushed to their limit. [The Brookings Institute](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) identified **state capacity** as one of three pre-existing conditions that amplified the impact of the shock. The COVID-19 crisis posed a critical challenge for policymakers as they needed to quickly reach workers and households during the abrupt economic crisis. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors and mayors have the opportunity to learn where our countries weak points are that led to these incredible economic losses and mitigate them in a future pandemic. 
+States governments were tested and pushed to their limit. [The Brookings Institute](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) identified **state capacity** as one of three pre-existing conditions that amplified the impact of the shock. The COVID-19 crisis posed a critical challenge for policymakers as they needed to quickly reach workers and households during the abrupt economic crisis. 
+
+Looking at the above factors hasn't been attempted. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors have the opportunity to learn where our state's weak points were that led to these incredible economic losses and mitigate them in a future pandemic. Our team is confident that state lawmakers can use our machine learning algorithm to as a basis for future policy decisions.
 
 ### Roles
 
@@ -211,10 +213,8 @@ importances
 sorted(zip(rf_model.feature_importances_, X.columns), reverse=True)
 ```
 
-#### Dashboard
+## Dashboard
 
 We will create an HTML/CSS portfolio to showcase our project and Bootstrap components to polish and customize the portfolio. We will also use JavaScript functions to display dynamic and interactive dashboard. 
 
-#### Machine Learning 
-
-We will use Scikit-learn machine learning library for Python to reshape, stratify, split, test, train …. our data. 
+### [Tableau Dashboard Demo](https://public.tableau.com/app/profile/yodit.teamir/viz/MarylandCoviddemo/DemoStory)
