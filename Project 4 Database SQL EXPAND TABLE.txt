@@ -10,31 +10,31 @@
 	Watson, David
 
 
-"1.	To create the MD data and replicate for all data"
+1.	To create the MD data and replicate for all data
 
 
-"2.	Create the maryland_data.csv in PGAdmin"
+2.	Create the maryland_data.csv or (cdc_database_cleaned) in PGAdmin
 CREATE TABLE MARYLAND_DATA(
-ID_MD                           INTEGER
-case_month                      TEXT
-res_state                       TEXT
-state_fips_code                 TEXT
-res_county                      TEXT
-county_fips_code                TEXT
-age_group                       TEXT
-sex                             TEXT
-race                            TEXT
-ethnicity                       TEXT
-exposure_yn                     TEXT
-current_status                  TEXT
-symptom_status                  TEXT
-hosp_yn                         TEXT
-icu_yn                          TEXT
-death_yn                        TEXT
-underlying_conditions_yn        TEXT
-"	);"
+ID_MD                           INTEGER,
+case_month                      TEXT,
+res_state                       TEXT,
+state_fips_code                 TEXT,
+res_county                      TEXT,
+county_fips_code                TEXT,
+age_group                       TEXT,
+sex                             TEXT,
+race                            TEXT,
+ethnicity                       TEXT,
+exposure_yn                     TEXT,
+current_status                  TEXT,
+symptom_status                  TEXT,
+hosp_yn                         TEXT,
+icu_yn                          TEXT,
+death_yn                        TEXT,
+underlying_conditions_yn        TEXT,
+	);
 
-"3.	Read the query to summarize counts"
+3.	Read the query to summarize counts
 
 
 SELECT DISTINCT RES_STATE
@@ -58,7 +58,7 @@ FROM MARYLAND_DATA ORDER BY 2
 
 
 
-"4.	Create a new table project4_covid_dataa"
+4.	Create a new table project4_covid_dataa
 CREATE TABLE COVID_CDC_PROJECT4_DATA(
 CDC_DATA_ID						INTEGER,
 res_state                       TEXT,
@@ -103,7 +103,7 @@ underlying_conditions_MISSING   INTEGER
 )
 
 
-"5.      Insert the summary data	"
+5.      Insert the summary data	
 
 INSERT INTO COVID_CDC_PROJECT4_DATA
 (
@@ -152,8 +152,7 @@ FROM MARYLAND_DATA ORDER BY 2,1
  )
 
 
-"6.	Export the data as csv"
+6.	Export the data as csv
 EXPORT AS MD_CLEANED
 
 
-end
