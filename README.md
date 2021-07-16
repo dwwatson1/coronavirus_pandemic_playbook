@@ -151,7 +151,7 @@ Our main data table has "Missing", "Unknown", and "NA" values. Because these val
 
 ## Machine Learning
 
-### Preliminary Data Spitting / Testing Sets
+### Preliminary Data Splitting / Testing Sets
 We used Maryland COVID-19 data as our preliminary data, which is a subset of our main data table. We chose one state to work with first as the size of the data is significantly smaller. This helped the model run faster for the testing phase. As the model worked with the Maryland data, we are assuming that the model will work for the whole dataset. For the preliminary data, we used features from age, gender, and race, hospitalization, ICU, and underlying conditions. This was most efficient for the preliminary model because these features were already included in the main dataset. 
 
 ### Preliminary Engineering and Feature Selection
