@@ -1,5 +1,11 @@
 # Coronavirus Pandemic Playbook
 
+## Census Data
+AGE AND SEX: https://data.census.gov/cedsci/table?g=0100000US,.04000.001&y=2019&tid=ACSST1Y2019.S0101&hidePreview=true&moe=false&tp=true
+
+RACE: https://data.census.gov/cedsci/table?q=United%20States&t=Race%20and%20Ethnicity&g=0100000US.04000.001&y=2019&tid=ACSDT1Y2019.B02001&tp=true&hidePreview=true&moe=false
+
+
 ## Machine Learning
 
 ### Preliminary Data Spitting / Testing Sets
