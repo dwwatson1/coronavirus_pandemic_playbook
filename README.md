@@ -47,6 +47,7 @@ For social factors, we looked at U.S. Census data estimates for information on s
 
 ### Data Analysis Overview
 
+Once we have joined all the factor tables in SQL, we will run 
 
 ### Datasets and Sources
 
@@ -55,32 +56,34 @@ For social factors, we looked at U.S. Census data estimates for information on s
 * [State Mask Mandate Policy/Political Affiliation by State](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/state_factors_from_gallup.csv) Source: Gallup
 * [Median Household Income by State](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/household_income_by_state.csv) Source: U.S. Census
 
-## Database
-
 ### Description of Data Sources
 
 Our primary dataset for this project consist of over 27 million rows of unique patient Covid-19 data and was sourced from the Center for Disease Control and Prevention (CDC) Case Surveillance Public Use Data.  It consists of 19 columns of patient specific attributes that will be reduced to 16 columns. Two other tables have been identified, and include data based on Religion by State and State Covid-19 Policy Mandates by state. These tables will be joined to the reconstructed primary database which will be indexed by the 50 US states and its territories. As we refine our Questions to Investigate, we may see fit to remove more columns due to numerous missing values. 
 
 Applying the SQL code on the primary dataset, the reconstructed dataframe will be grouped by state and the data values will become the columns with the patients become the measure to be counted.  In brief, the current primary dataset will be grouped with columns expanded.
 
-### SQL Database ERD Schema
+## Database
 
-![COVID_Pandemic_ERD](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Images/COVID_19_ERD.png)
+### Database Schema ERD
 
-Maryland State sub dataset:
-![image](https://user-images.githubusercontent.com/79073778/125868128-740d4848-1f0b-4f32-9f35-b0e6a3a60846.png)
+![CORONAVIRUS_PANDEMIC_PLAYBOOK_wCENSUSdata_ERD](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Images/CORONAVIRUS_PANDEMIC_PLAYBOOK_wCENSUSdata_ERD.png)
 
-Testing our data strategy, a subset of the primary dataset has been created for one state. That one state (MD) data subset consist of 225,815 rows to which the SQL code has been applied as a preparation step for reconstructing the entire database.  The following is sample work:
+### Building the Database
 
-![image](https://user-images.githubusercontent.com/79073778/125867840-4ed53e91-338b-47ea-b311-6a82f029610e.png)
+[Database Storing Overview](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/Project%204%20Database%20SQL.txt)
 
-![image](https://user-images.githubusercontent.com/79073778/125867942-26a4b027-bd93-44dd-bf8a-e0e9ee6965f7.png)
+**Steps**
 
-![image](https://user-images.githubusercontent.com/79073778/125868019-79dd73d9-244c-4d03-8502-58649666cf8f.png)
-
-![image](https://user-images.githubusercontent.com/79073778/125867494-eae850e9-66a7-46db-b40b-efb4f1b54959.png)
-
-![image](https://user-images.githubusercontent.com/79073778/125867771-34edf60e-f0b9-444c-8d6e-f6afde805352.png)
+1. We chose input data from CDC from March - December 2020 because March marked when the U.S. declared a state of emergency and December was when the first COVID-19 vaccine dose was administered and U.S. Census data. After storing the data in pgAdmin - PostgreSQL, we selected age group, state, sex, and race, columns from both datasets.
+2. We then created a table to hold the input data from CDC and U.S. Census. We called the table CDC_INPUTDB_CLEANED
+3. We identified the age group options available in the data and created an age group table
+4. We inserted the age group table into the CDC_INPUTDB_CLEANED table
+5. We repeated steps 3 and 4 for sex and race factors
+6. We read the query to summarize counts and selected Maryland as our test state for our new table
+7. Before creating the final table that include counts for the segments of each factor, we summarized each column's datatype.
+8. We created our final table to hold the total value counts: COVID_MARCH2020_DEC2020_PROJECT4
+9. Then we added up the counts for the segments of each factor and inserted into the COVID_MARCH2020_DEC2020_PROJECT4 table
+10. Exported to [COVID-19 Cases by Age, Sex, Race](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.csv)
 
 ### Data Dictionary
 
@@ -194,7 +197,7 @@ sorted(zip(rf_model.feature_importances_, X.columns), reverse=True)
 
 ## Dashboard
 
-### Description of interactive elements used.
+### Blueprint and Interactive Elements
 
 One of the interactive elements we are using is the filter action. Filter actions send information between worksheets. Typically, a filter action sends information from a selected mark to another sheet showing related information. Behind the scenes, filter actions send data values from the relevant source fields as filters to the target sheet and dashboards.
 
