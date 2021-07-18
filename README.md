@@ -7,7 +7,7 @@ The term 'pandemic playbook' circulated in the news during the beginning of the 
 The National Governors Association, a nonpartisan organizations comprised of governors in the U.S., tasked with creating an updated playbook for state governments. They have asked us to provide a comprehensive review of factors that led to the spread of COVID-19 cases in states across the United States. We will be presenting our at the next National Governors Association annual conference in late 2021.
 
 ### Project Goal
-Drawing on data from CDC, U.S. Census, and many other sources, our goal is to determine which social, economic, and policy factors contributed to the spread of COVID-19. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors have the opportunity to learn where our state's weak points were that led to these incredible economic losses and mitigate them in a future pandemic. Our team is confident that our machine learning algorithm will predict which factors contributed the most to the spread of respiratory diseases like COVID-19. The information will valuable for state lawmakers' future economic and social policy decisions.
+Drawing on data from CDC, U.S. Census, and many other sources, our goal is to determine which social, economic, and political factors contributed to the spread of COVID-19. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors have the opportunity to learn where our state's weak points were that led to these incredible economic losses and mitigate them in a future pandemic. Our team is confident that our machine learning algorithm will predict which factors contributed the most to the spread of respiratory diseases like COVID-19. The information will valuable for state lawmakers' future economic and social political decisions.
 
 ### Project Factors 
 
@@ -28,25 +28,32 @@ Given our audience for the project, the data we've obtained for each factor will
 **Economic Factors**
 * Median Household Income
 
-**Policy Factors**
+**Political Factors**
 * State Mandates / COVID-19 rules
 
 ### Questions to Investigate During Project
-1. Which social, economic, geographical, or policy factor contributed the most the spread of the disease?
+1. Which social, economic, geographical, or political factors contributed the most the spread of the disease?
 2. Which category of factor contributed the most the spread of the disease?
-3. Is there a connection between state policy (i.e. mask mandate) and the spread of COVID-19 within the state
+3. Is there a connection between state policy or political leaning (i.e. mask mandate) and the spread of COVID-19 within the state
 4. Do we need to account for the size of the population that didn't have COVID-19 when using a machine learning model?
 
 ## Data Exploration and Analysis Phases
 
 ### Data Exploration Overview
 
-We began the project by looking at the entirety of COVID-19 CDC data, which consists of 27 million rows and 19 columns of unique patient information. We quickly realized that if we wanted to replicate the spread of COVID-19 based on any factor, we needed to account for the population that didn't have the disease. We established **Number of COVID-19 Cases / State Population** as our target variable. Next, we moved on to categorical factors. 
+We began the project by looking at the entirety of COVID-19 CDC data, which consists of 27 million rows and 19 columns of unique patient information. We quickly realized that if we wanted to replicate the spread of COVID-19 based on any factor, we needed to account for the population that didn't have the disease. We established **Number of COVID-19 Cases / State Population** as our target variable. We found ratio would be easier to handle data-wise than working with large population datasets or creating pseudo population data. Next, we moved on to categorical factors. 
 
-For social factors, we looked at U.S. Census data estimates for information on sex, age, and race. We observed that both datasets had either state abbreviations or states spelled out with their full names. We knew we could join data tables by state, so we focused our efforts on finding geographical, economic, and policy factors with state columns already available.
-
+For social factors, we looked at U.S. Census data estimates for information on sex, age, and race. We observed that both datasets had either state abbreviations or states spelled out with their full names. We knew we could join data tables by state, so we focused our efforts on finding geographical, economic, and political factors with state columns already available.
 
 ### Data Analysis Overview
+
+
+### Datasets and Sources
+
+* [COVID-19 Cases by Age, Sex, Race](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.csv) Source: U.S. Census and CDC
+* [U.S. Commercial Airports by State](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/Group4%20Airport%20By%20Area.csv) Source: FAA
+* [State Mask Mandate Policy/Political Affiliation by State](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/state_factors_from_gallup.csv) Source: Gallup
+* [Median Household Income by State](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/household_income_by_state.csv) Source: U.S. Census
 
 ## Database
 
@@ -55,6 +62,10 @@ For social factors, we looked at U.S. Census data estimates for information on s
 Our primary dataset for this project consist of over 27 million rows of unique patient Covid-19 data and was sourced from the Center for Disease Control and Prevention (CDC) Case Surveillance Public Use Data.  It consists of 19 columns of patient specific attributes that will be reduced to 16 columns. Two other tables have been identified, and include data based on Religion by State and State Covid-19 Policy Mandates by state. These tables will be joined to the reconstructed primary database which will be indexed by the 50 US states and its territories. As we refine our Questions to Investigate, we may see fit to remove more columns due to numerous missing values. 
 
 Applying the SQL code on the primary dataset, the reconstructed dataframe will be grouped by state and the data values will become the columns with the patients become the measure to be counted.  In brief, the current primary dataset will be grouped with columns expanded.
+
+### SQL Database ERD Schema
+
+![COVID_Pandemic_ERD](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Images/COVID_19_ERD.png)
 
 Maryland State sub dataset:
 ![image](https://user-images.githubusercontent.com/79073778/125868128-740d4848-1f0b-4f32-9f35-b0e6a3a60846.png)
@@ -91,10 +102,6 @@ Testing our data strategy, a subset of the primary dataset has been created for 
 | icu_yn  | Was the patient admitted to an intensive care unit (ICU)?  | BOOLEAN  |
 | death_yn  | Did the patient die as a result of this illness?  | BOOLEAN  |
 | underlying_conditions_YN  | Did the patient have one or more of the underlying medical conditions and risk behaviors  | BOOLEAN  |
-
-### SQL Database ERD Schema
-
-![COVID_Pandemic_ERD](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Images/COVID_Pandemic_ERD.png)
 
 ### Database ETL Method
 
@@ -200,28 +207,6 @@ We have also created a simple HTML file to show the dashboard in a dedicated web
  
 
 ### [Tableau Dashboard Demo](https://public.tableau.com/views/ALLSTATESDATAMARCHtoDEC2020/Dashboard4?:language=en-US&:display_count=n&:origin=viz_share_link)
-
-## Resources
-
-### Data Sources List
-
-**Main Data Source**
-* [Case Surveillance Public Use Data with Geography](https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data-with-Ge/n8mc-b4w4/data)
-* [U.S. Census Data](https://www.census.gov/data/developers/data-sets.html)
-
-**COVID-19 State Mandate Data**
-* [US State Level Policy Tracker](https://github.com/govex/COVID-19/tree/govex_data/data_tables/policy_data/table_data/Current)
- 
-**Other Data Sources Used**
-
-We used these other data sources to find columns that matched our schema.
-* [John Hopkins Coronavirus Data](https://coronavirus.jhu.edu/data/new-cases-50-states)
-* [US Dept of Health Data Sources by State](https://github.com/CSSEGISandData/COVID-19)
-* [Additional data source that we are considering](https://docs.google.com/document/d/10i01u6oQAUVCbk5VTL6G0rIsTF9JlO1I90XTCDXWTCA/edit)
-* [Another possible data APIs](https://blogs.mulesoft.com/dev-guides/track-covid-19/)
-* [A database that we can consider](https://covidtracking.com/data/download)
-* [APM Research Lab: The Color of Coronavirus cvs files](https://www.apmresearchlab.org/covid/deaths-by-race)
-* [COVID-19 original and derived datasets (JHU, NY Times, ECDC)](https://github.com/cipriancraciun/covid19-datasets)
 
 ## Appendix 
 
