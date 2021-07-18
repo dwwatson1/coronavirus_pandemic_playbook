@@ -6,6 +6,10 @@ AGE AND SEX: https://data.census.gov/cedsci/table?g=0100000US,.04000.001&y=2019&
 RACE: https://data.census.gov/cedsci/table?q=United%20States&t=Race%20and%20Ethnicity&g=0100000US.04000.001&y=2019&tid=ACSDT1Y2019.B02001&tp=true&hidePreview=true&moe=false
 
 
+MD AGE AND SEX: https://data.census.gov/cedsci/table?q=maryland%20age%20and%20sex&y=2019&tid=ACSST1Y2019.S0101&hidePreview=true&tp=true
+
+MD RACE: https://data.census.gov/cedsci/table?q=maryland%20race&y=2019&tid=ACSDT1Y2019.B02001&hidePreview=true&tp=false&moe=false
+
 ## Machine Learning
 
 ### Preliminary Data Spitting / Testing Sets
