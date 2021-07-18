@@ -1,4 +1,4 @@
-// console.log("Hello from the COVID playbook!")
+
 let viz; 
 
 const url = 
