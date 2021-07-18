@@ -91,6 +91,6 @@ We will use Scikit-learn machine learning library for Python to reshape, stratif
 
 #### Preliminary sample dashbaord
 
-[Link to dashboard](https://public.tableau.com/views/ALLSTATESDATAMARCHtoDEC2020/ByAge?:language=en-US&:display_count=n&:origin=viz_share_link)
+[Link to dashboard](https://public.tableau.com/views/ALLSTATESDATAMARCHtoDEC2020/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 
