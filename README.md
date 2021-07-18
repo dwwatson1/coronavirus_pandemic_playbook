@@ -22,6 +22,15 @@ Given our audience for the project, the data we've obtained for each factor will
 * Population Density
 * Commercial Airports
 
+### Questions to Investigate During Project
+1. What is the population per state at the beginning and end of the pandemic?
+2. How has race played a role in the spread of the COVID-19 pandemic?
+3. Could the level of poverty and inequality affect the spread of COVID-19? If so what is the impact?
+4. What influence did State Covid Mandate policies have on testing, hospital utilization, ICU admittance, and death outcome.?
+5. What were the top 5 US States & territories impacted by Covid-19? 
+6. During periods of Covid-19 case spikes, were there geographical or state areas that trended with these spikes?
+7. Did religious affiliation have an influence on the number of Covid cases prior to vaccine distribution?
+
 ## Data Exploration and Analysis Phases
 
 ### Data Exploration Overview
