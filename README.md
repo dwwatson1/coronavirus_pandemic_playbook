@@ -35,27 +35,13 @@ States governments were tested and pushed to their limit. [The Brookings Institu
 
 Looking at the above factors hasn't been attempted. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors have the opportunity to learn where our state's weak points were that led to these incredible economic losses and mitigate them in a future pandemic. Our team is confident that our machine learning algorithm will predict which factors contributed the most to the spread of respiratory diseases like COVID-19. The information will valuable for state lawmakers' future economic and social policy decisions.
 
+## Data Exploration and Analysis Phases
+
+### Data Exploration Overview
+
+### Data Analysis Overview
+
 ## Database
-
-## Data Sources List
-
-**Main Data Source**
-* [Case Surveillance Public Use Data with Geography](https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data-with-Ge/n8mc-b4w4/data)
-* [U.S. Census Data](https://www.census.gov/data/developers/data-sets.html)
-
-**COVID-19 State Mandate Data**
-* [US State Level Policy Tracker](https://github.com/govex/COVID-19/tree/govex_data/data_tables/policy_data/table_data/Current)
- 
-**Other Data Sources Used**
-
-We used these other data sources to find columns that matched our schema.
-* [John Hopkins Coronavirus Data](https://coronavirus.jhu.edu/data/new-cases-50-states)
-* [US Dept of Health Data Sources by State](https://github.com/CSSEGISandData/COVID-19)
-* [Additional data source that we are considering](https://docs.google.com/document/d/10i01u6oQAUVCbk5VTL6G0rIsTF9JlO1I90XTCDXWTCA/edit)
-* [Another possible data APIs](https://blogs.mulesoft.com/dev-guides/track-covid-19/)
-* [A database that we can consider](https://covidtracking.com/data/download)
-* [APM Research Lab: The Color of Coronavirus cvs files](https://www.apmresearchlab.org/covid/deaths-by-race)
-* [COVID-19 original and derived datasets (JHU, NY Times, ECDC)](https://github.com/cipriancraciun/covid19-datasets)
 
 ### Description of Data Sources
 
@@ -198,6 +184,28 @@ We will create an HTML/CSS portfolio to showcase our project and Bootstrap compo
 
 ### [Tableau Dashboard Demo](https://public.tableau.com/views/MarylandCoviddemo/DEMO-MarylandCovidcasesdashboard?:language=en-US&:retry=yes&:display_count=n&:origin=viz_share_link)
 
+## Resources
+
+### Data Sources List
+
+**Main Data Source**
+* [Case Surveillance Public Use Data with Geography](https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data-with-Ge/n8mc-b4w4/data)
+* [U.S. Census Data](https://www.census.gov/data/developers/data-sets.html)
+
+**COVID-19 State Mandate Data**
+* [US State Level Policy Tracker](https://github.com/govex/COVID-19/tree/govex_data/data_tables/policy_data/table_data/Current)
+ 
+**Other Data Sources Used**
+
+We used these other data sources to find columns that matched our schema.
+* [John Hopkins Coronavirus Data](https://coronavirus.jhu.edu/data/new-cases-50-states)
+* [US Dept of Health Data Sources by State](https://github.com/CSSEGISandData/COVID-19)
+* [Additional data source that we are considering](https://docs.google.com/document/d/10i01u6oQAUVCbk5VTL6G0rIsTF9JlO1I90XTCDXWTCA/edit)
+* [Another possible data APIs](https://blogs.mulesoft.com/dev-guides/track-covid-19/)
+* [A database that we can consider](https://covidtracking.com/data/download)
+* [APM Research Lab: The Color of Coronavirus cvs files](https://www.apmresearchlab.org/covid/deaths-by-race)
+* [COVID-19 original and derived datasets (JHU, NY Times, ECDC)](https://github.com/cipriancraciun/covid19-datasets)
+
 ## Appendix 
 
 ### Roles
@@ -219,14 +227,7 @@ We will create an HTML/CSS portfolio to showcase our project and Bootstrap compo
     * Jack (Tableau
     * David (approver) & Team (GitHub)
 
-## Communication Protocol 
-
-* [Project Checklist](https://docs.google.com/spreadsheets/d/1G9lvPyMrlkjnYT-qGigKpNdVk72A9Zu0Je7hyy8Q6ug/edit?usp=sharing)
-* [Group meeting agendas](https://drive.google.com/drive/folders/1sMOLvKQO-S99917fQL9axuocZujgKNZQ?usp=sharing)
-
-We are meeting twice a week outside of class on Zoom and consistently communicating over Slack. David has established best pratices in GitHub, so we don't overwrite each other's work.
-
-## Technologies Used
+### Technologies Used
 
 * **Database Storage**
     * pgAdmin - PostgreSQL
@@ -238,3 +239,10 @@ We are meeting twice a week outside of class on Zoom and consistently communicat
 * **Presentation of Findings**
     * Tableau Public
     * GitHub
+
+### Communication Protocol 
+
+* [Project Checklist](https://docs.google.com/spreadsheets/d/1G9lvPyMrlkjnYT-qGigKpNdVk72A9Zu0Je7hyy8Q6ug/edit?usp=sharing)
+* [Group meeting agendas](https://drive.google.com/drive/folders/1sMOLvKQO-S99917fQL9axuocZujgKNZQ?usp=sharing)
+
+We are meeting twice a week outside of class on Zoom and consistently communicating over Slack. David has established best pratices in GitHub, so we don't overwrite each other's work.
