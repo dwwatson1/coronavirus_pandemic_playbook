@@ -13,23 +13,25 @@ Drawing on data from CDC, U.S. Census, and many other sources, our goal is to de
 
 Given our audience for the project, the data we've obtained for each factor will be organized by state. 
 
-* Number of COVID-19 Cases **(Target Variable)**
+**Target Variable**
+* Number of COVID-19 Cases
+**Social Factors**
 * Gender
 * Age
 * Race
-* State Mandates / COVID-19 rules
-* Median Household Income
+**Geographical Factors**
 * Population Density
 * Commercial Airports
+**Economical Factors**
+* Median Household Income
+**Policy Factors**
+* State Mandates / COVID-19 rules
 
 ### Questions to Investigate During Project
-1. What is the population per state at the beginning and end of the pandemic?
-2. How has race played a role in the spread of the COVID-19 pandemic?
-3. Could the level of poverty and inequality affect the spread of COVID-19? If so what is the impact?
-4. What influence did State Covid Mandate policies have on testing, hospital utilization, ICU admittance, and death outcome.?
-5. What were the top 5 US States & territories impacted by Covid-19? 
-6. During periods of Covid-19 case spikes, were there geographical or state areas that trended with these spikes?
-7. Did religious affiliation have an influence on the number of Covid cases prior to vaccine distribution?
+1. Which social, economic, geographical, or policy factor contributed the most the spread of the disease?
+2. Which category of factor contributed the most the spread of the disease?
+3. Is there a connection between state policy (i.e. mask mandate) and the spread of COVID-19 within the state
+4. Do we need to account for the size of the population that didn't have COVID-19 when using a machine learning model?
 
 ## Data Exploration and Analysis Phases
 
