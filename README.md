@@ -182,7 +182,7 @@ sorted(zip(rf_model.feature_importances_, X.columns), reverse=True)
 
 We will create an HTML/CSS portfolio to showcase our project and Bootstrap components to polish and customize the portfolio. We will also use JavaScript functions to display dynamic and interactive dashboard. 
 
-### [Tableau Dashboard Demo](https://public.tableau.com/app/profile/yodit.teamir/viz/ALLSTATESDATAMARCHtoDEC2020/Dashboard1)
+### [Tableau Dashboard Demo](https://public.tableau.com/views/ALLSTATESDATAMARCHtoDEC2020/Dashboard1_1?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 ## Resources
 
