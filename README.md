@@ -1,6 +1,6 @@
 # Coronavirus Pandemic Playbook
 
-## Topic
+## Topic & Background
 
 The term 'pandemic playbook' circulated in the news during the beginning of the coronavirus pandemic. President Obama's team had outlined how to respond to infectious diseases and biological incidents so future administrations would be prepared to respond to the next pandemic or biological threat. While the federal government prepared guidelines, state governments were woefully unprepared for a pandemic. The National Governors Association, a nonpartisan organizations comprised of governors from the 55 states and territories in the U.S., tasked with creating a playbook for state governments and have asked us to provide a comprehensive review of factors that led to the spread of COVID-19 cases in states across the United States. We will be presenting our at the next National Governors Association annual conference in late 2021.
 
@@ -14,7 +14,16 @@ The term 'pandemic playbook' circulated in the news during the beginning of the 
 * Income Level
 * Population Density
 
-### Audience
+### Questions to Investigate During Project
+1. What is the population per state at the beginning and end of the pandemic?
+2. How has race played a role in the spread of the COVID-19 pandemic?
+3. Could the level of poverty and inequality affect the spread of COVID-19? If so what is the impact?
+4. What influence did State Covid Mandate policies have on testing, hospital utilization, ICU admittance, and death outcome.?
+5. What were the top 5 US States & territories impacted by Covid-19? 
+6. During periods of Covid-19 case spikes, were there geographical or state areas that trended with these spikes?
+7. Did religious affiliation have an influence on the number of Covid cases prior to vaccine distribution?
+
+## Audience
 
 The National Governors Association tasked our group, the **COVID-19 Rapid Response Group: Preparing for the Next Pandemic** to present our pandemic playbook at the next National Governors Association annual conference. This conference is a rare opportunity for all state executives to gather and learn how to better respond to the next pandemic and minimize the spread, deaths, and economic impact. 
 
@@ -26,7 +35,9 @@ States governments were tested and pushed to their limit. [The Brookings Institu
 
 Looking at the above factors hasn't been attempted. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors have the opportunity to learn where our state's weak points were that led to these incredible economic losses and mitigate them in a future pandemic. Our team is confident that our machine learning algorithm will predict which factors contributed the most to the spread of respiratory diseases like COVID-19. The information will valuable for state lawmakers' future economic and social policy decisions.
 
-### Data Sources for Project
+## Database
+
+## Data Sources List
 
 **Main Data Source**
 * [Case Surveillance Public Use Data with Geography](https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data-with-Ge/n8mc-b4w4/data)
@@ -46,18 +57,7 @@ We used these other data sources to find columns that matched our schema.
 * [APM Research Lab: The Color of Coronavirus cvs files](https://www.apmresearchlab.org/covid/deaths-by-race)
 * [COVID-19 original and derived datasets (JHU, NY Times, ECDC)](https://github.com/cipriancraciun/covid19-datasets)
 
-### Questions to Investigate During Project
-1. What is the population per state at the beginning and end of the pandemic?
-2. How has race played a role in the spread of the COVID-19 pandemic?
-3. Could the level of poverty and inequality affect the spread of COVID-19? If so what is the impact?
-4. What influence did State Covid Mandate policies have on testing, hospital utilization, ICU admittance, and death outcome.?
-5. What were the top 5 US States & territories impacted by Covid-19? 
-6. During periods of Covid-19 case spikes, were there geographical or state areas that trended with these spikes?
-7. Did religious affiliation have an influence on the number of Covid cases prior to vaccine distribution?
-
-## Database
-
-### Sources of Data
+### Description of Data Sources
 
 Our primary dataset for this project consist of over 27 million rows of unique patient Covid-19 data and was sourced from the Center for Disease Control and Prevention (CDC) Case Surveillance Public Use Data.  It consists of 19 columns of patient specific attributes that will be reduced to 16 columns. Two other tables have been identified, and include data based on Religion by State and State Covid-19 Policy Mandates by state. These tables will be joined to the reconstructed primary database which will be indexed by the 50 US states and its territories. As we refine our Questions to Investigate, we may see fit to remove more columns due to numerous missing values. 
 
@@ -77,7 +77,6 @@ Testing our data strategy, a subset of the primary dataset has been created for 
 ![image](https://user-images.githubusercontent.com/79073778/125867494-eae850e9-66a7-46db-b40b-efb4f1b54959.png)
 
 ![image](https://user-images.githubusercontent.com/79073778/125867771-34edf60e-f0b9-444c-8d6e-f6afde805352.png)
-
 
 ### Data Dictionary
 
@@ -104,9 +103,7 @@ Testing our data strategy, a subset of the primary dataset has been created for 
 
 ![COVID_Pandemic_ERD](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Images/COVID_Pandemic_ERD.png)
 
-### Method
-
-#### Extract, Transform, and Load the Data
+### Database ETL Method
 
 Our main data table has "Missing", "Unknown", and "NA" values. Because these values are similar, we replaced these values to be all NA. In order for our machine learning model to process the data, we replaced all the NA values with 0. By replacing the NA's with 0, we will see that there are fewer values in certain columns that do not add up to the total number of COVID cases. For example, since there were some missing values for whether the COVID case person was either Male or Female, the total Male/Female columns will not add up to the total cases. To account for this, we will use the SMOTE oversampling technique.
 
