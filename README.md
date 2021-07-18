@@ -15,15 +15,19 @@ Given our audience for the project, the data we've obtained for each factor will
 
 **Target Variable**
 * Number of COVID-19 Cases
+
 **Social Factors**
 * Gender
 * Age
 * Race
+
 **Geographical Factors**
 * Population Density
 * Commercial Airports
+
 **Economical Factors**
 * Median Household Income
+
 **Policy Factors**
 * State Mandates / COVID-19 rules
 
