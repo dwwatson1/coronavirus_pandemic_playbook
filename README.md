@@ -1,39 +1,26 @@
 # Coronavirus Pandemic Playbook
 
-## Topic & Background
+## Project Topic, Background, Audience
 
-The term 'pandemic playbook' circulated in the news during the beginning of the coronavirus pandemic. President Obama's team had outlined how to respond to infectious diseases and biological incidents so future administrations would be prepared to respond to the next pandemic or biological threat. While the federal government prepared guidelines, state governments were woefully unprepared for a pandemic. The National Governors Association, a nonpartisan organizations comprised of governors from the 55 states and territories in the U.S., tasked with creating a playbook for state governments and have asked us to provide a comprehensive review of factors that led to the spread of COVID-19 cases in states across the United States. We will be presenting our at the next National Governors Association annual conference in late 2021.
+The term 'pandemic playbook' circulated in the news during the beginning of the coronavirus pandemic. U.S. President Barack Obama's team had outlined how to respond to infectious diseases and biological incidents so future administrations would be prepared to respond to the next pandemic or biological threat. While the federal government prepared guidelines, state governments from the 50 states + DC were woefully unprepared for a pandemic. The COVID-19 pandemic brought the [deepest recession since the end of WWII](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) as the global economy shrunk by 3.5% and [114 million](https://www.weforum.org/agenda/2021/02/covid-employment-global-job-loss/) people lost their jobs in 2020. The impact of this shock is likely to be felt for years to come.
 
-### Factors 
+The National Governors Association, a nonpartisan organizations comprised of governors in the U.S., tasked with creating an updated playbook for state governments. They have asked us to provide a comprehensive review of factors that led to the spread of COVID-19 cases in states across the United States. We will be presenting our at the next National Governors Association annual conference in late 2021.
+
+### Project Goal
+Drawing on data from CDC, U.S. Census, and many other sources, our goal is to determine which social, economic, and policy factors contributed to the spread of COVID-19. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors have the opportunity to learn where our state's weak points were that led to these incredible economic losses and mitigate them in a future pandemic. Our team is confident that our machine learning algorithm will predict which factors contributed the most to the spread of respiratory diseases like COVID-19. The information will valuable for state lawmakers' future economic and social policy decisions.
+
+### Project Factors 
+
+Given our audience for the project, the data we've obtained for each factor will be organized by state. 
+
+* Number of COVID-19 Cases **(Target Variable)**
 * Gender
 * Age
-* Weight
 * Race
 * State Mandates / COVID-19 rules
-* Religious Affiliation
-* Income Level
+* Median Household Income
 * Population Density
-
-### Questions to Investigate During Project
-1. What is the population per state at the beginning and end of the pandemic?
-2. How has race played a role in the spread of the COVID-19 pandemic?
-3. Could the level of poverty and inequality affect the spread of COVID-19? If so what is the impact?
-4. What influence did State Covid Mandate policies have on testing, hospital utilization, ICU admittance, and death outcome.?
-5. What were the top 5 US States & territories impacted by Covid-19? 
-6. During periods of Covid-19 case spikes, were there geographical or state areas that trended with these spikes?
-7. Did religious affiliation have an influence on the number of Covid cases prior to vaccine distribution?
-
-## Audience
-
-The National Governors Association tasked our group, the **COVID-19 Rapid Response Group: Preparing for the Next Pandemic** to present our pandemic playbook at the next National Governors Association annual conference. This conference is a rare opportunity for all state executives to gather and learn how to better respond to the next pandemic and minimize the spread, deaths, and economic impact. 
-
-### Why Should Our Audience Care?
-
-The COVID-19 brought the [deepest recession since the end of WWII](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) as the global economy shrunk by 3.5% and [114 million](https://www.weforum.org/agenda/2021/02/covid-employment-global-job-loss/) people lost their jobs in 2020. The impact of this shock is likely to be felt for years to come.
-
-States governments were tested and pushed to their limit. [The Brookings Institute](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) identified **state capacity** as one of three pre-existing conditions that amplified the impact of the shock. The COVID-19 crisis posed a critical challenge for policymakers as they needed to quickly reach workers and households during the abrupt economic crisis. 
-
-Looking at the above factors hasn't been attempted. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors have the opportunity to learn where our state's weak points were that led to these incredible economic losses and mitigate them in a future pandemic. Our team is confident that our machine learning algorithm will predict which factors contributed the most to the spread of respiratory diseases like COVID-19. The information will valuable for state lawmakers' future economic and social policy decisions.
+* Commercial Airports
 
 ## Data Exploration and Analysis Phases
 
