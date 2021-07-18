@@ -24,46 +24,7 @@ The COVID-19 brought the [deepest recession since the end of WWII](https://www.b
 
 States governments were tested and pushed to their limit. [The Brookings Institute](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) identified **state capacity** as one of three pre-existing conditions that amplified the impact of the shock. The COVID-19 crisis posed a critical challenge for policymakers as they needed to quickly reach workers and households during the abrupt economic crisis. 
 
-Looking at the above factors hasn't been attempted. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors have the opportunity to learn where our state's weak points were that led to these incredible economic losses and mitigate them in a future pandemic. Our team is confident that state lawmakers can use our machine learning algorithm to as a basis for future policy decisions.
-
-### Roles
-
-* **Project Manager**
-    * David
-* **Database Storage**
-    * Dinah
-    * Kimi
-    * Michael
-* **Data Cleaning and Analysis**
-    * Dinah
-    * Kimi
-    * Michael
-* **Machine Learning Model**
-    * Michael
-* **Presentation of Findings**
-    * Yodit (Tableau)
-    * Jack (Tableau
-    * David (approver) & Team (GitHub)
-
-## Communication Protocol 
-
-* [Project Checklist](https://docs.google.com/spreadsheets/d/1G9lvPyMrlkjnYT-qGigKpNdVk72A9Zu0Je7hyy8Q6ug/edit?usp=sharing)
-* [Group meeting agendas](https://drive.google.com/drive/folders/1sMOLvKQO-S99917fQL9axuocZujgKNZQ?usp=sharing)
-
-We are meeting twice a week outside of class on Zoom and consistently communicating over Slack. David has established best pratices in GitHub, so we don't overwrite each other's work.
-
-## Technologies Used
-
-* **Database Storage**
-    * pgAdmin - PostgreSQL
-    * AWS RDS
-* **Data Cleaning and Analysis**
-    * Juypter Notebook - Pandas
-* **Machine Learning Model**
-    * Google Collab Notebook
-* **Presentation of Findings**
-    * Tableau Public
-    * GitHub
+Looking at the above factors hasn't been attempted. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors have the opportunity to learn where our state's weak points were that led to these incredible economic losses and mitigate them in a future pandemic. Our team is confident that our machine learning algorithm will predict which factors contributed the most to the spread of respiratory diseases like COVID-19. The information will valuable for state lawmakers' future economic and social policy decisions.
 
 ### Data Sources for Project
 
@@ -239,3 +200,44 @@ sorted(zip(rf_model.feature_importances_, X.columns), reverse=True)
 We will create an HTML/CSS portfolio to showcase our project and Bootstrap components to polish and customize the portfolio. We will also use JavaScript functions to display dynamic and interactive dashboard. 
 
 ### [Tableau Dashboard Demo](https://public.tableau.com/views/MarylandCoviddemo/DEMO-MarylandCovidcasesdashboard?:language=en-US&:retry=yes&:display_count=n&:origin=viz_share_link)
+
+## Appendix 
+
+### Roles
+
+* **Project Manager**
+    * David
+* **Database Storage**
+    * Dinah
+    * Kimi
+    * Michael
+* **Data Cleaning and Analysis**
+    * Dinah
+    * Kimi
+    * Michael
+* **Machine Learning Model**
+    * Michael
+* **Presentation of Findings**
+    * Yodit (Tableau)
+    * Jack (Tableau
+    * David (approver) & Team (GitHub)
+
+## Communication Protocol 
+
+* [Project Checklist](https://docs.google.com/spreadsheets/d/1G9lvPyMrlkjnYT-qGigKpNdVk72A9Zu0Je7hyy8Q6ug/edit?usp=sharing)
+* [Group meeting agendas](https://drive.google.com/drive/folders/1sMOLvKQO-S99917fQL9axuocZujgKNZQ?usp=sharing)
+
+We are meeting twice a week outside of class on Zoom and consistently communicating over Slack. David has established best pratices in GitHub, so we don't overwrite each other's work.
+
+## Technologies Used
+
+* **Database Storage**
+    * pgAdmin - PostgreSQL
+    * AWS RDS
+* **Data Cleaning and Analysis**
+    * Juypter Notebook - Pandas
+* **Machine Learning Model**
+    * Google Collab Notebook
+* **Presentation of Findings**
+    * Tableau Public
+    * GitHub
