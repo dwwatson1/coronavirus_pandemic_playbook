@@ -14,10 +14,10 @@ Drawing on data from CDC, U.S. Census, and many other sources, our goal is to de
 Given our audience for the project, the data we've obtained for each factor will be organized by state. 
 
 **Target Variable**
-* Number of COVID-19 Cases
+* Number of COVID-19 Cases / State Population
 
 **Social Factors**
-* Gender
+* Sex
 * Age
 * Race
 
@@ -25,7 +25,7 @@ Given our audience for the project, the data we've obtained for each factor will
 * Population Density
 * Commercial Airports
 
-**Economical Factors**
+**Economic Factors**
 * Median Household Income
 
 **Policy Factors**
@@ -40,6 +40,11 @@ Given our audience for the project, the data we've obtained for each factor will
 ## Data Exploration and Analysis Phases
 
 ### Data Exploration Overview
+
+We began the project by looking at the entirety of COVID-19 CDC data, which consists of 27 million rows and 19 columns of unique patient information. We quickly realized that if we wanted to replicate the spread of COVID-19 based on any factor, we needed to account for the population that didn't have the disease. We established **Number of COVID-19 Cases / State Population** as our target variable. Next, we moved on to categorical factors. 
+
+For social factors, we looked at U.S. Census data estimates for information on sex, age, and race. We observed that both datasets had either state abbreviations or states spelled out with their full names. We knew we could join data tables by state, so we focused our efforts on finding geographical, economic, and policy factors with state columns already available.
+
 
 ### Data Analysis Overview
 
