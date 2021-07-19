@@ -125,10 +125,12 @@ To create the random forest model, we first initialize the dependencies, notably
 
 ```
 import pandas as pd
+import numpy as np
 from path import Path
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
+from sklearn import metrics
 ```
 
 After loading in the data, we use one hot encoding to account for null values and convert categorical variables to integer data.
@@ -187,11 +189,11 @@ rf_model = rf_model.fit(X_train_scaled, y_train)
 We make predictions and then evaluate how well the model classified the data.
 
 ```
-predictions = rf_model.predict(X_test_scaled)
+y_pred = rf_model.predict(X_test_scaled)
 
-acc_score = accuracy_score(y_test, predictions)
-
-print(f"Accuracy Score : {acc_score}")
+print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
+print('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))
+print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
 ```
 
 We finally rank the importance of the features and see which have the most impact on the output.
