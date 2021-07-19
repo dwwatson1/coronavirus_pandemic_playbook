@@ -30,6 +30,7 @@ Given our audience for the project, the data we've obtained for each factor will
 
 **Political Factors**
 * State Mandates / COVID-19 rules
+* Political Leaning
 
 ### Questions to Investigate During Project
 1. Which social, economic, geographical, or political factors contributed the most the spread of the disease?
