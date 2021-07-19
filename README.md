@@ -10,6 +10,26 @@ MD AGE AND SEX: https://data.census.gov/cedsci/table?q=maryland%20age%20and%20se
 
 MD RACE: https://data.census.gov/cedsci/table?q=maryland%20race&y=2019&tid=ACSDT1Y2019.B02001&hidePreview=true&tp=false&moe=false
 
+## ETL Method
+
+### Extracting the Data
+Our main dataset was COVID-19 CDC data, which consists of unique patient information spanning 19 columns and 27 million rows. With such a large dataset, we used Amazon S3 to store the data and used Google Colab with Pyspark to access and load the data.
+
+### Transforming the Data
+With the data loaded, we could now transform our data. We first filtered the data to be between March 2020 and December 2020. We chose this date range because March 2020 was when the United States declared COVID-19 a pandemic and December 2020 was when the first vaccine was administered in the United States. After filtering the data by date, we dropped many columns from the dataset for either or both of these reasons: 1) there were too many missing values for the variable to be usable and/or 2) the variable was not useful for our analysis. After dropping the unnecessary columns, the data was left with four variables: res_state, age_group, sex, and race. The dataset also had missing values which were identified in the data as either "Missing", "Unknown", or "NA". We replaced all the "Missing" and "Unknown" values to be "NA" for simplicity in identifying the missing values. The data was then exported to a CSV file where it was then imported into SQL for storage and further querying.
+
+### Loading the Data
+We used SQL to store the data and query it so that the data would be organized by state with the values becoming our new features. For example, we now have "Male" and "Female" as features of our data with totals of each for each state, whereas in the base CDC data, "sex" was the feature and "Male" and "Female" were values for the unique patients. 
+
+Currently, missing values are their own features in our dataset where we have them for age, sex, and gender, which could potentially result in poor performance of the machine learning model. We have a few other potential ideas on how we will handle the missing values:
+
+- As the features with missing values are categorical variables, we could impute the missing values by using the mode.
+- We can predict the missing values for the categorical variables by using a classification model. We would split the data as such:
+  - y_train: rows from data with non null values
+  - y_test: rows from data with null values
+  - X_train: Dataset except data features with non null values
+  - X_test: Dataset except data features with null values
+
 ## Machine Learning
 
 ### Model Choice
