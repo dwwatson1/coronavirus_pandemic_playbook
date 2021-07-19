@@ -20,10 +20,11 @@ Given our audience for the project, the data we've obtained for each factor will
 * Sex
 * Age
 * Race
+* Religion
 
 **Geographical Factors**
 * Population Density
-* Commercial Airports
+* Number of Commercial Airports / State Land Area
 
 **Economic Factors**
 * Median Household Income
@@ -32,23 +33,26 @@ Given our audience for the project, the data we've obtained for each factor will
 * State Mandates / COVID-19 rules
 * Political Leaning
 
+**Lifestyle Factors**
+* Health Insurance Coverage 
+* Exercise Frequency
+* Social Inclusivity 
+* Work Life Status
+* Monetary Stability
+
 ### Questions to Investigate During Project
-1. Which social, economic, geographical, or political factors contributed the most the spread of the disease?
+1. Which social, economic, geographical, lifestyle or political factors contributed the most the spread of the disease?
 2. Which category of factor contributed the most the spread of the disease?
 3. Is there a connection between state policy or political leaning (i.e. mask mandate) and the spread of COVID-19 within the state
 4. Do we need to account for the size of the population that didn't have COVID-19 when using a machine learning model?
 
 ## Data Exploration and Analysis Phases
 
-### Data Exploration Overview
+### Data Exploration and Analysis Overview
 
 We began the project by looking at the entirety of COVID-19 CDC data, which consists of 27 million rows and 19 columns of unique patient information. We quickly realized that if we wanted to replicate the spread of COVID-19 based on any factor, we needed to account for the population that didn't have the disease. We established **Number of COVID-19 Cases / State Population** as our target variable. We found ratio would be easier to handle data-wise than working with large population datasets or creating pseudo population data. Next, we moved on to categorical factors. 
 
-For social factors, we looked at U.S. Census data estimates for information on sex, age, and race. We observed that both datasets had either state abbreviations or states spelled out with their full names. We knew we could join data tables by state, so we focused our efforts on finding geographical, economic, and political factors with state columns already available.
-
-### Data Analysis Overview
-
-Once we have joined all the factor tables in SQL, we will run 
+For social factors, we looked at U.S. Census data estimates for information on sex, age, and race. We observed that both datasets had either state abbreviations or states spelled out with their full names. We knew we could join data tables by state, so we focused our efforts on finding geographical, economic, lifestyle and political factors with state columns already available.
 
 ### Datasets and Sources
 
