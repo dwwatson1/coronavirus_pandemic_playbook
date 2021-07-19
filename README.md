@@ -88,7 +88,7 @@ Applying the SQL code on the primary dataset, the reconstructed dataframe will b
 
 ### Data Dictionary
 
-**PLACE GROUP 4 DATA DICT .PNG IMAGE HERE, DAVID**
+![image](https://user-images.githubusercontent.com/79073778/126088189-b23583d2-390d-4510-8e2c-d58fafbd54d2.png)
 
 ### Database ETL Method
 
