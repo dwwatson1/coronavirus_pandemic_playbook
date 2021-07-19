@@ -88,24 +88,7 @@ Applying the SQL code on the primary dataset, the reconstructed dataframe will b
 
 ### Data Dictionary
 
-| Column Name  | Description | Type | 
-| ------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------- |
-| case_month  | The earlier of month the Clinical Date (date related to the illness or specimen collection) or the Date Received by CDC  | DATE  |
-| res_state | State of residence  | TEXT  |
-| state_fips_code  | Numeric two-digit code to identify states  | TEXT  |
-| res_county  | County of residence  | TEXT  |
-| county_fips_code  | Numeric five-digit codes to identify counties  | TEXT  |
-| age_group  | 0 - 17 years; 18 - 49 years; 50 - 64 years; 65 + years; Unknown; Missing; NA, if value suppressed for privacy protection | TEXT  |
-| sex  | Female; Male; Other; Unknown; Missing; NA, if value suppressed for privacy protection  | TEXT  |
-| race  | American Indian/Alaska Native; Asian; Black; Multiple/Other; Native Hawaiian/Other Pacific Islander; White; Unknown; Missing; NA, if value suppressed for privacy)  | TEXT  |
-| ethnicity  | Hispanic; Non-Hispanic; Unknown; Missing; NA, if value suppressed for privacy protection | TEXT  |
-| exposure_yn  | In the 14 days prior to illness onset, did the patient have any of the following known exposures: domestic travel, international travel, cruise ship or vessel travel as a passenger or crew member, workplace, airport/airplane, adult congregate living facility, etc  | BOOLEAN  |
-| current_status  | What is the current status of this person?  | BOOLEAN  |
-| symptom_status  | What is the symptom status of this person?  | BOOLEAN  |
-| hosp_yn  | Was the patient hospitalized?  | BOOLEAN  |
-| icu_yn  | Was the patient admitted to an intensive care unit (ICU)?  | BOOLEAN  |
-| death_yn  | Did the patient die as a result of this illness?  | BOOLEAN  |
-| underlying_conditions_YN  | Did the patient have one or more of the underlying medical conditions and risk behaviors  | BOOLEAN  |
+https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/Group4%20Data%20Dictionary.xlsx
 
 ### Database ETL Method
 
