@@ -186,7 +186,7 @@ rf_model = RandomForestRegressor(n_estimators=128, random_state=1)
 rf_model = rf_model.fit(X_train_scaled, y_train)
 ```
 
-We make predictions and then evaluate how well the model classified the data.
+We make predictions and then evaluate performance using the Mean Absolute Error, Mean Squared Error, and the Root Mean Squared Error.
 
 ```
 y_pred = rf_model.predict(X_test_scaled)
