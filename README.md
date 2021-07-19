@@ -59,9 +59,7 @@ Once we have joined all the factor tables in SQL, we will run
 
 ### Description of Data Sources
 
-As stated in the Data Exploration subheading, our original dataset consisted of over 27 million rows of unique patient Covid-19 data sourced from the Center for Disease Control and Prevention (CDC) Case Surveillance Public Use Data. Having analyze the quality of our data, we quickly pivoted to finding specific data that would support our model, have minimum missing data and null values. Our primary dataset with will be constructed by merging primary demographic information from the CDC, US census data from US Census Bureau  and qualitative survey data from Gallup.  
-
-Applying the SQL code on the primary dataset, the reconstructed dataframe will be grouped by state and the data values will become the columns with the patients become the measure to be counted.  In brief, the current primary dataset will be grouped with columns expanded.
+As stated in the Data Exploration subheading, our original dataset consisted of over 27 million rows of unique patient Covid-19 data sourced from the Center for Disease Control and Prevention (CDC) Case Surveillance Public Use Data. Having analyzed the quality of our data, the Team pivoted to finding additional, specific data that would support our model, have minimum missing data and null values and to answer our investigaative questions with a unique perspective. Our primary and final dataset will be constructed by merging primary demographic information from the Center of Disease Control & Prevention (CDC), US census data from US Census Bureau and qualitative survey data from Gallup that will consist of 50 rows of State values and 50-55 columns of factors.  
 
 ## Database
 
