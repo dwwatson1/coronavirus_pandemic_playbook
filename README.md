@@ -26,7 +26,6 @@ from path import Path
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
 ```
 
 After loading in the data, we use one hot encoding to account for null values and convert categorical variables to integer data.
