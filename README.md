@@ -88,7 +88,7 @@ Applying the SQL code on the primary dataset, the reconstructed dataframe will b
 
 ### Data Dictionary
 
-https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/Group4%20Data%20Dictionary.xlsx
+https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/Group%204%20Data%20Dictionary.png
 
 ### Database ETL Method
 
