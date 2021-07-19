@@ -92,9 +92,26 @@ As stated in the Data Exploration subheading, our original dataset consisted of 
 
 ![image](https://user-images.githubusercontent.com/79073778/126088189-b23583d2-390d-4510-8e2c-d58fafbd54d2.png)
 
-### Database ETL Method
+## ETL Method
 
-Our main data table has "Missing", "Unknown", and "NA" values. Because these values are similar, we replaced these values to be all NA. In order for our machine learning model to process the data, we replaced all the NA values with 0. By replacing the NA's with 0, we will see that there are fewer values in certain columns that do not add up to the total number of COVID cases. For example, since there were some missing values for whether the COVID case person was either Male or Female, the total Male/Female columns will not add up to the total cases. To account for this, we will use the SMOTE oversampling technique.
+### Extracting the Data
+Our main dataset was COVID-19 CDC data, which consists of unique patient information spanning 19 columns and 27 million rows. With such a large dataset, we used Amazon S3 to store the data and used Google Colab with Pyspark to access and load the data.
+
+### Transforming the Data
+With the data loaded, we could now transform our data. We first filtered the data to be between March 2020 and December 2020. We chose this date range because March 2020 was when the United States declared COVID-19 a pandemic and December 2020 was when the first vaccine was administered in the United States. After filtering the data by date, we dropped many columns from the dataset for either or both of these reasons: 1) there were too many missing values for the variable to be usable and/or 2) the variable was not useful for our analysis. After dropping the unnecessary columns, the data was left with four variables: res_state, age_group, sex, and race. The dataset also had missing values which were identified in the data as either "Missing", "Unknown", or "NA". We replaced all the "Missing" and "Unknown" values to be "NA" for simplicity in identifying the missing values. The data was then exported to a CSV file where it was then imported into SQL for storage and further querying.
+
+### Loading the Data
+We used SQL to store the data and query it so that the data would be organized by state with the values becoming our new features. For example, we now have "Male" and "Female" as features of our data with totals of each for each state, whereas in the base CDC data, "sex" was the feature and "Male" and "Female" were values for the unique patients. The other features we are using were imported from their respective CSV files and joined to this main table. Using the U.S. Census data, we were able to create the features for those who do not have COVID by subtracting the number of people with COVID by the total numbers for each state. For example, to find the total number of females who do not have COVID for the state of Maryland, we subtracted the total number of females with COVID from the total population of the state of Maryland.
+
+### Handling Missing Values
+Currently, missing values are their own features in our dataset where we have them for age, sex, and gender, which could potentially result in poor performance of the machine learning model. We have a couple other potential ideas on how we could handle the missing values:
+
+- As the features with missing values are categorical variables, we could impute the missing values by using the mode.
+- We can predict the missing values for the categorical variables by using a classification model. We would split the data as such:
+  - y_train: rows from data with non null values
+  - y_test: rows from data with null values
+  - X_train: Dataset except data features with non null values
+  - X_test: Dataset except data features with null values
 
 ## Machine Learning
 
