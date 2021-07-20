@@ -104,14 +104,18 @@ With the data loaded, we could now transform our data. We first filtered the dat
 We used SQL to store the data and query it so that the data would be organized by state with the values becoming our new features. For example, we now have "Male" and "Female" as features of our data with totals of each for each state, whereas in the base CDC data, "sex" was the feature and "Male" and "Female" were values for the unique patients. The other features we are using were imported from their respective CSV files and joined to this main table. Using the U.S. Census data, we were able to create the features for those who do not have COVID by subtracting the number of people with COVID by the total numbers for each state. For example, to find the total number of females who do not have COVID for the state of Maryland, we subtracted the total number of females with COVID from the total population of the state of Maryland.
 
 ### Handling Missing Values
-Currently, missing values are their own features in our dataset where we have them for age, sex, and gender, which could potentially result in poor performance of the machine learning model. We have a couple other potential ideas on how we could handle the missing values:
+The CDC dataset we used had many missing values for the patients age, sex, and race. This is to be expected as many people opt out of providing such information. Because machine learning models cannot run with null values, we had to find a way to handle the missing values. We came up with four possible strategies:
 
-- As the features with missing values are categorical variables, we could impute the missing values by using the mode.
-- We can predict the missing values for the categorical variables by using a classification model. We would split the data as such:
+1. Delete the observations with missing values.
+2. Delete the variable.
+3. As the features with missing values are categorical variables, we could impute the missing values by using the mode.
+4. We can predict the missing values for the categorical variables by using a classification model. We would split the data as such:
   - y_train: rows from data with non null values
   - y_test: rows from data with null values
   - X_train: Dataset except data features with non null values
   - X_test: Dataset except data features with null values
+
+Ultimately, we imputed the missing values by using the mode. We did not want to delete observations as that would mean less data and also would misrepresent the total number of COVID cases. We also did not want to delete the variables as we felt age, sex, and race are important variables for understanding the spread of COVID. Because there were not too many missing values for the variables, we felt that we did not need to overengineer our data by using a classification model when imputing with the mode would be sufficient.
 
 ## Machine Learning
 
