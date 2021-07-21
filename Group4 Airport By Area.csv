@@ -1,0 +1,52 @@
+ST,STATE,TOT_AIRPORTS,STATE_LAND_AREA_SQMi,AIRPT_AREA
+AK,Alaska,19,"570,641",0.003%
+AL,Alabama,5,"50,645",0.010%
+AR,Arkansas,4,"52,035",0.008%
+AZ,Arizona,4,"113,594",0.004%
+CA,California,22,"155,779",0.014%
+CO,Colorado,10,"103,642",0.010%
+CT,Connecticut,1,"4,842",0.021%
+DC,District of Columbia,0,61,0.000%
+DE,Delaware,1,"1,949",0.051%
+FL,Florida,17,"53,625",0.032%
+GA,Georgia,7,"57,513",0.012%
+HI,Hawaii,5,"6,423",0.078%
+IA,Iowa,5,"55,857",0.009%
+ID,Idaho,6,"82,643",0.007%
+IL,Illinois,7,"55,519",0.013%
+IN,Indiana,4,"35,826",0.011%
+KS,Kansas,4,"81,759",0.005%
+KY,Kentucky,4,"39,486",0.010%
+LA,Louisiana,7,"43,204",0.016%
+MA,Massachusetts,5,"7,800",0.064%
+MD,Maryland,1,"9,707",0.010%
+ME,Maine,2,"30,843",0.006%
+MI,Michigan,15,"56,539",0.027%
+MN,Minnesota,8,"79,627",0.010%
+MO,Missouri,5,"68,742",0.007%
+MS,Mississippi,5,"46,923",0.011%
+MT,Montana,8,"145,546",0.005%
+NC,North Carolina,8,"48,618",0.016%
+ND,North Dakota,8,"69,001",0.012%
+NE,Nebraska,3,"76,824",0.004%
+NH,New Hampshire,1,"8,953",0.011%
+NJ,New Jersey,3,"7,354",0.041%
+NM,New Mexico,4,"121,298",0.003%
+NV,Nevada,3,"109,781",0.003%
+NY,New York,14,"47,126",0.030%
+OH,Ohio,5,"40,861",0.012%
+OK,Oklahoma,3,"68,595",0.004%
+OR,Oregon,5,"95,988",0.005%
+PA,Pennsylvania,8,"44,743",0.018%
+RI,Rhode Island,1,"1,034",0.097%
+SC,South Carolina,4,"30,061",0.013%
+SD,South Dakota,3,"75,811",0.004%
+TN,Tennessee,5,"41,235",0.012%
+TX,Texas,24,"261,232",0.009%
+UT,Utah,5,"82,170",0.006%
+VA,Virginia,7,"39,490",0.018%
+VT,Vermont,1,"9,217",0.011%
+WA,Washington,4,"66,456",0.006%
+WI,Wisconsin,8,"54,158",0.015%
+WV,West Virginia,1,"24,038",0.004%
+WY,Wyoming,6,"97,093",0.006%
