@@ -90,7 +90,7 @@ As stated in the Data Exploration subheading, our original dataset consisted of 
 
 ### Data Dictionary
 
-![image](https://user-images.githubusercontent.com/79073778/126433091-ad20bcea-8796-483f-9580-d0fac3da5a55.png)
+![image](https://user-images.githubusercontent.com/79073778/126433251-84f72a83-93df-47fc-9797-425836639f47.png)
 
 ## ETL Method
 
