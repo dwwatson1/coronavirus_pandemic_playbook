@@ -73,7 +73,7 @@ As stated in the Data Exploration subheading, our original dataset consisted of 
 
 ### Building the Database
 
-[Database Storing Overview](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/Project%204%20Database%20SQL.txt)
+[Database Storing Overview](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/Project%204%20Database%20SQL_steps.txt)
 
 **Steps**
 
