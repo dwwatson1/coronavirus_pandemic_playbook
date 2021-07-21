@@ -1,0 +1,50 @@
+# Module 20
+
+# Coronavirus Pandemic Playbook
+## Group 4
+	Leggett, Michael
+	Essilfie-Bondzie, DINAH
+	Teamir rezene, Yodit
+	Ellerbe, Kimberly
+	Gross, Jack
+	Watson, David
+
+
+---------------------------------------------
+1.	We input/imported data from the following tables into PGAdmin
+cdc_db_cleaned_part1 (into CDC_INPUTDB_CLEANED),
+cdc_db_cleaned_part2 (into CDC_INPUTDB_CLEANED),
+cdc_db_cleaned_part3 (into CDC_INPUTDB_CLEANED),
+cdc_db_cleaned_part4 (into CDC_INPUTDB_CLEANED),
+household_income_by_state (into ST_INCOME),
+state_factors_from_gallup (into US_POLITICS),
+census_sex_no_covid (into CENSUS_SEX),
+census_age_no_covid (into CENSUS_RACE)	
+
+
+2.	We created the following tables in PGAdmin, from CDC_INPUTDB_CLEANED:
+DATA_AGE_GROUP (We identified the age group options:
+age_group_0_17, age_group_18_49, age_group_50_64, age_group_65PLUS),
+
+US_STATES(We identified the states, dropping DC),
+
+DATA_SEX(We identified the sex options: MALE, FEMALE),
+
+DATA_RACE (We identified the race options:
+Asian, Black, Multiple/Other, White,
+American Indian/Alaska Native,
+Native Hawaiian/Other Pacific Islander)
+
+
+
+3.	Using the table: US_STATES, we created the table: COVID_MARCH2020_DEC2020_PROJECT4, 
+of totals per state, with calculated data from the table:CDC_INPUTDB_CLEANED
+
+
+4.	Using the table: US_STATES, we added all the tables with totals, 
+and created the table: COVID_MARCH2020_DEC2020_TOTALS_PROJECT4
+
+
+5.	We exported our table COVID_MARCH2020_DEC2020_TOTALS_PROJECT4 from PGAdmin to the csv file:
+COVID_MARCH2020_DEC2020_TOTALS_PROJECT4
+
