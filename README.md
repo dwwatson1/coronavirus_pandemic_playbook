@@ -131,8 +131,7 @@ As stated in the Data Exploration subheading, our original dataset consisted of 
    - Table: DATA_RACE, New columns: COVID and NO COVID for each group: Asian, Black, Multiple/Other, White, American Indian/Alaska Native, Native Hawaiian/Other Pacific Islander
 5. We identified that we could join all tables using teh states column. Using the table: US_STATES, we created the table: COVID_MARCH2020_DEC2020_PROJECT4, of totals per state, with calculated data from the table: CDC_INPUTDB_CLEANED
 6. Using the table: US_STATES, we added all the tables with totals, and created the table: COVID_MARCH2020_DEC2020_TOTALS_PROJECT4
-7. We exported our table COVID_MARCH2020_DEC2020_TOTALS_PROJECT4 from pgAdmin to the csv file:
-COVID_MARCH2020_DEC2020_TOTALS_PROJECT4(https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.csv)
+7. We exported our table COVID_MARCH2020_DEC2020_TOTALS_PROJECT4 from pgAdmin to the csv file:  (https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.csv)
 
 ### Data Dictionary
 
