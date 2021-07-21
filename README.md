@@ -117,16 +117,22 @@ As stated in the Data Exploration subheading, our original dataset consisted of 
 
 **Steps**
 
-1. We chose input data from CDC from March - December 2020 because March marked when the U.S. declared a state of emergency and December was when the first COVID-19 vaccine dose was administered and U.S. Census data. After storing the data in pgAdmin - PostgreSQL, we selected age group, state, sex, and race, columns from both datasets.
-2. We then created a table to hold the input data from CDC and U.S. Census. We called the table CDC_INPUTDB_CLEANED
-3. We identified the age group options available in the data and created an age group table
-4. We inserted the age group table into the CDC_INPUTDB_CLEANED table
-5. We repeated steps 3 and 4 for sex and race factors
-6. We read the query to summarize counts and selected Maryland as our test state for our new table
-7. Before creating the final table that include counts for the segments of each factor, we summarized each column's datatype.
-8. We created our final table to hold the total value counts: COVID_MARCH2020_DEC2020_TOTALS_PROJECT4
-9. Then we added up the counts for the segments of each factor and inserted into the COVID_MARCH2020_DEC2020_TOTALS_PROJECT4 table
-10. Exported to [COVID-19 Cases by Age, Sex, Race](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.csv)
+1. We chose input data from CDC from March - December 2020 because March marked when the U.S. declared a state of emergency and December was when the first COVID-19 vaccine dose was administered and U.S. Census data, so we replicate the spread of COVID-19 and account for people who didn't have the disease (as mentioned in the Data Exploration section)
+2. Because it was such a large dataset, we split it into 4 parts so cleaning it was more manageable. These parts were imported to the table: CDC_INPUTDB_CLEANED
+3. We also used our data from investigating factors into their respective tables: 
+   - household_income_by_state into ST_INCOME
+   - state_factors_from_gallup into US_POLITICS
+   - census_sex_no_covid into CENSUS_SEX
+   - census_age_no_covid into CENSUS_RACE
+4. After storing the data in pgAdmin - PostgreSQL, we created new tables from CDC_INPUTDB_CLEANED and then segmented age group, state, sex, and race into new columns:
+   - Table: DATA_AGE_GROUP, New columns: COVID and NO COVID for each group: age_group_0_17, age_group_18_49, age_group_50_64, age_group_65PLUS
+   - Table: US_STATES, New columns: none
+   - Table: DATA_SEX, New columns: COVID and NO COVID for each group: Male, Female
+   - Table: DATA_RACE, New columns: COVID and NO COVID for each group: Asian, Black, Multiple/Other, White, American Indian/Alaska Native, Native Hawaiian/Other Pacific Islander
+5. We identified that we could join all tables using teh states column. Using the table: US_STATES, we created the table: COVID_MARCH2020_DEC2020_PROJECT4, of totals per state, with calculated data from the table: CDC_INPUTDB_CLEANED
+6. Using the table: US_STATES, we added all the tables with totals, and created the table: COVID_MARCH2020_DEC2020_TOTALS_PROJECT4
+7. We exported our table COVID_MARCH2020_DEC2020_TOTALS_PROJECT4 from pgAdmin to the csv file:
+COVID_MARCH2020_DEC2020_TOTALS_PROJECT4(https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.csv)
 
 ### Data Dictionary
 
