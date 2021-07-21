@@ -109,7 +109,11 @@ As stated in the Data Exploration subheading, our original dataset consisted of 
 
 ### Database Schema ERD
 
-![CORONAVIRUS_PANDEMIC_PLAYBOOK_wCENSUSdata_ERD](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Images/CORONAVIRUS_PANDEMIC_PLAYBOOK_wCENSUSdata_ERD.png)
+Joining factor data by state (see step 7 below):
+![COVID_MARCH2020_DEC2020_PROJECT4%20ERD](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Images/COVID_MARCH2020_DEC2020_PROJECT4%20ERD.png)
+
+Joining cleaned CDC data by state (see step 8 below):
+![COVID_MARCH2020_DEC2020_PROJECT4_CDC%20ERD](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Images/COVID_MARCH2020_DEC2020_PROJECT4_CDC%20ERD.png)
 
 ### Building the Database
 
@@ -138,7 +142,7 @@ As stated in the Data Exploration subheading, our original dataset consisted of 
    - Please refer to the first ERD image for the visual of this process
 8. Simiarly, with the cleaned CDC_INPUTDB_CLEANED table mentioned in **step 2 and step 3**, we joined the tables by state and input the data to COVID_MARCH2020_DEC2020_TOTALS_PROJECT4 as well. 
    - Please refer to the second ERD image for the visual of this process
-10. We exported our table COVID_MARCH2020_DEC2020_TOTALS_PROJECT4 from pgAdmin to the csv file: [COVID_MARCH2020_DEC2020_TOTALS_PROJECT4](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.csv)
+9. We exported our table COVID_MARCH2020_DEC2020_TOTALS_PROJECT4 from pgAdmin to the csv file: [COVID_MARCH2020_DEC2020_TOTALS_PROJECT4](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.csv)
 
 ### Data Dictionary
 
