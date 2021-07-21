@@ -103,7 +103,7 @@ For social factors, we looked at U.S. Census data estimates for information on s
 
 ### Description of Data Sources
 
-As stated in the Data Exploration subheading, our original dataset consisted of over 27 million rows of unique patient Covid-19 data sourced from the Center for Disease Control and Prevention (CDC) Case Surveillance Public Use Data. Having analyzed the quality of our data, the Team pivoted to finding additional, specific data that would support our model, have minimum missing data and null values and to answer our investigaative questions with a unique perspective. Our primary and final dataset will be constructed by merging primary demographic information from the Center of Disease Control & Prevention (CDC), US census data from US Census Bureau and qualitative survey data from Gallup that will consist of 50 rows of State values and 50-55 columns of factors.  
+As stated in the Data Exploration subheading, our original dataset consisted of over 27 million rows of unique patient Covid-19 data sourced from the Center for Disease Control and Prevention (CDC) Case Surveillance Public Use Data. Having analyzed the quality of our data, the Team pivoted to finding additional, specific data that would support our model, have minimum missing data and null values and to answer our investigative questions with a unique perspective. Our primary and final dataset will be constructed by merging primary demographic information from the Center of Disease Control & Prevention (CDC), US census data from US Census Bureau and qualitative survey data from Gallup that will consist of 50 rows of State values and 50-55 columns of factors.  
 
 ## Database
 
@@ -124,8 +124,8 @@ As stated in the Data Exploration subheading, our original dataset consisted of 
 5. We repeated steps 3 and 4 for sex and race factors
 6. We read the query to summarize counts and selected Maryland as our test state for our new table
 7. Before creating the final table that include counts for the segments of each factor, we summarized each column's datatype.
-8. We created our final table to hold the total value counts: COVID_MARCH2020_DEC2020_PROJECT4
-9. Then we added up the counts for the segments of each factor and inserted into the COVID_MARCH2020_DEC2020_PROJECT4 table
+8. We created our final table to hold the total value counts: COVID_MARCH2020_DEC2020_TOTALS_PROJECT4
+9. Then we added up the counts for the segments of each factor and inserted into the COVID_MARCH2020_DEC2020_TOTALS_PROJECT4 table
 10. Exported to [COVID-19 Cases by Age, Sex, Race](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.csv)
 
 ### Data Dictionary
