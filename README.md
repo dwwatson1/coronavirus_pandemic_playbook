@@ -46,6 +46,45 @@ Given our audience for the project, the data we've obtained for each factor will
 3. Is there a connection between state policy or political leaning (i.e. mask mandate) and the spread of COVID-19 within the state
 4. Do we need to account for the size of the population that didn't have COVID-19 when using a machine learning model?
 
+### Roles
+
+* **Project Manager**
+    * David
+* **Database Storage**
+    * Dinah
+    * Kimi
+    * Michael
+* **Data Cleaning and Analysis**
+    * Dinah
+    * Kimi
+    * Michael
+* **Machine Learning Model**
+    * Michael
+* **Presentation of Findings**
+    * Yodit (Tableau)
+    * Jack (Tableau)
+    * David (approver) & Team (GitHub)
+
+### Technologies Used
+
+* **Database Storage**
+    * pgAdmin - PostgreSQL
+    * AWS RDS
+* **Data Cleaning and Analysis**
+    * Juypter Notebook - Pandas
+* **Machine Learning Model**
+    * Google Collab Notebook
+* **Presentation of Findings**
+    * Tableau Public
+    * GitHub
+
+### Communication Protocol 
+
+* [Project Checklist](https://docs.google.com/spreadsheets/d/1G9lvPyMrlkjnYT-qGigKpNdVk72A9Zu0Je7hyy8Q6ug/edit?usp=sharing)
+* [Group meeting agendas](https://drive.google.com/drive/folders/1sMOLvKQO-S99917fQL9axuocZujgKNZQ?usp=sharing)
+
+We are meeting twice a week outside of class on Zoom and consistently communicating over Slack. David has established best pratices in GitHub, so we don't overwrite each other's work.
+
 ## Data Exploration and Analysis Phases
 
 ### Data Exploration and Analysis Overview
@@ -212,6 +251,8 @@ sorted(zip(rf_model.feature_importances_, X.columns), reverse=True)
 
 ## Dashboard
 
+### [Tableau Dashboard Demo](https://public.tableau.com/views/ALLSTATESDATAMARCHtoDEC2020/Dashboard4?:language=en-US&:display_count=n&:origin=viz_share_link)
+
 ### Blueprint and Interactive Elements
 
 One of the interactive elements we are using is the filter action. Filter actions send information between worksheets. Typically, a filter action sends information from a selected mark to another sheet showing related information. Behind the scenes, filter actions send data values from the relevant source fields as filters to the target sheet and dashboards.
@@ -222,47 +263,3 @@ User can select marks to see information about a specific data filed. One can al
 When you select marks in the view, all other marks are dimmed to draw attention to the selection. The selection is saved with the workbook. Quick data view can also be done by one of the run-on options; hovering your mouse on the charts/marks. 
 
 We have also created a simple HTML file to show the dashboard in a dedicated webpage with another interactive element where users can download the analysis into PDF file. 
- 
-
-### [Tableau Dashboard Demo](https://public.tableau.com/views/ALLSTATESDATAMARCHtoDEC2020/Dashboard4?:language=en-US&:display_count=n&:origin=viz_share_link)
-
-## Appendix 
-
-### Roles
-
-* **Project Manager**
-    * David
-* **Database Storage**
-    * Dinah
-    * Kimi
-    * Michael
-* **Data Cleaning and Analysis**
-    * Dinah
-    * Kimi
-    * Michael
-* **Machine Learning Model**
-    * Michael
-* **Presentation of Findings**
-    * Yodit (Tableau)
-    * Jack (Tableau
-    * David (approver) & Team (GitHub)
-
-### Technologies Used
-
-* **Database Storage**
-    * pgAdmin - PostgreSQL
-    * AWS RDS
-* **Data Cleaning and Analysis**
-    * Juypter Notebook - Pandas
-* **Machine Learning Model**
-    * Google Collab Notebook
-* **Presentation of Findings**
-    * Tableau Public
-    * GitHub
-
-### Communication Protocol 
-
-* [Project Checklist](https://docs.google.com/spreadsheets/d/1G9lvPyMrlkjnYT-qGigKpNdVk72A9Zu0Je7hyy8Q6ug/edit?usp=sharing)
-* [Group meeting agendas](https://drive.google.com/drive/folders/1sMOLvKQO-S99917fQL9axuocZujgKNZQ?usp=sharing)
-
-We are meeting twice a week outside of class on Zoom and consistently communicating over Slack. David has established best pratices in GitHub, so we don't overwrite each other's work.
