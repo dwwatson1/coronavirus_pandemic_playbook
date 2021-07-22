@@ -173,6 +173,8 @@ The CDC dataset we used had many missing values for the patients age, sex, and r
 
 We did not want to delete observations as that would mean less data and also would misrepresent the total number of COVID cases. We also did not want to delete the variables as we felt age, sex, and race are important variables for understanding the spread of COVID. For age and sex, we decided to impute the missing values with the mode, as both variables had very low numbers of missing values (1% and 3% respectively). Race, however, had about 42% of missing data. Imputing the data with the mode would not be effective here as a few states had no race data at all. However, we felt that even though there were many missing values for race, the lack of data has something to show for itself. There is strong analysis that can be made on why that data is missing and exposes the weaknesses in data collection on behalf of the CDC and state governments, demonstrating how disjointed states were in their response to COVID and data collection, and on such a crucial factor such as race. That being said, the missing values still had to be accounted for in order for the data to be run through a machine learning model. Therefore, the total number of missing values for each state were put into its own column.
 
+We also were originally going to look at data for all 50 US states and DC. Unfortunately, the Gallup data that we are using for most of our features recorded no data for DC and we therefore had to remove DC from our dataset.
+
 ## Machine Learning
 
 ### Model Choice
