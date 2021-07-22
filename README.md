@@ -267,7 +267,7 @@ sorted(zip(rf_model.feature_importances_, X.columns), reverse=True)
 
 ## Dashboard
 
-### [Tableau Dashboard Demo](https://public.tableau.com/views/ALLSTATESDATAMARCHtoDEC2020/Dashboard4?:language=en-US&:display_count=n&:origin=viz_share_link)
+### [Tableau Dashboard Demo](https://public.tableau.com/views/THECOVIDPLAYBOOKDASHBOARD/THECOVIDPLAYBOOKDASHBOARD_1?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 ### Blueprint and Interactive Elements
 
