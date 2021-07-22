@@ -1,0 +1,680 @@
+# Module 20
+
+# Coronavirus Pandemic Playbook
+## Group 4
+	Leggett, Michael
+	Essilfie-Bondzie, DINAH
+	Teamir rezene, Yodit
+	Ellerbe, Kimberly
+	Gross, Jack
+	Watson, David
+
+
+---------------------------------------------
+1.	We input/imported data from the following tables into PGAdmin
+cdc_db_cleaned_part1 (into CDC_INPUTDB_CLEANED),
+cdc_db_cleaned_part2 (into CDC_INPUTDB_CLEANED),
+cdc_db_cleaned_part3 (into CDC_INPUTDB_CLEANED),
+cdc_db_cleaned_part4 (into CDC_INPUTDB_CLEANED),
+household_income_by_state (into ST_INCOME),
+state_factors_from_gallup (into US_POLITICS),
+census_sex_no_covid (into CENSUS_SEX),
+census_age_no_covid (into CENSUS_RACE)	
+
+
+2.	We created the following tables in PGAdmin, from CDC_INPUTDB_CLEANED:
+DATA_AGE_GROUP (We identified the age group options:
+age_group_0_17, age_group_18_49, age_group_50_64, age_group_65PLUS),
+
+US_STATES(We identified the states, dropping DC),
+
+DATA_SEX(We identified the sex options: MALE, FEMALE),
+
+DATA_RACE (We identified the race options:
+Asian, Black, Multiple/Other, White,
+American Indian/Alaska Native,
+Native Hawaiian/Other Pacific Islander,
+NO_IDENTIFIED_RACE)
+
+
+
+3.	Using the table: US_STATES, we created the table: COVID_MARCH2020_DEC2020_PROJECT4, 
+of totals per state, with calculated data from the table:CDC_INPUTDB_CLEANED
+
+------------------------
+1ST calculated the totals for the age group
+INSERT INTO AGE_GROUP
+(
+SELECT DISTINCT RES_STATE ST,AGE_GROUP,COUNT(DATA_ID)
+FROM CDC_INPUTDB_CLEANED
+GROUP BY RES_STATE, AGE_GROUP
+)
+------------------------
+Calculated the sex totals
+
+INSERT INTO SEX_GROUP
+(
+SELECT DISTINCT RES_STATE ST, SEX,COUNT(DATA_ID)
+FROM CDC_INPUTDB_CLEANED
+GROUP BY RES_STATE, SEX
+)
+
+INSERT INTO TOTAL_FEMALE
+(
+SELECT US_STATES.ST, SUM(TOTAL_AGE) COVID_SEX_FEMALE 
+FROM US_STATES
+LEFT JOIN SEX_GROUP 
+ON US_STATES.ST=SEX_GROUP.ST
+WHERE SEX = 'Female' 
+GROUP BY US_STATES.ST
+	)
+	
+INSERT INTO TOTAL_MALE
+(
+SELECT US_STATES.ST, SUM(TOTAL_AGE) COVID_SEX_MALE 
+FROM US_STATES
+LEFT JOIN SEX_GROUP 
+ON US_STATES.ST=SEX_GROUP.ST
+WHERE SEX = 'Male' 
+GROUP BY US_STATES.ST
+)
+
+
+CREATE TABLE TOTAL_FEMALE(
+ST                         TEXT,
+COVID_SEX_FEMALE           INTEGER);
+
+CREATE TABLE TOTAL_MALE(
+ST                         TEXT,
+COVID_SEX_MALE           INTEGER);
+
+
+------------------------
+Calculated the race totals
+
+INSERT INTO RACE_GROUP
+(
+SELECT DISTINCT RES_STATE ST,RACE,COUNT(DATA_ID)
+FROM CDC_INPUTDB_CLEANED
+GROUP BY RES_STATE, RACE
+)
+------------------------
+combined the totals
+
+
+
+4.	Using the table: US_STATES, we added all the tables with totals, 
+and created the table: COVID_MARCH2020_DEC2020_TOTALS_PROJECT4
+
+
+5.	We exported our table COVID_MARCH2020_DEC2020_TOTALS_PROJECT4 from PGAdmin to the csv file:
+COVID_MARCH2020_DEC2020_TOTALS_PROJECT4
+
+
+-----------------------------------------
+
+CREATE TABLE CDC_INPUTDB_CLEANED(
+DATA_ID                         INTEGER,
+res_state                       TEXT,
+age_group                       TEXT,
+sex                             TEXT,
+race                            TEXT);
+
+
+CREATE TABLE DATA_AGE_GROUP
+( AGE_GROUP       TEXT);
+
+	
+CREATE TABLE AGE_GROUP(
+ST                         TEXT,
+AGE_GROUP                  TEXT,
+TOTAL_AGE                  INTEGER);
+
+
+CREATE TABLE DATA_SEX
+( SEX       TEXT);
+
+
+CREATE TABLE DATA_RACE
+( RACE       TEXT);
+
+
+CREATE TABLE CDC_INPUTDB_CLEANED(
+DATA_ID                           INTEGER,
+res_state                       TEXT,
+age_group                       TEXT,
+sex                             TEXT,
+race                            TEXT
+	);
+
+
+CREATE TABLE US_STATES( 
+STATE           TEXT,
+ABBREV          TEXT,
+ST				TEXT);
+	
+	
+
+
+CREATE TABLE COVID_MARCH2020_DEC2020_TOTALS(
+STATE		                    	TEXT,
+ST		                        TEXT,
+COVID_age_group_0_17                  	INTEGER,
+COVID_age_group_18_49                 	INTEGER,
+COVID_age_group_50_64                 	INTEGER,
+COVID_age_group_65PLUS                	INTEGER,
+COVID_NO_age_group                 		INTEGER,
+COVID_sex_FEMALE                        INTEGER,
+COVID_sex_MALE                      	INTEGER,
+COVID_NO_SEX                       		INTEGER,
+COVID_race_WHITE                      	INTEGER,
+COVID_race_BLACK                      	INTEGER,
+COVID_race_ASIAN                      	INTEGER,
+COVID_race_MULTIPLE_OTHER             	INTEGER,
+COVID_race_AM_INDIAN_ALASKA_NATIVE    	INTEGER,
+COVID_race_NativeHawaiian_OtherPacificIslander INTEGER,
+COVID_NO_race         	             	INTEGER
+)
+
+
+----------
+
+INSERT INTO COVID_MARCH2020_DEC2020_TOTALS
+(
+SELECT F.STATE, F.ST, age_group_0_17, age_group_18_49, age_group_50_64, age_group_65PLUS, NO_AGE_GROUP, COVID_SEX_FEMALE, COVID_SEX_MALE, NO_SEX_GROUP,
+race_WHITE, race_BLACK, race_ASIAN, race_MULTIPLE_OTHER, race_AM_INDIAN_ALASKA_NATIVE, race_NATIVE_HAWAIIAN_OTHER_PACIFIC, NO_RACE
+FROM
+US_STATES F
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) age_group_0_17 
+FROM AGE_GROUP 
+WHERE AGE_GROUP = '0 - 17 years' 
+GROUP BY ST) AS A
+ ON F.ST=A.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) age_group_18_49 
+FROM AGE_GROUP 
+WHERE AGE_GROUP = '18 to 49 years' 
+GROUP BY ST) AS B
+ON F.ST=B.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) age_group_50_64 
+FROM AGE_GROUP 
+WHERE AGE_GROUP = '50 to 64 years' 
+GROUP BY ST) AS C
+ ON F.ST=C.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) age_group_65PLUS
+FROM  AGE_GROUP 
+WHERE AGE_GROUP = '65+ years' 
+GROUP BY ST) AS D
+ ON F.ST=D.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) NO_AGE_GROUP 
+FROM AGE_GROUP 
+WHERE AGE_GROUP  NOT IN ('0 - 17 years', '18 to 49 years', '50 to 64 years', '65+ years')
+GROUP BY ST) AS E
+ ON F.ST=E.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) COVID_SEX_FEMALE 
+FROM  SEX_GROUP 
+WHERE SEX = 'Female' 
+GROUP BY ST) G
+ ON F.ST=G.ST
+ LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) COVID_SEX_MALE 
+FROM SEX_GROUP 
+WHERE SEX = 'Male' 
+GROUP BY ST) H
+ ON F.ST=H.ST
+ LEFT JOIN
+ (SELECT ST, SUM(TOTAL_AGE) NO_SEX_GROUP 
+FROM SEX_GROUP 
+WHERE SEX NOT IN ('Male','Female') 
+GROUP BY ST) I
+ ON F.ST=I.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) race_WHITE 
+FROM  RACE_GROUP 
+WHERE RACE = 'White'
+GROUP BY ST) AS L
+ ON F.ST=L.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) race_Black 
+FROM  RACE_GROUP 
+WHERE RACE = 'Black'
+GROUP BY ST) AS M
+ ON F.ST=M.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) race_Asian 
+FROM RACE_GROUP 
+WHERE RACE = 'Asian'
+GROUP BY ST) AS N
+ ON F.ST=N.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) race_MULTIPLE_OTHER
+FROM  RACE_GROUP 
+WHERE RACE = 'Multiple/Other'
+GROUP BY ST) AS O
+ ON F.ST=O.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) race_AM_INDIAN_ALASKA_NATIVE 
+FROM  RACE_GROUP
+WHERE RACE = 'American Indian/Alaska Native'
+GROUP BY ST) AS P
+ ON F.ST=P.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) race_NATIVE_HAWAIIAN_OTHER_PACIFIC 
+FROM  RACE_GROUP
+WHERE RACE = 'Native Hawaiian/Other Pacific Islander'
+GROUP BY ST) AS Q
+ ON F.ST=Q.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) NO_race 
+FROM  RACE_GROUP
+WHERE RACE NOT IN ('White', 'Black', 'Asian', 'Multiple/Other', 'American Indian/Alaska Native', 'Native Hawaiian/Other Pacific Islander')
+GROUP BY ST) AS R
+ ON F.ST=R.ST
+)
+----------
+
+
+CREATE TABLE ST_INCOME
+( ST           	TEXT,
+  MEDIAN_INCOME         INTEGER);
+
+
+CREATE TABLE US_POLITICS
+( STATE           				TEXT,
+ST						TEXT,
+CENSUS_Population 				INTEGER,
+State_Policy_Prevention_Mandates_Score		INTEGER,
+Trump_approval 					INTEGER,
+Trump_disapproval 				INTEGER,
+People_who_dont_care_about_Trump 		INTEGER,
+Number_Republican_lean 				INTEGER,
+Number_Democrat_lean				INTEGER,
+Number_Neither_Democrat_or_Republican		INTEGER,
+Number_Conservatives				INTEGER,
+Number_Moderates				INTEGER,
+Number_Liberals					INTEGER,
+Number_NO_political_ideology			INTEGER,
+Economic_Confidence_Index			INTEGER,
+Number_very_religious				INTEGER,
+Number_Moderatly_religious			INTEGER,
+Number_Nonreligious				INTEGER,
+PERCENT_Uninsured				INTEGER,
+Number_uninsured				INTEGER,
+Number_Insured					INTEGER,
+Number_Exercise_frequently			INTEGER,
+Number_dont_exercise_frequently			INTEGER,
+Number_eat_produce_frequently			INTEGER,
+Number_dont_eat_produce_frequently		INTEGER,
+Number_feel_recognize_by_community 		INTEGER,
+Number_dont_feel_community_recognition		INTEGER,
+Number_Feel_active_and_productive		INTEGER,
+Number_arent_active_and_productive		INTEGER,
+Number_Worried_about_money			INTEGER,
+Number_NOT_worried_about_money			INTEGER);
+
+
+
+CREATE TABLE NOCOVID_CENSUS_SEX
+( ST           			TEXT,
+Total_SEX_population		INTEGER,
+sex_male_no_covid	        INTEGER,
+sex_female_no_covid		INTEGER);
+
+
+CREATE TABLE COVID_CASES_SEX
+( ST           			TEXT,
+COVID_SEX_MALE      		INTEGER,
+COVID_SEX_FEMALE		INTEGER,
+COVID_NO_SEX               	INTEGER);
+
+
+CREATE TABLE NOCOVID_CENSUS_AGE
+( ST           			TEXT,
+Total_AGE_population		INTEGER,
+age_group_0_17_no_covid		INTEGER,
+age_group_18_49_no_covid	INTEGER,
+age_group_50_64_no_covid	INTEGER,
+age_group_65plus_no_covid	INTEGER);
+
+
+CREATE TABLE COVID_CASES_AGE
+( ST           			TEXT,
+COVID_AGE_GOUP_0_17		INTEGER,
+COVID_AGE_GOUP_18_49		INTEGER,
+COVID_AGE_GOUP_50_64		INTEGER,
+COVID_AGE_GOUP_65plus		INTEGER,
+COVID_NO_AGE_GOUP               INTEGER);
+
+
+CREATE TABLE COVID_CASES_RACE
+( ST           			        	TEXT,
+COVID_race_ASIAN                      		INTEGER,
+COVID_race_AMERICAN_INDIAN_ALASKA_NATIVE    	INTEGER,
+COVID_race_BLACK                      		INTEGER,
+COVID_race_MULTIPLE_OTHER             		INTEGER,
+COVID_race_WHITE                      		INTEGER,
+COVID_race_HAWAIIAN_OTHER_PACIFIC		INTEGER,
+COVID_NO_race                      		INTEGER);
+
+
+
+CREATE TABLE AIRPORT_BY_AREA
+( ST           			TEXT,
+ STATE					TEXT,
+TOT_AIRPORTS			INTEGER,
+STATE_LAND_AREA_SQMILE		INTEGER,
+AIRPORT_AREA			DECIMAL);
+
+
+
+CREATE TABLE COVID_MARCH2020_DEC2020_TOTALS_PROJECT4
+(STATE				TEXT,
+ST           			TEXT,
+COVID_AGE_GOUP_0_17		INTEGER,
+COVID_AGE_GOUP_18_49		INTEGER,
+COVID_AGE_GOUP_50_64		INTEGER,
+COVID_AGE_GOUP_65plus		INTEGER,
+COVID_NO_AGE_GOUP               INTEGER,
+Total_AGE_population		INTEGER,
+age_group_0_17_no_covid		INTEGER,
+age_group_18_49_no_covid	INTEGER,
+age_group_50_64_no_covid	INTEGER,
+age_group_65plus_no_covid	INTEGER,
+COVID_SEX_MALE      		INTEGER,
+COVID_SEX_FEMALE		INTEGER,
+COVID_NO_SEX               	INTEGER,
+Total_SEX_population		INTEGER,
+sex_male_no_covid	        INTEGER,
+sex_female_no_covid		INTEGER,
+COVID_race_ASIAN                      		INTEGER,
+COVID_race_AMERICAN_INDIAN_ALASKA_NATIVE    	INTEGER,
+COVID_race_BLACK                      		INTEGER,
+COVID_race_MULTIPLE_OTHER             		INTEGER,
+COVID_race_WHITE                      		INTEGER,
+COVID_race_HAWAIIAN_OTHER_PACIFIC		INTEGER,
+COVID_NO_race                      		INTEGER,
+MEDIAN_INCOME         				INTEGER,
+CENSUS_Population 				INTEGER,
+State_Policy_Prevention_Mandates_Score		DECIMAL,
+Trump_approval 					INTEGER,
+Trump_disapproval 				INTEGER,
+People_who_dont_care_about_Trump 		INTEGER,
+Number_Republican_lean 				INTEGER,
+Number_Democrat_lean				INTEGER,
+Number_Neither_Democrat_or_Republican		INTEGER,
+Number_Conservatives				INTEGER,
+Number_Moderates				INTEGER,
+Number_Liberals					INTEGER,
+Number_NO_political_ideology			INTEGER,
+Economic_Confidence_Index			INTEGER,
+Number_very_religious				INTEGER,
+Number_Moderatly_religious			INTEGER,
+Number_Nonreligious				INTEGER,
+PERCENT_Uninsured				INTEGER,
+Number_uninsured				DECIMAL,
+Number_Insured					INTEGER,
+Number_Exercise_frequently			INTEGER,
+Number_dont_exercise_frequently			INTEGER,
+Number_eat_produce_frequently			INTEGER,
+Number_dont_eat_produce_frequently		INTEGER,
+Number_feel_recognize_by_community 		INTEGER,
+Number_dont_feel_community_recognition		INTEGER,
+Number_Feel_active_and_productive		INTEGER,
+Number_arent_active_and_productive		INTEGER,
+Number_Worried_about_money			INTEGER,
+Number_NOT_worried_about_money			INTEGER,
+TOT_AIRPORTS					INTEGER,
+STATE_LAND_AREA_SQMILE				INTEGER,
+AIRPORT_AREA					DECIMAL);
+
+
+------
+
+SELECT ST, Total_SEX_population, sex_male_no_covid, sex_female_no_covid FROM NOCOVID_CENSUS_SEX
+
+SELECT ST, Total_AGE_population, age_group_0_17_no_covid, age_group_18_49_no_covid, age_group_50_64_no_covid, age_group_65plus_no_covid
+FROM NOCOVID_CENSUS_AGE
+
+SELECT ST STATE, MEDIAN_INCOME FROM ST_INCOME
+
+SELECT ST, CENSUS_Population, State_Policy_Prevention_Mandates_Score, Trump_approval, Trump_disapproval,
+People_who_dont_care_about_Trump, Number_Republican_lean, Number_Democrat_lean, Number_Neither_Democrat_or_Republican,
+Number_Conservatives, Number_Moderates, Number_Liberals, Number_NO_political_ideology, Economic_Confidence_Index,
+Number_very_religious, Number_Moderatly_religious, Number_Nonreligious, PERCENT_Uninsured, Number_uninsured, Number_Insured,
+Number_Exercise_frequently, Number_dont_exercise_frequently, Number_eat_produce_frequently, Number_dont_eat_produce_frequently,
+Number_feel_recognize_by_community, Number_dont_feel_community_recognition, Number_Feel_active_and_productive, 
+Number_arent_active_and_productive, Number_Worried_about_money, Number_NOT_worried_about_money
+FROM US_POLITICS
+
+SELECT ST, TOT_AIRPORTS, STATE_LAND_AREA_SQMILE AIRPORT_AREA FROM AIRPORT_BY_AREA
+
+------
+
+
+
+FOR ERD
+---------
+
+CDC_INPUTDB_CLEANED 
+-
+DATA_ID                         INTEGER,
+res_state TEXT, FK >- COVID_CASES_SEX.ST
+age_group TEXT,
+sex TEXT,
+race TEXT
+
+
+ST_INCOME
+-
+ST TEXT, FK >- COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.ST
+MEDIAN_INCOME       INTEGER
+
+
+US_POLITICS
+-
+STATE               TEXT,
+ST TEXT, FK >- COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.ST
+CENSUS_Population   INTEGER,
+State_Policy_Prevention_Mandates_Score  INTEGER,
+Trump_approval      INTEGER,
+Trump_disapproval   INTEGER,
+People_who_dont_care_about_Trump        INTEGER,
+Number_Republican_lean                  INTEGER,
+Number_Democrat_lean                    INTEGER,
+Number_Neither_Democrat_or_Republican   INTEGER,
+Number_Conservatives                    INTEGER,
+Number_Moderates                        INTEGER,
+Number_Liberals                         INTEGER,
+Number_NO_political_ideology            INTEGER,
+Economic_Confidence_Index               INTEGER,
+Number_very_religious                   INTEGER,
+Number_Moderatly_religious              INTEGER,
+Number_Nonreligious                     INTEGER,
+PERCENT_Uninsured                       INTEGER,
+Number_uninsured                        INTEGER,
+Number_Insured                          INTEGER,
+Number_Exercise_frequently              INTEGER,
+Number_dont_exercise_frequently         INTEGER,
+Number_eat_produce_frequently           INTEGER,
+Number_dont_eat_produce_frequently      INTEGER,
+Number_feel_recognize_by_community      INTEGER,
+Number_dont_feel_community_recognition  INTEGER,
+Number_Feel_active_and_productive       INTEGER,
+Number_arent_active_and_productive      INTEGER,
+Number_Worried_about_money              INTEGER,
+Number_NOT_worried_about_money          INTEGER
+
+
+
+NOCOVID_CENSUS_SEX
+-
+ST TEXT, FK >- COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.ST
+Total_SEX_population        INTEGER,
+sex_male_no_covid           INTEGER,
+sex_female_no_covid         INTEGER);
+
+
+COVID_CASES_SEX
+-
+ST TEXT, FK >- COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.ST
+COVID_SEX_MALE      INTEGER,
+COVID_SEX_FEMALE    INTEGER
+
+
+
+NOCOVID_CENSUS_AGE
+-
+ST TEXT, FK >- COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.ST
+Total_AGE_population        INTEGER,
+age_group_0_17_no_covid     INTEGER,
+age_group_18_49_no_covid    INTEGER,
+age_group_50_64_no_covid    INTEGER,
+age_group_65plus_no_covid   INTEGER
+
+
+COVID_CASES_AGE
+-
+ST TEXT, FK >- CDC_INPUTDB_CLEANED.res_state
+COVID_AGE_GOUP_0_17         INTEGER,
+COVID_AGE_GOUP_18_49        INTEGER,
+COVID_AGE_GOUP_50_64        INTEGER,
+COVID_AGE_GOUP_65plus       INTEGER
+
+
+COVID_CASES_RACE
+-
+ST TEXT, FK >- CDC_INPUTDB_CLEANED.res_state
+COVID_RACE_POP                          INTEGER,
+COVID_race_ASIAN                        INTEGER,
+COVID_race_AMERICAN_INDIAN_ALASKA_NATIVE    INTEGER,
+COVID_race_BLACK                        INTEGER,
+COVID_race_MULTIPLE_OTHER               INTEGER,
+COVID_race_WHITE                        INTEGER,
+COVID_race_HAWAIIAN_OTHER_PACIFIC       INTEGER,
+COVID_NO_race                           INTEGER
+
+
+AIRPORT_BY_AREA
+-
+ST TEXT, FK >- COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.ST
+TOT_AIRPORTS            INTEGER,
+STATE_LAND_AREA_SQMILE  INTEGER,
+AIRPORT_AREA            INTEGER
+
+
+
+
+CREATE TABLE COVID_MARCH2020_DEC2020_TOTALS_PROJECT4
+(STATE						TEXT,
+ST           				TEXT,
+COVID_AGE_GOUP_0_17			INTEGER,
+COVID_AGE_GOUP_18_49		INTEGER,
+COVID_AGE_GOUP_50_64		INTEGER,
+COVID_AGE_GOUP_65plus		INTEGER,
+COVID_NO_AGE_GOUP           INTEGER,
+COVID_sex_FEMALE            INTEGER,
+COVID_sex_MALE              INTEGER,
+COVID_NO_SEX                INTEGER,
+COVID_race_WHITE            INTEGER,
+COVID_race_BLACK            INTEGER,
+COVID_race_ASIAN            INTEGER,
+COVID_race_MULTIPLE_OTHER             	 INTEGER,
+COVID_race_AM_INDIAN_ALASKA_NATIVE    	 INTEGER,
+COVID_race_NATIVE_HAWAIIAN_OTHER_PACIFIC INTEGER,
+COVID_NO_race         	             	 INTEGER
+Total_AGE_population		INTEGER,
+age_group_0_17_no_covid		INTEGER,
+age_group_18_49_no_covid	INTEGER,
+age_group_50_64_no_covid	INTEGER,
+age_group_65plus_no_covid	INTEGER,
+Total_SEX_population		INTEGER,
+sex_male_no_covid	        INTEGER,
+sex_female_no_covid			INTEGER,
+MEDIAN_INCOME         		INTEGER,
+CENSUS_Population 			INTEGER,
+State_Policy_Prevention_Mandates_Score		DECIMAL,
+Trump_approval 				INTEGER,
+Trump_disapproval 			INTEGER,
+People_who_dont_care_about_Trump 		INTEGER,
+Number_Republican_lean 		INTEGER,
+Number_Democrat_lean		INTEGER,
+Number_Neither_Democrat_or_Republican	INTEGER,
+Number_Conservatives		INTEGER,
+Number_Moderates			INTEGER,
+Number_Liberals				INTEGER,
+Number_NO_political_ideology			INTEGER,
+Economic_Confidence_Index				INTEGER,
+Number_very_religious					INTEGER,
+Number_Moderatly_religious				INTEGER,
+Number_Nonreligious			INTEGER,
+PERCENT_Uninsured			INTEGER,
+Number_uninsured			DECIMAL,
+Number_Insured				INTEGER,
+Number_Exercise_frequently	INTEGER,
+Number_dont_exercise_frequently			INTEGER,
+Number_eat_produce_frequently			INTEGER,
+Number_dont_eat_produce_frequently		INTEGER,
+Number_feel_recognize_by_community 		INTEGER,
+Number_dont_feel_community_recognition	INTEGER,
+Number_Feel_active_and_productive		INTEGER,
+Number_arent_active_and_productive		INTEGER,
+Number_Worried_about_money				INTEGER,
+Number_NOT_worried_about_money			INTEGER,
+TOT_AIRPORTS				INTEGER,
+STATE_LAND_AREA_SQMILE		INTEGER,
+AIRPORT_AREA				DECIMAL);
+
+----------------------------------------------------
+
+
+INSERT INTO COVID_MARCH2020_DEC2020_TOTALS_PROJECT4
+(
+SELECT A.STATE, A.ST, COVID_age_group_0_17, COVID_age_group_18_49, COVID_age_group_50_64, COVID_age_group_65PLUS,
+COVID_NO_age_group, COVID_sex_FEMALE, COVID_sex_MALE, COVID_NO_SEX, COVID_race_WHITE, COVID_race_BLACK,
+COVID_race_ASIAN, COVID_race_MULTIPLE_OTHER, COVID_race_AM_INDIAN_ALASKA_NATIVE, 
+COVID_race_NATIVE_HAWAIIAN_OTHER_PACIFIC, COVID_NO_race, Total_AGE_population, age_group_0_17_no_covid, age_group_18_49_no_covid, 
+age_group_50_64_no_covid, age_group_65plus_no_covid, Total_SEX_population, sex_male_no_covid, sex_female_no_covid,
+MEDIAN_INCOME, CENSUS_Population, State_Policy_Prevention_Mandates_Score, Trump_approval, Trump_disapproval,
+People_who_dont_care_about_Trump, Number_Republican_lean, Number_Democrat_lean, Number_Neither_Democrat_or_Republican,
+Number_Conservatives, Number_Moderates, Number_Liberals, Number_NO_political_ideology, Economic_Confidence_Index,
+Number_very_religious, Number_Moderatly_religious, Number_Nonreligious, PERCENT_Uninsured, Number_uninsured, Number_Insured,
+Number_Exercise_frequently, Number_dont_exercise_frequently, Number_eat_produce_frequently, Number_dont_eat_produce_frequently,
+Number_feel_recognize_by_community, Number_dont_feel_community_recognition, Number_Feel_active_and_productive, 
+Number_arent_active_and_productive, Number_Worried_about_money, Number_NOT_worried_about_money, TOT_AIRPORTS, STATE_LAND_AREA_SQMILE, AIRPORT_AREA 
+FROM COVID_MARCH2020_DEC2020_TOTALS  A
+LEFT JOIN
+(SELECT ST, Total_SEX_population, sex_male_no_covid, sex_female_no_covid FROM NOCOVID_CENSUS_SEX) B
+ON A.ST=B.ST
+LEFT JOIN
+(SELECT ST, Total_AGE_population, age_group_0_17_no_covid, age_group_18_49_no_covid, age_group_50_64_no_covid, age_group_65plus_no_covid
+FROM NOCOVID_CENSUS_AGE) C
+ON A.ST=C.ST
+LEFT JOIN
+(SELECT ST, MEDIAN_INCOME FROM ST_INCOME) D
+ON A.STATE=D.ST
+LEFT JOIN
+(SELECT ST, CENSUS_Population, State_Policy_Prevention_Mandates_Score, Trump_approval, Trump_disapproval,
+People_who_dont_care_about_Trump, Number_Republican_lean, Number_Democrat_lean, Number_Neither_Democrat_or_Republican,
+Number_Conservatives, Number_Moderates, Number_Liberals, Number_NO_political_ideology, Economic_Confidence_Index,
+Number_very_religious, Number_Moderatly_religious, Number_Nonreligious, PERCENT_Uninsured, Number_uninsured, Number_Insured,
+Number_Exercise_frequently, Number_dont_exercise_frequently, Number_eat_produce_frequently, Number_dont_eat_produce_frequently,
+Number_feel_recognize_by_community, Number_dont_feel_community_recognition, Number_Feel_active_and_productive, 
+Number_arent_active_and_productive, Number_Worried_about_money, Number_NOT_worried_about_money
+FROM US_POLITICS) E
+ON A.ST=E.ST
+LEFT JOIN
+(SELECT ST, TOT_AIRPORTS, STATE_LAND_AREA_SQMILE, AIRPORT_AREA FROM AIRPORT_BY_AREA) F
+ON A.ST=F.ST
+)
+
+------------------------------------------------
+DC needs to be removed.
+Our target variable is not here which is (total # of state covid cases / state population)
+We do not need both 'total_age_population' and 'total_sex_population' as they have the same data. I would suggest removing one of them and renaming the other 'total_state_population'
+We need total covid populations (could be done by adding the covid_sex_female and covid_sex_male columns) for each state and total no_covid populations for each state (subtract the total covid population from the total population for each state).
+
