@@ -33,18 +33,210 @@ DATA_SEX(We identified the sex options: MALE, FEMALE),
 DATA_RACE (We identified the race options:
 Asian, Black, Multiple/Other, White,
 American Indian/Alaska Native,
-Native Hawaiian/Other Pacific Islander)
+Native Hawaiian/Other Pacific Islander,
+NO_IDENTIFIED_RACE)
 
 
 
-3.	Using the table: US_STATES, we created the table: COVID_MARCH2020_DEC2020_PROJECT4, 
-of totals per state, with calculated data from the table:CDC_INPUTDB_CLEANED
+3.	Using the table: US_STATES, we created COVID totals, of totals per state, from the table:CDC_INPUTDB_CLEANED
+
+------------------------
+1ST calculated the totals for the age group
+INSERT INTO AGE_GROUP
+(
+SELECT DISTINCT RES_STATE ST,AGE_GROUP, COUNT(DATA_ID) TOTAL_AGE
+FROM CDC_INPUTDB_CLEANED
+GROUP BY RES_STATE, AGE_GROUP
+)
+------------------------
+Calculated the sex totals
+
+INSERT INTO SEX_GROUP
+(
+SELECT DISTINCT RES_STATE ST, SEX, COUNT(DATA_ID) TOTAL_SEX
+FROM CDC_INPUTDB_CLEANED
+GROUP BY RES_STATE, SEX
+)
 
 
-4.	Using the table: US_STATES, we added all the tables with totals, 
+------------------------
+Calculated the race totals
+
+INSERT INTO RACE_GROUP
+(
+SELECT DISTINCT RES_STATE ST,RACE,COUNT(DATA_ID) TOTAL_RACE
+FROM CDC_INPUTDB_CLEANED
+GROUP BY RES_STATE, RACE
+)
+------------------------
+
+
+
+
+4.	Using the table: US_STATES, and the calculated COVID totals, 
+and created the table: COVID_MARCH2020_DEC2020_TOTALS
+(limited function of the SQL process due to limit of my personal laptop)
+-----------------------
+
+INSERT INTO COVID_MARCH2020_DEC2020_TOTALS
+(
+SELECT F.STATE, F.ST, age_group_0_17, age_group_18_49, age_group_50_64, age_group_65PLUS, NO_AGE_GROUP, COVID_SEX_FEMALE, COVID_SEX_MALE, NO_SEX_GROUP,
+race_WHITE, race_BLACK, race_ASIAN, race_MULTIPLE_OTHER, race_AM_INDIAN_ALASKA_NATIVE, race_NATIVE_HAWAIIAN_OTHER_PACIFIC, NO_RACE
+FROM
+US_STATES F
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) age_group_0_17 
+FROM AGE_GROUP 
+WHERE AGE_GROUP = '0 - 17 years' 
+GROUP BY ST) AS A
+ ON F.ST=A.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) age_group_18_49 
+FROM AGE_GROUP 
+WHERE AGE_GROUP = '18 to 49 years' 
+GROUP BY ST) AS B
+ON F.ST=B.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) age_group_50_64 
+FROM AGE_GROUP 
+WHERE AGE_GROUP = '50 to 64 years' 
+GROUP BY ST) AS C
+ ON F.ST=C.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) age_group_65PLUS
+FROM  AGE_GROUP 
+WHERE AGE_GROUP = '65+ years' 
+GROUP BY ST) AS D
+ ON F.ST=D.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_AGE) NO_AGE_GROUP 
+FROM AGE_GROUP 
+WHERE AGE_GROUP  NOT IN ('0 - 17 years', '18 to 49 years', '50 to 64 years', '65+ years')
+GROUP BY ST) AS E
+ ON F.ST=E.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_SEX) COVID_SEX_FEMALE 
+FROM  SEX_GROUP 
+WHERE SEX = 'Female' 
+GROUP BY ST) G
+ ON F.ST=G.ST
+ LEFT JOIN
+(SELECT ST, SUM(TOTAL_SEX) COVID_SEX_MALE 
+FROM SEX_GROUP 
+WHERE SEX = 'Male' 
+GROUP BY ST) H
+ ON F.ST=H.ST
+ LEFT JOIN
+ (SELECT ST, SUM(TOTAL_SEX) NO_SEX_GROUP 
+FROM SEX_GROUP 
+WHERE SEX NOT IN ('Male','Female') 
+GROUP BY ST) I
+ ON F.ST=I.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_RACE) race_WHITE 
+FROM  RACE_GROUP 
+WHERE RACE = 'White'
+GROUP BY ST) AS L
+ ON F.ST=L.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_RACE) race_Black 
+FROM  RACE_GROUP 
+WHERE RACE = 'Black'
+GROUP BY ST) AS M
+ ON F.ST=M.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_RACE) race_Asian 
+FROM RACE_GROUP 
+WHERE RACE = 'Asian'
+GROUP BY ST) AS N
+ ON F.ST=N.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_RACE) race_MULTIPLE_OTHER
+FROM  RACE_GROUP 
+WHERE RACE = 'Multiple/Other'
+GROUP BY ST) AS O
+ ON F.ST=O.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_RACE) race_AM_INDIAN_ALASKA_NATIVE 
+FROM  RACE_GROUP
+WHERE RACE = 'American Indian/Alaska Native'
+GROUP BY ST) AS P
+ ON F.ST=P.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_RACE) race_NATIVE_HAWAIIAN_OTHER_PACIFIC 
+FROM  RACE_GROUP
+WHERE RACE = 'Native Hawaiian/Other Pacific Islander'
+GROUP BY ST) AS Q
+ ON F.ST=Q.ST
+LEFT JOIN
+(SELECT ST, SUM(TOTAL_RACE) NO_race 
+FROM  RACE_GROUP
+WHERE RACE NOT IN ('White', 'Black', 'Asian', 'Multiple/Other', 'American Indian/Alaska Native', 'Native Hawaiian/Other Pacific Islander')
+GROUP BY ST) AS R
+ ON F.ST=R.ST
+)
+-----------------------
+
+5.	Using the table: US_STATES, we added all the tables with totals, 
 and created the table: COVID_MARCH2020_DEC2020_TOTALS_PROJECT4
+-----------------------
 
 
-5.	We exported our table COVID_MARCH2020_DEC2020_TOTALS_PROJECT4 from PGAdmin to the csv file:
+INSERT INTO COVID_MARCH2020_DEC2020_TOTALS_PROJECT4
+(
+SELECT A.STATE, A.ST, COVID_age_group_0_17, COVID_age_group_18_49, COVID_age_group_50_64, COVID_age_group_65PLUS,
+COVID_NO_age_group, COVID_sex_FEMALE, COVID_sex_MALE, COVID_NO_SEX, COVID_race_WHITE, COVID_race_BLACK,
+COVID_race_ASIAN, COVID_race_MULTIPLE_OTHER, COVID_race_AM_INDIAN_ALASKA_NATIVE, 
+COVID_race_NATIVE_HAWAIIAN_OTHER_PACIFIC, COVID_NO_race, Total_AGE_population, age_group_0_17_no_covid, age_group_18_49_no_covid, 
+age_group_50_64_no_covid, age_group_65plus_no_covid, Total_SEX_population, sex_male_no_covid, sex_female_no_covid,
+MEDIAN_INCOME, CENSUS_Population, State_Policy_Prevention_Mandates_Score, Trump_approval, Trump_disapproval,
+People_who_dont_care_about_Trump, Number_Republican_lean, Number_Democrat_lean, Number_Neither_Democrat_or_Republican,
+Number_Conservatives, Number_Moderates, Number_Liberals, Number_NO_political_ideology, Economic_Confidence_Index,
+Number_very_religious, Number_Moderatly_religious, Number_Nonreligious, PERCENT_Uninsured, Number_uninsured, Number_Insured,
+Number_Exercise_frequently, Number_dont_exercise_frequently, Number_eat_produce_frequently, Number_dont_eat_produce_frequently,
+Number_feel_recognize_by_community, Number_dont_feel_community_recognition, Number_Feel_active_and_productive, 
+Number_arent_active_and_productive, Number_Worried_about_money, Number_NOT_worried_about_money, TOT_AIRPORTS, STATE_LAND_AREA_SQMILE, AIRPORT_AREA 
+FROM COVID_MARCH2020_DEC2020_TOTALS  A
+LEFT JOIN
+(SELECT ST, Total_SEX_population, sex_male_no_covid, sex_female_no_covid FROM NOCOVID_CENSUS_SEX) B
+ON A.ST=B.ST
+LEFT JOIN
+(SELECT ST, Total_AGE_population, age_group_0_17_no_covid, age_group_18_49_no_covid, age_group_50_64_no_covid, age_group_65plus_no_covid
+FROM NOCOVID_CENSUS_AGE) C
+ON A.ST=C.ST
+LEFT JOIN
+(SELECT ST, MEDIAN_INCOME FROM ST_INCOME) D
+ON A.STATE=D.ST
+LEFT JOIN
+(SELECT ST, CENSUS_Population, State_Policy_Prevention_Mandates_Score, Trump_approval, Trump_disapproval,
+People_who_dont_care_about_Trump, Number_Republican_lean, Number_Democrat_lean, Number_Neither_Democrat_or_Republican,
+Number_Conservatives, Number_Moderates, Number_Liberals, Number_NO_political_ideology, Economic_Confidence_Index,
+Number_very_religious, Number_Moderatly_religious, Number_Nonreligious, PERCENT_Uninsured, Number_uninsured, Number_Insured,
+Number_Exercise_frequently, Number_dont_exercise_frequently, Number_eat_produce_frequently, Number_dont_eat_produce_frequently,
+Number_feel_recognize_by_community, Number_dont_feel_community_recognition, Number_Feel_active_and_productive, 
+Number_arent_active_and_productive, Number_Worried_about_money, Number_NOT_worried_about_money
+FROM US_POLITICS) E
+ON A.ST=E.ST
+LEFT JOIN
+(SELECT ST, TOT_AIRPORTS, STATE_LAND_AREA_SQMILE, AIRPORT_AREA FROM AIRPORT_BY_AREA) F
+ON A.ST=F.ST
+)
+
+------------------------------------------------
+
+6.	We exported our table COVID_MARCH2020_DEC2020_TOTALS_PROJECT4 from PGAdmin to the csv file:
 COVID_MARCH2020_DEC2020_TOTALS_PROJECT4
 
+
+7.	In Excel, after the export, we had to do the following, to make the data even more representative
+
+a.	remove NO_COVID_AGE_GROUP, and NO_COVID_SEX because they were null values
+b.	rename Total_AGE_population to total_STATE_population
+C.	remove Total_SEX_population because it had the same value as Total_AGE_population/total_COVID_ST_population
+d.	remove DC data because it had too many nill values
+e.	change the few other nill values to zero
+f.	create the target variable: TARGET_VAR_COVID_NO_per_STATE from (total_COVID_ST_population / total_STATE_population)
+g.	added the total_COVID_ST_population from the sum of COVID_sex_FEMALE, and COVID_sex_MALE,
+h.	added total_noCOVID_ST_population from total_STATE_population-total_COVID_ST_population
+
+------------------------------------------------
