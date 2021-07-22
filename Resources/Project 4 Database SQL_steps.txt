@@ -238,5 +238,7 @@ e.	change the few other nill values to zero
 f.	create the target variable: TARGET_VAR_COVID_NO_per_STATE from (total_COVID_ST_population / total_STATE_population)
 g.	added the total_COVID_ST_population from the sum of COVID_sex_FEMALE, and COVID_sex_MALE,
 h.	added total_noCOVID_ST_population from total_STATE_population-total_COVID_ST_population
+i.	created the POPULATION_DENSITY from total_STATE_population/state_land_area_sqmile
+
 
 ------------------------------------------------
