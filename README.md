@@ -258,6 +258,8 @@ print('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))
 print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
 ```
 
+![Accuracy](Resources/accuracy.PNG)
+
 We finally rank the importance of the features and see which have the most impact on the output.
 
 ```
@@ -266,6 +268,8 @@ importances
 
 sorted(zip(rf_model.feature_importances_, X.columns), reverse=True)
 ```
+
+![Results](Resources/features_ranked.PNG)
 
 ## Dashboard
 
