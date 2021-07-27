@@ -273,7 +273,7 @@ sorted(zip(rf_model.feature_importances_, X.columns), reverse=True)
 
 ![Results](Resources/features_ranked.PNG)
 
-Interestingly, we find that the highest ranking feature in the spread of COVID is COVID cases in the 0-17 age group, which made up 44%. This means that our model found that children are the largest factor in the spread of COVID nationwide. Not too surprisingly, we also find that population density is a high factor in spread, as well as white people which isn't too surprising either as roughly 76% of U.S. citizens are white. Our model also ranked liberals and people with Democratic-leans higher than conservatives or people with Republican-leans. This might be because most liberals or Democrats live in highly population dense areas and therefore are more likely to spread COVID.
+Interestingly, we find that the highest ranking feature in the spread of COVID is COVID cases in the 0-17 age group, which made up 44%. This means that our model found that children are the largest factor in the spread of COVID nationwide. Not too surprisingly, we also find that population density is a high factor in spread, as well as white people which isn't too surprising either as roughly 76% of U.S. citizens are white. Our model also ranked liberals and people with Democratic-leans higher than conservatives or people with Republican-leans. We think this might be better explained by most liberals or Democrats live in highly population dense areas, rather than ideological differences.
 
 ## Dashboard
 
