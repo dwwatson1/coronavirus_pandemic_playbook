@@ -260,6 +260,8 @@ print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_p
 
 ![Accuracy](Resources/accuracy.PNG)
 
+The mean absolute error is the average of all absolute errors. Absolute errors are calculated by subtracting the measured value and "true" value. Our mean absolute error is quite low at only 13%. The mean squared error tells us how close a regression line is to a set of points. Our mean squared error was extremely low which means we were able to find the line of best fit. The root mean squared error is the standard deviation of the prediction errors. Our root mean squared error was only 17% which again is fairly low.
+
 We finally rank the importance of the features and see which have the most impact on the output.
 
 ```
