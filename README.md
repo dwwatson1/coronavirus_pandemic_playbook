@@ -122,27 +122,27 @@ Joining cleaned CDC data by state (see step 8 below):
 **Steps**
 
 1. We chose input data from CDC from March - December 2020 because March marked when the U.S. declared a state of emergency and December was when the first COVID-19 vaccine dose was administered and U.S. Census data, so we replicate the spread of COVID-19 and account for people who didn't have the disease (as mentioned in the Data Exploration section)
-2. Because it was such a large dataset, we split it into 4 parts so cleaning it was more manageable. These parts were imported to the table: CDC_INPUTDB_CLEANED
+2. Because it was such a large dataset, we split it into 4 parts so cleaning it was more manageable. These parts were imported to the table: _CDC_INPUTDB_CLEANED_
 3. We also used our data from investigating factors into their respective tables: 
-   - household_income_by_state into ST_INCOME
-   - state_factors_from_gallup into US_POLITICS
-   - census_sex_no_covid into CENSUS_SEX
-   - census_age_no_covid into CENSUS_RACE
-4. After storing the data in pgAdmin - PostgreSQL, we created new tables from CDC_INPUTDB_CLEANED and then segmented age group, state, sex, and race. Here's a review of all the tables we worked with and new columns we created for the final table, for visual, please refer to the ERD above:
-   - Table: DATA_AGE_GROUP, COVID_CASES_AGE, New columns: COVID and NO COVID for each group: age_group_0_17, age_group_18_49, age_group_50_64, age_group_65PLUS
-   - Table: US_STATES, New columns: none
-   - Table: DATA_SEX, COVID_CASES_SEX, NOCOVID_CENSUS_SEX, New columns: COVID and NO COVID for each group: Male, Female
-   - Table: DATA_RACE, COVID_CASES_RACE, New columns: COVID and NO COVID for each group: Asian, Black, Multiple/Other, White, American Indian/Alaska Native, Native Hawaiian/Other Pacific Islander, No_identified_race
-   - Table: US_POLITICS, New columns: Nearly 30 new political and lifestyle columns with data on information on mask mandates, political party, exercise frequency, sense of community, etc. 
-   - Table: AIRPORT_BY_AREA, New columns: total airports, state land area (sq. miles), airport area (airports per sq. mile)
-   - Table: ST_INCOME, New columns: median income
-5. We identified that we could join all tables using the states column. Using the table: US_STATES, we created the table: COVID_MARCH2020_DEC2020_PROJECT4, of totals per state, with calculated data from the table: CDC_INPUTDB_CLEANED
-6. Using the table: US_STATES, we added all the tables with totals, and created the table: COVID_MARCH2020_DEC2020_TOTALS_PROJECT4
-7. Next, we joined all tables by **state** to input data from all tables to COVID_MARCH2020_DEC2020_TOTALS_PROJECT4. 
+   - household_income_by_state into _ST_INCOME_
+   - state_factors_from_gallup into _US_POLITICS_
+   - census_sex_no_covid into _CENSUS_SEX_
+   - census_age_no_covid into _CENSUS_RACE_
+4. After storing the data in pgAdmin - PostgreSQL, we created new tables from _CDC_INPUTDB_CLEANED_ and then segmented age group, state, sex, and race. Here's a review of all the tables we worked with and new columns we created for the final table, for visual, please refer to the ERD above:
+   - Table: _DATA_AGE_GROUP, COVID_CASES_AGE_, New columns: _COVID_ and _NO COVID_ for each group: _age_group_0_17, age_group_18_49, age_group_50_64, age_group_65PLUS_
+   - Table: _US_STATES_, New columns: none
+   - Table: _DATA_SEX, COVID_CASES_SEX, NOCOVID_CENSUS_SEX,_ New columns: _COVID _and _NO COVID_ for each group: _Male, Female_
+   - Table: DATA_RACE, COVID_CASES_RACE, New columns: COVID and _NO COVID_ for each group: _Asian, Black, Multiple/Other, White, American Indian/Alaska Native, Native Hawaiian/Other Pacific Islander, No_identified_race_
+   - Table: _US_POLITICS_, New columns: Nearly 30 new political and lifestyle columns with data on information on mask mandates, political party, exercise frequency, sense of community, etc. 
+   - Table: _AIRPORT_BY_AREA_, New columns: total airports, state land area (sq. miles), airport area (airports per sq. mile)
+   - Table: _ST_INCOME_, New columns: median income
+5. We identified that we could join all tables using the states column. Using the table: _US_STATES_, we created the table: _COVID_MARCH2020_DEC2020_PROJECT4_, of totals per state, with calculated data from the table: _CDC_INPUTDB_CLEANED_
+6. Using the table: _US_STATES_, we added all the tables with totals, and created the table: _COVID_MARCH2020_DEC2020_TOTALS_PROJECT4_
+7. Next, we joined all tables by **state** to input data from all tables to _COVID_MARCH2020_DEC2020_TOTALS_PROJECT4_. 
    - Please refer to the **first ERD image** for the visual of this process
-8. Simiarly, with the cleaned CDC_INPUTDB_CLEANED table mentioned in **step 2 and step 3**, we joined the tables by state and input the data to COVID_MARCH2020_DEC2020_TOTALS_PROJECT4 as well. 
+8. Simiarly, with the cleaned CDC_INPUTDB_CLEANED table mentioned in **step 2 and step 3**, we joined the tables by state and input the data to _COVID_MARCH2020_DEC2020_TOTALS_PROJECT4_ as well. 
    - Please refer to the **second ERD image** for the visual of this process
-9. We exported our table COVID_MARCH2020_DEC2020_TOTALS_PROJECT4 from pgAdmin to the csv file: [COVID_MARCH2020_DEC2020_TOTALS_PROJECT4](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.csv)
+9. We exported our table _COVID_MARCH2020_DEC2020_TOTALS_PROJECT4_ from pgAdmin to the csv file: [COVID_MARCH2020_DEC2020_TOTALS_PROJECT4](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.csv)
 
 ### Data Dictionary
 
