@@ -277,7 +277,7 @@ Interestingly, we find that the highest ranking feature in the spread of COVID i
 
 ## Dashboard
 
-### [Tableau Dashboard Demo](https://public.tableau.com/views/THECOVIDPLAYBOOKDASHBOARD/THECOVIDPLAYBOOKDASHBOARD_1?:language=en-US&:display_count=n&:origin=viz_share_link)
+### [Tableau Dashboard Demo](https://public.tableau.com/views/THECOVIDPLAYBOOKDASHBOARD/THECOVIDPLAYBOOKDASHBOARD?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 ### Blueprint and Interactive Elements
 
