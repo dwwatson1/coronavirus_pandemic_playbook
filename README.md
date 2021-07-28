@@ -131,7 +131,7 @@ Joining cleaned CDC data by state (see step 8 below):
 4. After storing the data in pgAdmin - PostgreSQL, we created new tables from _CDC_INPUTDB_CLEANED_ and then segmented age group, state, sex, and race. Here's a review of all the tables we worked with and new columns we created for the final table, for visual, please refer to the ERD above:
    - Table: _DATA_AGE_GROUP, COVID_CASES_AGE_, New columns: _COVID_ and _NO COVID_ for each group: _age_group_0_17, age_group_18_49, age_group_50_64, age_group_65PLUS_
    - Table: _US_STATES_, New columns: none
-   - Table: _DATA_SEX, COVID_CASES_SEX, NOCOVID_CENSUS_SEX,_ New columns: _COVID _and _NO COVID_ for each group: _Male, Female_
+   - Table: _DATA_SEX, COVID_CASES_SEX, NOCOVID_CENSUS_SEX,_ New columns: _COVID_ and _NO COVID_ for each group: _Male, Female_
    - Table: DATA_RACE, COVID_CASES_RACE, New columns: COVID and _NO COVID_ for each group: _Asian, Black, Multiple/Other, White, American Indian/Alaska Native, Native Hawaiian/Other Pacific Islander, No_identified_race_
    - Table: _US_POLITICS_, New columns: Nearly 30 new political and lifestyle columns with data on information on mask mandates, political party, exercise frequency, sense of community, etc. 
    - Table: _AIRPORT_BY_AREA_, New columns: total airports, state land area (sq. miles), airport area (airports per sq. mile)
