@@ -360,7 +360,7 @@ As we can see, the model was not able to predict COVID cases at all without the 
 
 ![dashboard_map](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/dashboard_map.png)
 
-The dashboard map presents the largest factors that contributed to the spread of COVID-19. The factors presented are:
+The dashboard map presents the largest factors that were determined by running the aggregated machine learning model with ratios that contributed to the spread of COVID-19. The factors presented are:
 - Age Group 50 64 No Covid Ratio
 - Airport Area
 - Economic Confidence Index
