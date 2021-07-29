@@ -371,9 +371,63 @@ We have also created a simple HTML file to show the dashboard in a dedicated web
 
 ## Conclusion 
 
+### Results
+
+We completed 4 runs of our machine learning model. Below is an overview of the data we used in each run and their factor results:
+
+**Data:** Aggregated state COVID-19 data with absolute values
+**Feature Importance:**
+* Age group 0-17 individuals
+* Population Density
+* 'No race' individuals
+* American Indian and Alaskan Native race
+* State Policy Prevention Mandate Score
+ 
+**Data:** Aggregated state COVID-19 data with ratios
+**Feature Importance:**
+* Population Density
+* Race: Black individuals
+* State land area (sq. miles)
+* Number of individuals who don't feel community recognition
+* Total airports
+
+**Data:** Aggregated state COVID-19 data with ratios, removed population density, state land area 
+**Feature Importance**
+* State Policy Prevention Mandate Score
+* Trump disapproval
+* Age group 50-64 individuals
+* Airport area (land area/number of airports)
+* Economic Confidence Index
+
+**Data:** Feature engineered COVID-19 data
+**Feature Importance**
+* Race
+* Age Group
+* Population Density
+
 ### Summary
 
+While there are lessons to be learned and perfect for our next project on the topic of COVID-19 data, however these four category of factors were the most common in our 4 runs of our model. 
 
+1. Race
+2. Age
+3. Population density
+4. State Mandate Policy
+
+Let's revist our questions from the beginning of the project.
+
+```Which social, economic, geographical, lifestyle or political factors contributed the most the spread of the disease?```
+```Which category of factor contributed the most the spread of the disease?```
+```Is there a connection between state policy or political leaning (i.e. mask mandate) and the spread of COVID-19 within the state```
+```Do we need to account for the size of the population that didn't have COVID-19 when using a machine learning model?```
+
+* The longer list above answers the first question we asked at the outset of our project. 
+* The shorter list here answers question #2. 
+* For question #3, we wanted to find out if a state policy mandate, such as a mask mandate, or political leaning contributed to the spread of COVID-19. Trump disapproval showed up in the top 5 most important factors in run 2 but didn't show up again. State Policy Mandate Score showed up in two model runs, so there is a stronger connection to this score than political leaning. 
+* For question #4, yes we did take into account the size of the population that didn't have COVID-19 so we could replicate the spread of COVID-19. We even created featured engineered data to replicate and account for those individuals in states that didn't have COVID-19. If we hadn't done this, our model would've been even less accurate and because the mode wouldn't have replicated the spread of COVID-19 correctly.
+
+_Do we recommend rewriting the pandemic playbook?_
+The short answer is yes. Given the list of most important factors, we need to update the playbook to prepare our cities better. Their emergency management systems are more equipped to deal with natural disasters or terrorist attacks rather than a pandemic. Cities are more dense and more diverse racially and given the results from our model, these communities are more prone to the spread of COVID-19. While cities do receive federal funds, they need the most support from the states where they are located. City officials then should use these funds to hire experts to develop mitigation and quicker response plans the spread of airborne illnesses like COVID-19. 
 
 ### Lessons Learned
 
