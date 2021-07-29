@@ -192,9 +192,11 @@ We chose a random forest algorithm because it can handle many input variables of
 We originally ran the data with absolute values through the model. Based on the accuracy scores, the model suffered from extreme overfitting. Also, the model might not be very accurate because the data used had absolute values instead of ratios, which would be more appropriate and representative of the data. Here were the accuracy scores and results of that model:
 
 Accuracy
+
 ![Accuracy](Resources/accuracy.PNG)
 
 Feature Importance
+
 ![Results](Resources/features_ranked.PNG)
 
 We ran the model again, this time using ratios instead of absolute values in the data.
@@ -293,7 +295,7 @@ Not too surprisingly, we find that population density is the highest ranked fact
 
 To see how the model would rank the features without population density as a factor, we removed the population_density and state_land_area_sqmile columns as they are both similar in relation and the state_land_area_sqmile column is not a necessary feature in running the model.
 
-![Ratio Accuracy](Resources/accuracy/ratio.PNG)
+![Ratio Accuracy](Resources/accuracy_ratio.PNG)
 
 We see drastically different accuracy scores from the previous run of the model. The mean absolute error and the root mean squared error are quite good, but the mean squared error is arguably high but significantly better than it was before.. Because of how we aggregated our data by state and because we only have 36 observations, it might be impossible to get the mean squared error any smaller. However, we did see some very interesting results:
 
