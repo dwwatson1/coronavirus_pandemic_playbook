@@ -358,6 +358,8 @@ As we can see, the model was not able to predict COVID cases at all without the 
 
 ### [Tableau Dashboard](https://public.tableau.com/views/THECOVIDPLAYBOOKDASHBOARD/THECOVIDPLAYBOOKDASHBOARD?:language=en-US&:display_count=n&:origin=viz_share_link)
 
+![dashboard_map](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/dashboard_map.png)
+
 ### Blueprint and Interactive Elements
 
 One of the interactive elements we are using is the filter action. Filter actions send information between worksheets. Typically, a filter action sends information from a selected mark to another sheet showing related information. Behind the scenes, filter actions send data values from the relevant source fields as filters to the target sheet and dashboards.
