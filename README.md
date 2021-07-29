@@ -183,6 +183,9 @@ The model we chose to use is a **supervised random forest regression model.** We
 We chose a random forest algorithm because it can handle many input variables of which we have many. The algorithm can run efficiently on large datasets, and most importantly, random forest models can be used to rank the importance of input variables. This fits the question we are trying to answer perfectly - **what are the top factors that influence the spread of COVID?** A random forest model will help us rank the most influential factors. Since we have a large dataset with many features, as well as both continuous and categorical non-linear variables, a random forest algorithm will be more efficient and more accurate than a simple linear regression. While a large number of trees in a random forest algorithm can be slow requiring a lot of computational power and resources, the advantages outweigh the disadvantages.
 
 ### Code for Random Forest Model
+
+[Link to COVID-19 Machine Learning Notebook](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/covid_ml.ipynb)
+
 To create the random forest model, we first initialize the dependencies, notably the 'from sklearn.ensemble import RandomForestRegressor'.
 
 ```
