@@ -387,7 +387,7 @@ The [methodology](https://wallethub.com/edu/states-coronavirus-restrictions/7381
    - Staff screening
    - PPE (personal protective equipment)
 
-The more points that a state recieved the worse their COVID-19 policy protections were. Iowa had the highest score and the worst policies while Vermont had the lowest score and the best preventitive policies.
+Each of the states recieved different ratios dependent upon the actions they took. The more points that a state recieved the worse their COVID-19 policy protections were. Iowa had the highest score and the worst policies while Vermont had the lowest score and the best preventitive policies.
 
 ### Blueprint and Interactive Elements
 
