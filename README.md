@@ -1,4 +1,5 @@
 # Coronavirus Pandemic Playbook
+_A Project by: David Watson, Dinah Bondzie, Michael Leggett, Kimi Ellerbe, Jack Gross, Yodit Teamir _
 
 ## Project Topic, Background, Audience
 
