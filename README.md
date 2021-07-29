@@ -6,7 +6,7 @@ The term 'pandemic playbook' circulated in the news during the beginning of the 
 
 The National Governors Association, a nonpartisan organization comprised of governors in the U.S., tasked with creating an updated playbook for state governments. They have asked us to provide a comprehensive review of factors that led to the spread of COVID-19 cases in states across the United States. We will be presenting our at the next National Governors Association annual conference in late 2021.
 
-![pandemic_playbook.jpg](Images/pandemic_playbook.jpg)
+<img src="Images/pandemic_playbook.jpg" width="700" >
 
 ### Project Goal
 Drawing on data from CDC, U.S. Census, and many other sources, our goal is to determine which social, economic, and political factors contributed to the spread of COVID-19. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors have the opportunity to learn where our state's weak points were that led to these incredible economic losses and mitigate them in a future pandemic. Our team is confident that our machine learning algorithm will predict which factors contributed the most to the spread of respiratory diseases like COVID-19. The information will valuable for state lawmakers' future economic and social political decisions.
