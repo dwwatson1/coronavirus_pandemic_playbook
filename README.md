@@ -301,4 +301,6 @@ We have also created a simple HTML file to show the dashboard in a dedicated web
 
 ### Lessons Learned
 
+In the outset of the project, we decided our audience would be state lawmakers. With this in mind, we chose to focus on finding factor data tables with state columns. If we had more time to do the project over again, we would've instead chosen counties. After the first pass of our machine learning model, we learned that aggregated COVID and no COVID totals were too few data points - only 50 to measure replicate the spread of COVID-19 and determine the accuracy of our machine learning model. If we had organized our data by county, we would've ended up with 3,006 data points, far more than our original attempt. 
+
 ### Future Projects
