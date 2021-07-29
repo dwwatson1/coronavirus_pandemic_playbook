@@ -289,3 +289,11 @@ User can select marks to see information about a specific data filed. One can al
 When you select marks in the view, all other marks are dimmed to draw attention to the selection. The selection is saved with the workbook. Quick data view can also be done by one of the run-on options; hovering your mouse on the charts/marks. 
 
 We have also created a simple HTML file to show the dashboard in a dedicated webpage with another interactive element where users can download the analysis into PDF file. 
+
+## Conclusion 
+
+### Summary
+
+### Lessons Learned
+
+### Future Projects
