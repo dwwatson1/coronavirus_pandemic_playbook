@@ -245,7 +245,7 @@ X_train_scaled = X_scaler.transform(X_train)
 X_test_scaled = X_scaler.transform(X_test)
 ```
 
-We initialize the random forest classifier and fit the model. We set n_estimators to 128 because best practice is to use between 64 and 128 forests. Generally, the higher the number, the stronger and more stable the predictions are. Given that this is a test model, it is reasonable to assume the model might be able to handle 128 forests.
+We initialize the random forest regressor and fit the model. We set n_estimators to 128 because best practice is to use between 64 and 128 forests. Generally, the higher the number, the stronger and more stable the predictions are. Given that this is a test model, it is reasonable to assume the model might be able to handle 128 forests.
 
 ```
 rf_model = RandomForestRegressor(n_estimators=128, random_state=1) 
@@ -265,7 +265,7 @@ print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_p
 
 ![Accuracy](Resources/accuracy.PNG)
 
-The mean absolute error is the average of all absolute errors. Absolute errors are calculated by subtracting the measured value and "true" value. Our mean absolute error is quite low at only 13%. The mean squared error tells us how close a regression line is to a set of points. Our mean squared error was extremely low which means we were able to find the line of best fit. The root mean squared error is the standard deviation of the prediction errors. Our root mean squared error was only 17% which again is fairly low.
+The mean absolute error is the average of all absolute errors. Absolute errors are calculated by subtracting the measured value and "true" value. Our mean absolute error is very low at only 0.0136. The mean squared error tells us how close a regression line is to a set of points. Our mean squared error was extremely low which means we were able to find the line of best fit. The root mean squared error is the standard deviation of the prediction errors. Our root mean squared error was only 0.0175 which again is very low.
 
 We finally rank the importance of the features and see which have the most impact on the output.
 
@@ -278,7 +278,53 @@ sorted(zip(rf_model.feature_importances_, X.columns), reverse=True)
 
 ![Results](Resources/features_ranked.PNG)
 
-Interestingly, we find that the highest ranking feature in the spread of COVID is COVID cases in the 0-17 age group, which made up 44%. This means that our model found that children are the largest factor in the spread of COVID nationwide. Not too surprisingly, we also find that population density is a high factor in spread, as well as white people which isn't too surprising either as roughly 76% of U.S. citizens are white. Our model also ranked liberals and people with Democratic-leans higher than conservatives or people with Republican-leans. We think this might be better explained by most liberals or Democrats live in highly population dense areas, rather than ideological differences.
+Interestingly, we find that the highest ranking feature in the spread of COVID is COVID cases in the 0-17 age group, which made up 44%. This means that our model found that children are the largest factor in the spread of COVID nationwide. Not too surprisingly, we also find that population density is a high factor in spread, as well as white people which isn't too surprising either as roughly 76% of U.S. citizens are white. Our model also ranked liberals and people with Democratic-leans higher than conservatives or people with Republican-leans. We think this might be better explained by most liberals or Democrats live in highly population dense areas, rather than ideological differences. However, there are a couple issues with this model. Based on the accuracy scores, it seems that there is some extreme overfitting. Also, the model might not be very accurate because the data used had absolute values instead of ratios, which might be more appropriate and representative of the data.
+
+We ran the model again, this time using ratios instead of absolute values in the data.
+
+![Ratio Accuracy](Resources/accuracy_ratio.PNG)
+
+We see drastically different accuracy scores from the previous run of the model. The mean absolute error and the root mean squared error are quite good, but the mean squared error is very high, which means we are very far from finding the line of best fit. Because of how we aggregated our data by state and because we only have 36 observations, it might be impossible to get the mean squared error any smaller.
+
+Next, we tried a different approach - what if we could use the individual patient data and use whether or not a person has covid as the target variable? It is a good idea in theory, however, the only data we have is for individual patients with COVID. We know from simple subtraction of the (total population - total number of covid cases) how many total people don't have COVID, but we know nothing about the individual people. From the CDC data, we were able to see each person with COVID's age range, sex, and race. In order to get that data for the people without COVID, we used feature engineering to create those values based on Census statistics.
+
+For example, for Connecticut, we looked at the Census data and calculated what percentage of the non-COVID people would be in each age bracket, male or female, and what their race would be and used those percentages as probabilities to create the non-COVID data.
+
+```
+# Connecticut
+def faker_categorical(num=1, seed=None):
+  np.random.seed(seed)
+  fake.seed_instance(seed)
+
+  output = [
+    {
+        "res_state": "CT",
+        # age_group: 0: 0-17 years, 1: 18-49 years, 2: 50-64 years, 3: 65+ years
+        "age_group": np.random.choice(["0", "1", "2", "3"], p=[0.21, 0.40, 0.21, 0.18]),
+        # sex: 0-Male, 1-Female
+        "sex": np.random.choice(["0", "1"], p=[0.49, 0.51]),
+        # race: 0-White, 1-Black, 2-Asian, 3-American Indian/Alaska Native, 4-Native Hawaiian/Other Pacific Islander, 5-Multiple/Other
+        "race": np.random.choice(["0", "1", "2", "3", "4", "5"], p=(0.7461, 0.1113, 0.0467, 0.0025, 0.0004, 0.0930)),
+    }
+    for x in range(num)
+  ]
+  return output
+  ```
+  
+Using these probabilites, we had the script create a certain number of rows equal to the total non-COVID population for each state. In the case of Connecticut, there were 3,394,611 people without COVID and the script created that many rows using the probabilites we gave it above.
+  
+  ```
+  ct_df = pd.DataFrame(faker_categorical(num=3394611, seed=0))
+  ```
+
+Doing this for every state creates a lot of data. Doing this for all 38 states we were using created almost 250 million rows. While we would have liked to run a machine learning model on this data, we did not have the necessary infrastructure to run this data as we lacked the necessary RAM or memory. We tried using Google Colab Pro and their 25GB of RAM but it still was not enough. Therefore, we decided to pick one state from each region in the United States - Northeast, Southeast, Midwest, West, Southeast, and Southwest - for a total of five states. The states we chose were Connecticut, Tennessee, Wisconsin, Utah, and Oklahoma as these were also relatively the same size population wise.
+
+We also added additional factors to the data including the states' region, population density, median income, airport per square mile, and COVID policy pervention score. In order to help make the data less memory intensive, the categorical data was also ordinally encoded. The final table looked as such:
+
+![Table](Resources/table.PNG)
+
+After the data preprocessing was complete, we ran the data through a random forest classification model.
+
 
 ## Dashboard
 
