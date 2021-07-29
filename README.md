@@ -407,6 +407,7 @@ We have also created a simple HTML file to show the dashboard in a dedicated web
 We completed 4 runs of our machine learning model. Below is an overview of the data we used in each run and their factor results:
 
 **Data:** Aggregated state COVID-19 data with absolute values
+
 **Feature Importance:**
 * Age group 0-17 individuals
 * Population Density
@@ -415,6 +416,7 @@ We completed 4 runs of our machine learning model. Below is an overview of the d
 * State Policy Prevention Mandate Score
  
 **Data:** Aggregated state COVID-19 data with ratios
+
 **Feature Importance:**
 * Population Density
 * Race: Black individuals
@@ -423,6 +425,7 @@ We completed 4 runs of our machine learning model. Below is an overview of the d
 * Total airports
 
 **Data:** Aggregated state COVID-19 data with ratios, removed population density, state land area 
+
 **Feature Importance**
 * State Policy Prevention Mandate Score
 * Trump disapproval
@@ -431,6 +434,7 @@ We completed 4 runs of our machine learning model. Below is an overview of the d
 * Economic Confidence Index
 
 **Data:** Feature engineered COVID-19 data
+
 **Feature Importance**
 * Race
 * Age Group
@@ -447,10 +451,12 @@ While there are lessons to be learned and perfect for our next project on the to
 
 Let's revist our questions from the beginning of the project.
 
-```Which social, economic, geographical, lifestyle or political factors contributed the most the spread of the disease?```
-```Which category of factor contributed the most the spread of the disease?```
-```Is there a connection between state policy or political leaning (i.e. mask mandate) and the spread of COVID-19 within the state```
-```Do we need to account for the size of the population that didn't have COVID-19 when using a machine learning model?```
+```
+1. Which social, economic, geographical, lifestyle or political factors contributed the most the spread of the disease?
+2. Which category of factor contributed the most the spread of the disease?
+3. Is there a connection between state policy or political leaning (i.e. mask mandate) and the spread of COVID-19 within the state
+4. Do we need to account for the size of the population that didn't have COVID-19 when using a machine learning model?
+```
 
 * The longer list above answers the first question we asked at the outset of our project. 
 * The shorter list here answers question #2. 
