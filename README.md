@@ -5,12 +5,12 @@ _A Project by: David Watson, Dinah Bondzie, Michael Leggett, Kimi Ellerbe, Jack 
 
 The term 'pandemic playbook' circulated in the news during the beginning of the COVID-19 pandemic. U.S. President Barack Obama's team had outlined how to respond to infectious diseases and biological incidents so future administrations would be prepared to respond to the next pandemic or biological threat. While the federal government prepared guidelines, state governments from the 50 states + DC were woefully unprepared for a pandemic. The COVID-19 pandemic brought the [deepest recession since the end of WWII](https://www.brookings.edu/research/social-and-economic-impact-of-covid-19/) as the global economy shrunk by 3.5% and [114 million](https://www.weforum.org/agenda/2021/02/covid-employment-global-job-loss/) people lost their jobs in 2020. The impact of this shock is likely to be felt for years to come.
 
-The National Governors Association, a nonpartisan organization comprised of governors in the U.S., tasked with creating an updated playbook for state governments. They have asked us to provide a comprehensive review of factors that led to the spread of COVID-19 cases in states across the United States. We will be presenting our at the next National Governors Association annual conference in late 2021.
+The National Governors Association, a nonpartisan organization comprised of governors in the U.S., tasked with creating an updated playbook for state governments. They have asked us to provide a comprehensive review of factors that led to the spread of COVID-19 cases in states across the United States. We will be presenting ours at the next National Governors Association annual conference in late 2021.
 
 <img src="Images/pandemic_playbook.jpg" width="600">
 
 ### Project Goal
-Drawing on data from CDC, U.S. Census, and many other sources, our goal is to determine which social, economic, and political factors contributed to the spread of COVID-19. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors have the opportunity to learn where our state's weak points were that led to these incredible economic losses and mitigate them in a future pandemic. Our team is confident that our machine learning algorithm will predict which factors contributed the most to the spread of respiratory diseases like COVID-19. The information will valuable for state lawmakers' future economic and social political decisions.
+Drawing on data from CDC, U.S. Census, and many other sources, our goal is to determine which social, economic, and political factors contributed to the spread of COVID-19. There is evidence that if states were more prepared to handle a pandemic, economic performance would not have suffered as it did in 2020. Our nation's governors have the opportunity to learn where our state's weak points were that led to these incredible economic losses and mitigate them in a future pandemic. Our team is confident that our machine learning algorithm will predict which factors contributed the most to the spread of respiratory diseases like COVID-19. The information will be valuable for state lawmakers' future economic and social political decisions.
 
 ### Project Factors 
 
@@ -45,7 +45,7 @@ Given our audience for the project, the data we've obtained for each factor will
 
 ### Questions to Investigate During Project
 1. Which social, economic, geographical, lifestyle or political factors contributed the most the spread of the disease?
-2. Which category of factor contributed the most the spread of the disease?
+2. Which category of factor contributed the most to the spread of the disease?
 3. Is there a connection between state policy or political leaning (i.e. mask mandate) and the spread of COVID-19 within the state
 4. Do we need to account for the size of the population that didn't have COVID-19 when using a machine learning model?
 
