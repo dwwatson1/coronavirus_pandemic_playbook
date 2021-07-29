@@ -387,6 +387,8 @@ The [methodology](https://wallethub.com/edu/states-coronavirus-restrictions/7381
    - Staff screening
    - PPE (personal protective equipment)
 
+The more points that a state recieved the worse their COVID-19 policy protections were. Iowa had the highest score and the worst policies while Vermont had the lowest score and the best preventitive policies.
+
 ### Blueprint and Interactive Elements
 
 One of the interactive elements we are using is the filter action. Filter actions send information between worksheets. Typically, a filter action sends information from a selected mark to another sheet showing related information. Behind the scenes, filter actions send data values from the relevant source fields as filters to the target sheet and dashboards.
