@@ -449,7 +449,7 @@ While there are lessons to be learned and perfect for our next project on the to
 3. Population density
 4. State Mandate Policy
 
-Let's revist our questions from the beginning of the project.
+Let's revisit our questions from the beginning of the project.
 
 ```
 1. Which social, economic, geographical, lifestyle or political factors contributed the most the spread of the disease?
