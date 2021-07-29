@@ -369,13 +369,13 @@ The dashboard map presents the largest factors that contributed to the spread of
 - State Policy Prevention Mandates Score
 - Trump Disapproval Ratio
 
-The ![methodology](https://wallethub.com/edu/states-coronavirus-restrictions/73818) to calculate the state policy prevention mandates score is below:
+The [methodology](https://wallethub.com/edu/states-coronavirus-restrictions/73818) to calculate the state policy prevention mandates score is below:
 - Requirement to Wear a Face Mask in Public: Double Weight (~9.30 Points)
 - Travel Restrictions: Full Weight (~4.65 Points)
 - Large Gatherings Restrictions: Triple Weight (~13.95 Points)
 - Statewide School Restart: Double Weight (~9.30 Points)
 - Reopening of Restaurants and Bars: Quadruple Weight (~18.60 Points)
-- Bars Limitations
+   - Bars Limitations
 - State Guidance on Customer Health Checks at Restaurants: Full Weight (~4.65 Points)
 - Reopening of Non-Essential Businesses: Double Weight (~9.30 Points)
 - Legislation on Business Immunity from COVID-19 Claims: Full Weight (~4.65 Points)
@@ -384,8 +384,8 @@ The ![methodology](https://wallethub.com/edu/states-coronavirus-restrictions/738
 - Strictness of “Shelter in Place” Order: Triple Weight (~13.95 Points)
 - Presence of Multistate Agreements to Reopen: Half Weight (~2.33 Points)
 - Guidance for Assisted Living Facilities Related to COVID-19: Half Weight (~2.33 Points)
-- Staff screening:
-- PPE (personal protective equipment)
+   - Staff screening
+   - PPE (personal protective equipment)
 
 ### Blueprint and Interactive Elements
 
