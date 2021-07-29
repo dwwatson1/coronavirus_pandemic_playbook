@@ -189,6 +189,16 @@ We chose a random forest algorithm because it can handle many input variables of
 
 [Link to COVID-19 Machine Learning Notebook](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/covid_ml.ipynb)
 
+We originally ran the data with absolute values through the model. Based on the accuracy scores, the model suffered from extreme overfitting. Also, the model might not be very accurate because the data used had absolute values instead of ratios, which would be more appropriate and representative of the data. Here were the accuracy scores and results of that model:
+
+Accuracy
+![Accuracy](Resources/accuracy.PNG)
+
+Feature Importance
+![Results](Resources/features_ranked.PNG)
+
+We ran the model again, this time using ratios instead of absolute values in the data.
+
 To create the random forest model, we first initialize the dependencies, notably the 'from sklearn.ensemble import RandomForestRegressor'.
 
 ```
@@ -201,10 +211,10 @@ from sklearn.model_selection import train_test_split
 from sklearn import metrics
 ```
 
-After loading in the data, we use one hot encoding to account for null values and convert categorical variables to integer data.
+After loading in the data, we use one hot encoding to convert categorical variables to integer data.
 
 ```
-file_path = ("COVID_MARCH2020_DEC2020_TOTALS_PROJECT4.csv")
+file_path = ("COVID_MARCH2020_DEC2020_RATIOS_PROJECT4.csv")
 covid_df = pd.read_csv(file_path)
 
 covid_cat = covid_df.dtypes[covid_df.dtypes == "object"].index.tolist()
@@ -228,9 +238,9 @@ covid_df
 We split our preprocessed data into our features and target variables.
 
 ```
-y = covid_df["case_pop"].ravel()
-X = covid_df.copy()
-X = X.drop("case_pop", axis=1)
+y = covid_df_encode["target_var_covid_st"].ravel()
+X = covid_df_encode.copy()
+X = X.drop("target_var_covid_st", axis=1)
 ```
 
 We then split the data into training and testing sets and scale the data. We set random_state to a number in the testing phase so that we can consistently see the same results when the test model is run (this could possibly be removed for the final model).
@@ -246,10 +256,10 @@ X_train_scaled = X_scaler.transform(X_train)
 X_test_scaled = X_scaler.transform(X_test)
 ```
 
-We initialize the random forest regressor and fit the model. We set n_estimators to 128 because best practice is to use between 64 and 128 forests. Generally, the higher the number, the stronger and more stable the predictions are. Given that this is a test model, it is reasonable to assume the model might be able to handle 128 forests.
+We initialize the random forest regressor and fit the model. We set n_estimators to 500 since generally the higher the number, the stronger and more stable the predictions are. Given that there are not too many observations, it is reasonable to assume the model might be able to handle 500 forests.
 
 ```
-rf_model = RandomForestRegressor(n_estimators=128, random_state=1) 
+rf_model = RandomForestRegressor(n_estimators=500, random_state=1) 
 
 rf_model = rf_model.fit(X_train_scaled, y_train)
 ```
@@ -264,9 +274,9 @@ print('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))
 print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
 ```
 
-![Accuracy](Resources/accuracy.PNG)
+![Ratio Accuracy](Resources/accuracy_ratio2.PNG)
 
-The mean absolute error is the average of all absolute errors. Absolute errors are calculated by subtracting the measured value and "true" value. Our mean absolute error is very low at only 0.0136. The mean squared error tells us how close a regression line is to a set of points. Our mean squared error was extremely low which means we were able to find the line of best fit. The root mean squared error is the standard deviation of the prediction errors. Our root mean squared error was only 0.0175 which again is very low.
+The mean absolute error and root mean squared error are sizeable but the mean squared error is very high, meaning we are very far from finding the line of best fit.
 
 We finally rank the importance of the features and see which have the most impact on the output.
 
@@ -277,21 +287,21 @@ importances
 sorted(zip(rf_model.feature_importances_, X.columns), reverse=True)
 ```
 
-![Results](Resources/features_ranked.PNG)
+![Ratio Results](Resources/results_ratio2.PNG)
 
-Interestingly, we find that the highest ranking feature in the spread of COVID is COVID cases in the 0-17 age group, which made up 44%. This means that our model found that children are the largest factor in the spread of COVID nationwide. Not too surprisingly, we also find that population density is a high factor in spread, as well as white people which isn't too surprising either as roughly 76% of U.S. citizens are white. Our model also ranked liberals and people with Democratic-leans higher than conservatives or people with Republican-leans. We think this might be better explained by most liberals or Democrats live in highly population dense areas, rather than ideological differences. However, there are a couple issues with this model. Based on the accuracy scores, it seems that there is some extreme overfitting. Also, the model might not be very accurate because the data used had absolute values instead of ratios, which might be more appropriate and representative of the data.
+Not too surprisingly, we find that population density is the highest ranked factor at 75%. As more people are densely close together, the more likely COVID is to spread from person to person.
 
-We ran the model again, this time using ratios instead of absolute values in the data.
+To see how the model would rank the features without population density as a factor, we removed the population_density and state_land_area_sqmile columns as they are both similar in relation and the state_land_area_sqmile column is not a necessary feature in running the model.
 
-![Ratio Accuracy](Resources/accuracy_ratio.PNG)
+![Ratio Accuracy](Resources/accuracy/ratio.PNG)
 
-We see drastically different accuracy scores from the previous run of the model. The mean absolute error and the root mean squared error are quite good, but the mean squared error is arguably high, which means we are far from finding the line of best fit. Because of how we aggregated our data by state and because we only have 36 observations, it might be impossible to get the mean squared error any smaller. However, we did see some very interesting results:
+We see drastically different accuracy scores from the previous run of the model. The mean absolute error and the root mean squared error are quite good, but the mean squared error is arguably high but significantly better than it was before.. Because of how we aggregated our data by state and because we only have 36 observations, it might be impossible to get the mean squared error any smaller. However, we did see some very interesting results:
 
 ![Ratio Results](Resources/results_ratio.PNG)
 
 The state policy prevention mandate score is the top most important factor in the spread of COVID with Trump disapproval trailing close behind. The 50-64 age group airport per square mile, economic confidence index, and 0-17 age group are also fairly large factors that contributed to the spread of COVID.
 
-We realized that there were some potential problems with our model - since we only have 36 observations and all of them individual states, the machine learning model is taking 75% of those states and predicting for the other 25% which is problematic as each state is so different demographically, in its response to COVID, etc. We were also unable to run individual models for each state because of the aggregation. So, we also tried a different approach - what if we could use the individual patient data and use whether or not a person has covid as the target variable? It is a good idea in theory, however, the only data we have is for individual patients with COVID. We know from simple subtraction of the (total population - total number of covid cases) how many total people don't have COVID, but we know nothing about the individual people. From the CDC data, we were able to see each person with COVID's age range, sex, and race. In order to get that data for the people without COVID, we used feature engineering to create those values based on Census statistics.
+We realized that there were some potential problems with our model - since we only have 36 observations and all of them individual states, the machine learning model is taking 75% of those states and predicting for the other 25% which is problematic as each state is so different demographically, in its response to COVID, etc. We were also unable to run individual models for each state because of the aggregation. So, we also tried a different approach - keeping in line of our overall question about the top factors leading to the spread of COVID, what if we could use the individual patient data and use whether or not a person has covid as the target variable? It is a good idea in theory, however, the only data we have is for individual patients with COVID. We know from simple subtraction of the (total population - total number of covid cases) how many total people don't have COVID, but we know nothing about the individual people. From the CDC data, we were able to see each person with COVID's age range, sex, and race. In order to get that data for the people without COVID, we used feature engineering to create those values based on Census statistics.
 
 For example, for Connecticut, we looked at the Census data and calculated what percentage of the non-COVID people would be in each age bracket, male or female, and what their race would be and used those percentages as probabilities to create the non-COVID data.
 
@@ -336,7 +346,11 @@ After the data preprocessing was complete, we ran the data through a random fore
 
 ![Results](Resources/new_model_results.PNG)
 
-Race was essentially the single most important feature at 94%, followed by age and population density at 2% and 1% respectively.
+Race was essentially the single most important feature at 94%, followed by age and population density at 2% and 1% respectively. This is misleading, however. We think the model is relying on the "Not Identified" variable for race in the COVID data. The feature engineered data does not have a "Not Identified" variable. We also know that the "Not Identified" variable makes up about 40% of the overall data, meaning that for these five states we chose, there are a significant number of "Not Identified" which are linked only to COVID cases. To test this theory, we ran the model without the race column.
+
+![Confusion Matrix](Resources/confusion_matrix2.PNG)
+
+As we can see, the model was not able to predict COVID cases at all without the race data. The broader issue is that the data is extremely unbalanced - there are significantly more non-COVID cases than COVID cases. This could be solved by using SMOTE or SMOTEENN, however, we do not have the time or resources to run that over almost 30 million rows. Therefore, unless there are enough computer resources, this strategy is not a viable option.
 
 ## Dashboard
 
@@ -361,7 +375,9 @@ We have also created a simple HTML file to show the dashboard in a dedicated web
 
 ### Lessons Learned
 
-In the outset of the project, we decided our audience would be state lawmakers. With this in mind, we chose to focus on finding factor data tables with state columns. If we had more time to do the project over again, we would've instead chosen counties. After the first pass of our machine learning model, we learned that aggregated COVID and no COVID totals were too few data points - only 50 to measure replicate the spread of COVID-19 and determine the accuracy of our machine learning model. If we had organized our data by county, we would've ended up with 3,006 data points, far more than our original attempt. 
+In the outset of the project, we decided our audience would be state lawmakers. With this in mind, we chose to focus on finding factor data tables with state columns. If we had more time to do the project over again, we would've instead chosen counties. After the first pass of our machine learning model, we learned that aggregated COVID and no COVID totals were too few data points - only 50 to measure replicate the spread of COVID-19 and determine the accuracy of our machine learning model. If we had organized our data by county, we would've ended up with 3,006 data points, far more than our original attempt.
+
+Our aggregated model was a great way to address our question of looking at the spread of COVID in the United States but it suffered from too few observations. The exploratory model of looking at individual cases was good in theory, fixing the problem of too few observations, but suffered from random pairings in the feature engineered data, requiring an extreme amount of resources, and restricting the amount of features we can have. We can therefore suggest that if we want to create a more accurate and efficient model, the data should be aggregated by U.S. county. This fixes the faults of the aggregated model by state by allowing for more observations, and it also fixes the faults of the model by individual cases by keeping the data aggregated (removing the need for feature engineered data) and using less resources. We could also run independent analysis on each state by using their counties as observations.
 
 ### Future Projects
 
