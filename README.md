@@ -360,6 +360,15 @@ As we can see, the model was not able to predict COVID cases at all without the 
 
 ![dashboard_map](https://github.com/dwwatson1/coronavirus_pandemic_playbook/blob/main/Resources/dashboard_map.png)
 
+The dashboard map presents the largest factors that contributed to the spread of COVID-19. The factors presented are:
+- Age Group 50 64 No Covid Ratio
+- Airport Area
+- Economic Confidence Index
+- Population Density
+- State Land Area Sqmile
+- State Policy Prevention Mandates Score
+- Trump Disapproval Ratio
+
 ### Blueprint and Interactive Elements
 
 One of the interactive elements we are using is the filter action. Filter actions send information between worksheets. Typically, a filter action sends information from a selected mark to another sheet showing related information. Behind the scenes, filter actions send data values from the relevant source fields as filters to the target sheet and dashboards.
